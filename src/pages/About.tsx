@@ -1,13 +1,13 @@
 import React from "react";
+import AboutSection from "../components/AboutSection";
 import Platform from "../components/Platform";
 import CoreValues from "../components/CoreValues";
 import WhyHive from "../components/WhyHive";
-import AboutSection from "../components/AboutSection";
 
 const About: React.FC = () => {
   return (
-    <div>
-      <AboutSection/>
+    <div className="bg-zinc-900 text-zinc-100">
+      <AboutSection />
       <Platform />
       <CoreValues />
       <WhyHive />

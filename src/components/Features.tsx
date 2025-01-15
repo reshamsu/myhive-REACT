@@ -1,73 +1,56 @@
 import React from "react";
 import { FaRobot, FaChartLine, FaLock, FaCogs } from "react-icons/fa";
 
+const FeatureCard: React.FC<{
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}> = ({ icon, title, description }) => (
+  <div className="bg-zinc-800 rounded-2xl p-8 hover:bg-zinc-700 transition-all duration-300 flex flex-col items-start">
+    <div className="text-4xl mb-6 text-amber-500">{icon}</div>
+    <h3 className="text-2xl font-light mb-4 text-zinc-100">{title}</h3>
+    <p className="text-zinc-400">{description}</p>
+  </div>
+);
+
 const Features: React.FC = () => {
+  const features = [
+    {
+      icon: <FaRobot />,
+      title: "AI-Powered Automation",
+      description:
+        "Transform your business with intelligent workflows that save time and reduce errors.",
+    },
+    {
+      icon: <FaChartLine />,
+      title: "Real-Time Analytics",
+      description:
+        "Make data-driven decisions with real-time insights into your sales, finances, and operations.",
+    },
+    {
+      icon: <FaLock />,
+      title: "Secure Payment Processing",
+      description:
+        "Secure, multi-currency payment solutions with built-in fraud detection to protect your business.",
+    },
+    {
+      icon: <FaCogs />,
+      title: "End-to-End Integration",
+      description:
+        "Unified solutions for seamless collaboration across sales, marketing, HR, and finance.",
+    },
+  ];
+
   return (
-    <div className="bg-gray-100 py-16 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-gray-800">
-          Key Features
+    <div className="bg-zinc-900 py-32 px-4">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-5xl font-thin text-center text-zinc-100 mb-24">
+          Key <span className="font-bold">Features</span>
         </h2>
-        <p className="text-center text-gray-600 mt-4">
-          Explore the powerful tools that will elevate your business to new
-          heights.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
-          {/* Feature Card 1 */}
-          <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transform transition duration-300 hover:scale-105">
-            <div className="flex justify-center text-green-500 text-5xl mb-4">
-              <FaRobot />
-            </div>
-            <h3 className="text-xl font-semibold text-center text-gray-800">
-              AI-Powered Automation
-            </h3>
-            <p className="text-gray-600 text-center mt-2">
-              Transform your business with intelligent workflows that save time
-              and reduce errors.
-            </p>
-          </div>
-
-          {/* Feature Card 2 */}
-          <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transform transition duration-300 hover:scale-105">
-            <div className="flex justify-center text-blue-500 text-5xl mb-4">
-              <FaChartLine />
-            </div>
-            <h3 className="text-xl font-semibold text-center text-gray-800">
-              Real-Time Analytics
-            </h3>
-            <p className="text-gray-600 text-center mt-2">
-              Make data-driven decisions with real-time insights into your
-              sales, finances, and operations.
-            </p>
-          </div>
-
-          {/* Feature Card 3 */}
-          <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transform transition duration-300 hover:scale-105">
-            <div className="flex justify-center text-red-500 text-5xl mb-4">
-              <FaLock />
-            </div>
-            <h3 className="text-xl font-semibold text-center text-gray-800">
-              Secure Payment Processing
-            </h3>
-            <p className="text-gray-600 text-center mt-2">
-              Secure, multi-currency payment solutions with built-in fraud
-              detection to protect your business.
-            </p>
-          </div>
-
-          {/* Feature Card 4 */}
-          <div className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transform transition duration-300 hover:scale-105">
-            <div className="flex justify-center text-yellow-500 text-5xl mb-4">
-              <FaCogs />
-            </div>
-            <h3 className="text-xl font-semibold text-center text-gray-800">
-              End-to-End Integration
-            </h3>
-            <p className="text-gray-600 text-center mt-2">
-              Unified solutions for seamless collaboration across sales,
-              marketing, HR, and finance.
-            </p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {features.map((feature, index) => (
+            <FeatureCard key={index} {...feature} />
+          ))}
         </div>
       </div>
     </div>

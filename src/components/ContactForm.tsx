@@ -1,93 +1,110 @@
 import React from "react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const ContactForm: React.FC = () => {
   return (
-    <div className="flex items-center justify-center py-10">
-      <div className="bg-white shadow-lg rounded-lg w-full max-w-6xl overflow-hidden">
-        <div className="flex flex-col md:flex-row">
-          {/* Contact Information Section */}
-          <div className="bg-zinc-700 text-white p-8 md:w-1/2 text-center">
-            <h2 className="text-4xl font-bold">Get in Touch with Us</h2>
-            <p className="text-lg mt-2">We’re here to assist you with any inquiries.</p>
-            <ul className="mt-6 space-y-3 text-lg">
-              <li>
-                <span className="font-semibold">Phone:</span> xxx-xxx-xxxx
-              </li>
-              <li>
-                <span className="font-semibold">Address:</span> Lorem, Ipsum, XX, 1234
-              </li>
-              <li>
-                <span className="font-semibold">Hours:</span> 9am - 5pm EST, Daily
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Form Section */}
-          <form className="p-8 bg-white md:w-1/2">
-            <h2 className="text-3xl font-bold text-gray-800">Contact Us</h2>
-            <p className="text-gray-500 mt-2">
-              Fill out the form below and we’ll get back to you as soon as possible.
-            </p>
-            <div className="mt-6 grid grid-cols-1 gap-6">
-              {/* Name Field */}
-              <div>
-                <label className="block text-gray-700 font-semibold">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
-              </div>
-
-              {/* Email Field */}
-              <div>
-                <label className="block text-gray-700 font-semibold">Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
-              </div>
-
-              {/* Phone Field */}
-              <div>
-                <label className="block text-gray-700 font-semibold">Phone</label>
-                <input
-                  type="tel"
-                  name="phone"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
-                />
-              </div>
-
-              {/* Inquiry Type Field */}
-              <div>
-                <label className="block text-gray-700 font-semibold">
-                  Inquiry Type
-                </label>
-                <select
-                  name="inquiryType"
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
-                >
-                  <option value="general">General Inquiry</option>
-                  <option value="support">Support</option>
-                  <option value="sales">Sales</option>
-                </select>
-              </div>
-            </div>
-
-            {/* Submit Button */}
-            <div className="mt-6">
-              <button
-                type="submit"
-                className="w-full bg-amber-500 text-white py-3 px-6 rounded-lg font-semibold hover:bg-amber-700 transition duration-300"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
+    <div className="bg-zinc-800 rounded-3xl shadow-xl overflow-hidden">
+      <div className="flex flex-col lg:flex-row">
+        {/* Contact Information Section */}
+        <div className="bg-amber-500 text-zinc-900 p-8 lg:w-2/5">
+          <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
+          <p className="mb-8">We're here to assist you with any inquiries.</p>
+          <ul className="space-y-6">
+            <li className="flex items-center">
+              <Phone className="mr-4 h-6 w-6" />
+              <span>+1 (234) 567-890</span>
+            </li>
+            <li className="flex items-center">
+              <Mail className="mr-4 h-6 w-6" />
+              <span>support@hive.com</span>
+            </li>
+            <li className="flex items-center">
+              <MapPin className="mr-4 h-6 w-6" />
+              <span>123 HiVE St, Business City, BC 12345</span>
+            </li>
+            <li className="flex items-center">
+              <Clock className="mr-4 h-6 w-6" />
+              <span>9am - 5pm EST, Monday - Friday</span>
+            </li>
+          </ul>
         </div>
+
+        {/* Contact Form Section */}
+        <form className="p-8 bg-zinc-800 lg:w-3/5">
+          <h2 className="text-3xl font-bold text-zinc-100 mb-6">
+            Send us a message
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label className="block text-zinc-400 mb-2" htmlFor="name">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+              />
+            </div>
+            <div>
+              <label className="block text-zinc-400 mb-2" htmlFor="email">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+              />
+            </div>
+            <div>
+              <label className="block text-zinc-400 mb-2" htmlFor="phone">
+                Phone
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+              />
+            </div>
+            <div>
+              <label className="block text-zinc-400 mb-2" htmlFor="inquiryType">
+                Inquiry Type
+              </label>
+              <select
+                id="inquiryType"
+                name="inquiryType"
+                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+              >
+                <option value="general">General Inquiry</option>
+                <option value="support">Support</option>
+                <option value="sales">Sales</option>
+              </select>
+            </div>
+          </div>
+          <div className="mt-6">
+            <label className="block text-zinc-400 mb-2" htmlFor="message">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+            ></textarea>
+          </div>
+          <div className="mt-6">
+            <button
+              type="submit"
+              className="w-full bg-amber-500 text-zinc-900 py-3 px-6 rounded-lg font-semibold hover:bg-amber-400 transition duration-300"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );
