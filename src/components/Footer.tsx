@@ -50,9 +50,7 @@ const Footer: React.FC = () => {
           <h3 className="font-semibold mb-2">Contact Us</h3>
           <p className="text-gray-400">Email: hello@myhive.biz</p>
           <p className="text-gray-400">Phone: +1 (234) 567-890</p>
-          <p className="text-gray-400">
-            Address: 123 HiVE St, Business City, BC 12345
-          </p>
+          <p className="text-gray-400">Colombo 3, Sri Lanka</p>
         </div>
 
         {/* Section 4: Social Media Icons */}

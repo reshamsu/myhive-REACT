@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center">
           <img src={logo} alt="HiVE Logo" className="w-10 h-10 mr-2" />
           <Link to="/" className="text-amber-500 text-2xl font-bold">
-            HiVE Colombo
+            HiVE
           </Link>
         </div>
         <div className="hidden md:flex space-x-6">

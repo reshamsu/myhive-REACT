@@ -20,7 +20,7 @@ const ContactForm: React.FC = () => {
             </li>
             <li className="flex items-center">
               <MapPin className="mr-4 h-6 w-6" />
-              <span>123 HiVE St, Business City, BC 12345</span>
+              <span>Colombo 3, Sri Lanka</span>
             </li>
             <li className="flex items-center">
               <Clock className="mr-4 h-6 w-6" />

@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import csImage from "../assets/cs.jpeg";
 import accImage from "../assets/acc.jpeg";
 import salesImage from "../assets/sales.jpeg";
+import bg2 from "../assets/4.png";
 
 const PlatformFeature: React.FC<{ title: string; description: string }> = ({
   title,
   description,
 }) => (
-  <div className="bg-zinc-700 p-6 rounded-2xl shadow-lg flex items-center justify-center text-zinc-100 transition-all duration-300 hover:bg-amber-500 hover:text-zinc-900 group">
+  <div className="bg-zinc-700 p-6 rounded-2xl shadow-lg flex items-center justify-center text-zinc-100 transition-all duration-300 hover:bg-amber-600 hover:text-zinc-900 group">
     <div>
       <h4 className="text-xl font-semibold mb-2 group-hover:text-zinc-900">
         {title}
@@ -46,7 +47,7 @@ const ImageScroller: React.FC = () => {
           }`}
         >
           <img
-            src={image.src}
+            src={image.src || "/placeholder.svg"}
             alt={image.alt}
             className="w-full h-full object-cover"
           />
@@ -82,12 +83,16 @@ const Platform: React.FC = () => {
   ];
 
   return (
-    <div className="bg-zinc-800 py-32 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h3 className="text-4xl font-thin mb-8 text-zinc-100 text-center">
+    <div className="py-32 px-4 bg-amber-500 relative">
+      <div 
+        className="absolute inset-0 bg-contain opacity-50"
+        style={{ backgroundImage: `url(${bg2})` }}
+      ></div>
+      <div className="relative z-10 max-w-7xl mx-auto">
+        <h3 className="text-4xl font-thin mb-8 text-zinc-800 text-center">
           Our <span className="font-bold">Platform</span>
         </h3>
-        <p className="text-xl leading-relaxed text-zinc-300 max-w-4xl mx-auto mb-16 text-center">
+        <p className="text-xl leading-relaxed text-zinc-800 max-w-4xl mx-auto mb-16 text-center">
           The HiVE Solution integrates AI-driven automation and secure licensed
           payment processing to optimize operations across:
         </p>
@@ -105,3 +110,4 @@ const Platform: React.FC = () => {
 };
 
 export default Platform;
+
