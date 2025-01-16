@@ -1,9 +1,11 @@
 import React from "react";
+import heroImage from "../assets/bg1.jpeg";
 
 const HeroSection: React.FC = () => {
   return (
     <div className="bg-zinc-900 text-zinc-100 py-32 px-4 overflow-hidden relative">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center">
+        {/* Text Section */}
         <div className="lg:w-1/2 text-left mb-12 lg:mb-0">
           <h1 className="text-5xl lg:text-7xl font-thin leading-tight mb-6">
             Elevate Your
@@ -22,10 +24,13 @@ const HeroSection: React.FC = () => {
             </button>
           </div>
         </div>
+        {/* Image Section */}
         <div className="lg:w-1/2 relative">
+          {/* Gradient Background */}
           <div className="w-full h-96 bg-gradient-to-br from-amber-500 to-amber-700 rounded-3xl transform rotate-3 transition-transform duration-500 hover:rotate-0"></div>
+          {/* Imported Image */}
           <img
-            src="/placeholder.svg?height=400&width=600"
+            src={heroImage}
             alt="HiVE Platform"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl shadow-2xl transform -rotate-3 transition-transform duration-500 hover:rotate-0"
           />

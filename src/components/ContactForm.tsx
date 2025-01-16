@@ -16,7 +16,7 @@ const ContactForm: React.FC = () => {
             </li>
             <li className="flex items-center">
               <Mail className="mr-4 h-6 w-6" />
-              <span>support@hive.com</span>
+              <span>hello@myhive.biz</span>
             </li>
             <li className="flex items-center">
               <MapPin className="mr-4 h-6 w-6" />

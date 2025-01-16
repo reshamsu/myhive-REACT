@@ -7,8 +7,8 @@ import { FaQuoteLeft } from "react-icons/fa";
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      text: "HiVE has transformed our operations, bringing efficiency to a whole new level.",
-      client: "Sarah Johnson, CEO of TechInnovate",
+      text: "HiVE has been instrumental in revolutionizing our operations at Air Ceylon. From streamlining bookings and payments to enhancing customer engagement with their 24/7 Ai Live Bot, their technology has boosted our efficiency and customer satisfaction.The Digital Marketing tools have amplified our brand visibility, while Real-Time Tracking & Analytics provide invaluable insights for decision-making. Beyond the tools, HiVE’s exceptional support and dedication have made all the difference.Thank you, HiVE, for helping us deliver world-class travel experiences with world-class tech!",
+      client: "Director of Air Ceylon International Pvt (Ltd.)",
     },
     {
       text: "The automation features are a game changer! We've seen a 40% increase in productivity.",

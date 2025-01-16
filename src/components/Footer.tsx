@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
         {/* Section 3: Contact Us Details */}
         <div className="flex flex-col">
           <h3 className="font-semibold mb-2">Contact Us</h3>
-          <p className="text-gray-400">Email: support@hive.com</p>
+          <p className="text-gray-400">Email: hello@myhive.biz</p>
           <p className="text-gray-400">Phone: +1 (234) 567-890</p>
           <p className="text-gray-400">
             Address: 123 HiVE St, Business City, BC 12345
