@@ -38,10 +38,10 @@ const Testimonials: React.FC = () => {
             <SwiperSlide key={index}>
               <div className="bg-zinc-800 mx-auto max-w-4xl p-12 rounded-2xl">
                 <FaQuoteLeft className="text-4xl text-amber-500 mb-6" />
-                <p className="text-2xl italic text-zinc-100 mb-6">
-                  {testimonial.text}
+                <p className="text-lg text-zinc-100 mb-6">{testimonial.text}</p>
+                <p className="text-xl italic text-zinc-400">
+                  - {testimonial.client}
                 </p>
-                <p className="text-lg text-zinc-400">- {testimonial.client}</p>
               </div>
             </SwiperSlide>
           ))}

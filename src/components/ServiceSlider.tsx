@@ -65,12 +65,23 @@ const ServiceSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative">
+    <div className="relative px-4 md:px-0">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={"auto"}
+        slidesPerView={1}
+        spaceBetween={20}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -86,11 +97,11 @@ const ServiceSlider: React.FC = () => {
       >
         {pricingFeatures.map((feature, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-lg p-8 m-4 h-[500px] flex flex-col justify-between shadow-xl">
+            <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-lg p-6 md:p-8 m-2 md:m-4 h-[450px] md:h-[500px] flex flex-col justify-between shadow-xl">
               <div>
                 <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                   <img
-                    src={feature.image}
+                    src={feature.image || "/placeholder.svg"}
                     alt={feature.title}
                     className="w-full h-full object-cover"
                   />

@@ -3,11 +3,13 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const ContactForm: React.FC = () => {
   return (
-    <div className="bg-zinc-800 rounded-3xl shadow-xl overflow-hidden">
+    <div className="bg-zinc-800 rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Contact Information Section */}
-        <div className="bg-amber-500 text-zinc-900 p-8 lg:w-2/5">
-          <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
+        <div className="bg-amber-500 text-zinc-900 p-8 w-full lg:w-2/5">
+          <h2 className="text-2xl md:text-3xl font-bold mb-6">
+            Contact Information
+          </h2>
           <p className="mb-8">We're here to assist you with any inquiries.</p>
           <ul className="space-y-6">
             <li className="flex items-center">
@@ -30,11 +32,11 @@ const ContactForm: React.FC = () => {
         </div>
 
         {/* Contact Form Section */}
-        <form className="p-8 bg-zinc-800 lg:w-3/5">
-          <h2 className="text-3xl font-bold text-zinc-100 mb-6">
+        <form className="p-8 bg-zinc-800 w-full lg:w-3/5">
+          <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-6">
             Send us a message
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label className="block text-zinc-400 mb-2" htmlFor="name">
                 Name

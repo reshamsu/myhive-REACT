@@ -11,10 +11,14 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-zinc-900 p-4 sticky top-0 z-50">
+    <nav className="bg-zinc-900 p-4 md:p-6 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <img src={logo} alt="HiVE Logo" className="w-10 h-10 mr-2" />
+          <img
+            src={logo || "/placeholder.svg"}
+            alt="HiVE Logo"
+            className="w-10 h-10 mr-2"
+          />
           <Link to="/" className="text-amber-500 text-2xl font-bold">
             HiVE
           </Link>
@@ -61,7 +65,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden mt-4">
+        <div className="md:hidden mt-4 space-y-2">
           <Link
             to="/"
             className="block text-zinc-100 hover:text-amber-500 py-2 transition duration-300"

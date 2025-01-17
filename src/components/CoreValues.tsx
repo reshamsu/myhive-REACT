@@ -2,9 +2,9 @@ import React from "react";
 
 const CoreValues: React.FC = () => {
   return (
-    <div className="bg-zinc-900 py-32 px-4">
+    <div className="bg-zinc-900 py-20 md:py-32 px-4">
       <div className="max-w-7xl mx-auto text-center">
-        <h3 className="text-4xl font-thin mb-16 text-zinc-100">
+        <h3 className="text-3xl md:text-4xl font-thin mb-16 text-zinc-100">
           Core <span className="font-bold">Values</span>
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -33,7 +33,7 @@ const CoreValues: React.FC = () => {
           ].map((value, index) => (
             <div
               key={index}
-              className="bg-zinc-800 p-8 rounded-2xl shadow-lg text-left transition-all duration-300 hover:bg-amber-500 group"
+              className="bg-zinc-800 p-6 md:p-8 rounded-2xl shadow-lg text-left transition-all duration-300 hover:bg-amber-500 group"
             >
               <h4 className="text-2xl font-light text-amber-500 group-hover:text-zinc-900 mb-4">
                 {value.title}

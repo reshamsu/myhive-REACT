@@ -8,12 +8,12 @@ const PlatformFeature: React.FC<{ title: string; description: string }> = ({
   title,
   description,
 }) => (
-  <div className="bg-zinc-700 p-6 rounded-2xl shadow-lg flex items-center justify-center text-zinc-100 transition-all duration-300 hover:bg-amber-600 hover:text-zinc-900 group">
+  <div className="bg-zinc-700 p-4 sm:p-6 rounded-2xl shadow-lg flex items-center justify-center text-zinc-100 transition-all duration-300 hover:bg-amber-600 hover:text-zinc-900 group">
     <div>
-      <h4 className="text-xl font-semibold mb-2 group-hover:text-zinc-900">
+      <h4 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-zinc-900">
         {title}
       </h4>
-      <p className="text-sm text-zinc-300 group-hover:text-zinc-800">
+      <p className="text-xs sm:text-sm text-zinc-300 group-hover:text-zinc-800">
         {description}
       </p>
     </div>
@@ -38,7 +38,7 @@ const ImageScroller: React.FC = () => {
   }, [images.length]);
 
   return (
-    <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg">
+    <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
       {images.map((image, index) => (
         <div
           key={index}
@@ -83,26 +83,28 @@ const Platform: React.FC = () => {
   ];
 
   return (
-    <div className="py-32 px-4 bg-amber-500 relative">
+    <div className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-amber-500 relative">
       <div 
-        className="absolute inset-0 bg-contain opacity-50"
+        className="absolute inset-0 bg-contain opacity-50 hidden sm:block"
         style={{ backgroundImage: `url(${bg2})` }}
       ></div>
       <div className="relative z-10 max-w-7xl mx-auto">
-        <h3 className="text-4xl font-thin mb-8 text-zinc-800 text-center">
+        <h3 className="text-3xl sm:text-4xl font-thin mb-4 sm:mb-8 text-zinc-800 text-center">
           Our <span className="font-bold">Platform</span>
         </h3>
-        <p className="text-xl leading-relaxed text-zinc-800 max-w-4xl mx-auto mb-16 text-center">
+        <p className="text-base sm:text-lg md:text-xl leading-relaxed text-zinc-800 max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 text-center">
           The HiVE Solution integrates AI-driven automation and secure licensed
           payment processing to optimize operations across:
         </p>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {features.map((feature, index) => (
               <PlatformFeature key={index} {...feature} />
             ))}
           </div>
-          <ImageScroller />
+          <div className="mt-8 lg:mt-0">
+            <ImageScroller />
+          </div>
         </div>
       </div>
     </div>

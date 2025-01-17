@@ -42,12 +42,12 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <div className="bg-zinc-900 py-32 px-4">
+    <div className="bg-zinc-900 py-20 md:py-32 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-thin text-center text-zinc-100 mb-24">
+        <h2 className="text-4xl md:text-5xl font-thin text-center text-zinc-100 mb-16 md:mb-24">
           Key <span className="font-bold">Features</span>
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} />
           ))}
