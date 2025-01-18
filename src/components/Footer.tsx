@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* Company Info */}
         <div>
-          <h3 className="text-2xl font-bold text-amber-600 mb-4">HiVE</h3>
+          <h3 className="text-2xl font-bold text-yellow-600 mb-4">HiVE</h3>
           <p className="text-gray-600 mb-4">
             Empowering businesses with innovative solutions for unparalleled
             success.
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
               href="https://www.facebook.com/hive.biz/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-amber-600 transition duration-300"
+              className="text-gray-600 hover:text-yellow-600 transition duration-300"
             >
               <FaFacebook size={24} />
             </a>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
               href="https://www.instagram.com/hive.biz/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-amber-600 transition duration-300"
+              className="text-gray-600 hover:text-yellow-600 transition duration-300"
             >
               <FaInstagram size={24} />
             </a>
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               href="https://www.linkedin.com/company/hive-live/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-amber-600 transition duration-300"
+              className="text-gray-600 hover:text-yellow-600 transition duration-300"
             >
               <FaLinkedin size={24} />
             </a>
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
               href="https://www.tiktok.com/hive.biz/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-amber-600 transition duration-300"
+              className="text-gray-600 hover:text-yellow-600 transition duration-300"
             >
               <FaTiktok size={24} />
             </a>
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
               href="https://wa.me/your-whatsapp-number"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 hover:text-amber-600 transition duration-300"
+              className="text-gray-600 hover:text-yellow-600 transition duration-300"
             >
               <FaWhatsapp size={24} />
             </a>
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 to="/"
-                className="text-gray-600 hover:text-amber-600 transition duration-300"
+                className="text-gray-600 hover:text-yellow-600 transition duration-300"
               >
                 Home
               </Link>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 to="/about"
-                className="text-gray-600 hover:text-amber-600 transition duration-300"
+                className="text-gray-600 hover:text-yellow-600 transition duration-300"
               >
                 About
               </Link>
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 to="/services"
-                className="text-gray-600 hover:text-amber-600 transition duration-300"
+                className="text-gray-600 hover:text-yellow-600 transition duration-300"
               >
                 Services
               </Link>
@@ -94,7 +94,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 to="/pricing"
-                className="text-gray-600 hover:text-amber-600 transition duration-300"
+                className="text-gray-600 hover:text-yellow-600 transition duration-300"
               >
                 Pricing
               </Link>
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
             <li>
               <Link
                 to="/contact"
-                className="text-gray-600 hover:text-amber-600 transition duration-300"
+                className="text-gray-600 hover:text-yellow-600 transition duration-300"
               >
                 Contact
               </Link>
@@ -129,7 +129,7 @@ const Footer: React.FC = () => {
             Email:{" "}
             <a
               href="mailto:hello@myhive.biz"
-              className="hover:text-amber-600 transition duration-300"
+              className="hover:text-yellow-600 transition duration-300"
             >
               hello@myhive.biz
             </a>
@@ -138,7 +138,7 @@ const Footer: React.FC = () => {
             Phone:{" "}
             <a
               href="tel:+15551234567"
-              className="hover:text-amber-600 transition duration-300"
+              className="hover:text-yellow-600 transition duration-300"
             >
               +1 555 123 4567
             </a>

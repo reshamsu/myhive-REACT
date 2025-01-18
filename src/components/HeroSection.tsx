@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="w-full h-full bg-gradient-to-br from-yellow-500 to-amber-700 rounded-3xl shadow-2xl transform md:rotate-3 transition-transform duration-500 hover:rotate-0"></div>
+          <div className="w-full h-full bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-3xl shadow-2xl transform md:rotate-3 transition-transform duration-500 hover:rotate-0"></div>
           <img
             src={bg1 || "/placeholder.svg"}
             alt="HiVE Platform"
@@ -80,7 +80,7 @@ const HeroSection: React.FC = () => {
             loading="eager"
           />
           <div className="absolute -bottom-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-gray-700 rounded-full opacity-50 blur-2xl"></div>
-          <div className="absolute -top-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-amber-700 rounded-full opacity-50 blur-2xl"></div>
+          <div className="absolute -top-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-yellow-700 rounded-full opacity-50 blur-2xl"></div>
         </motion.div>
       </div>
     </div>

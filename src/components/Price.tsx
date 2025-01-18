@@ -23,7 +23,7 @@ const PriceCard: React.FC<{
         <span className="text-3xl sm:text-4xl font-bold text-yellow-500">
           {price}
         </span>
-        <span className="text-zinc-800 ml-2">/ month</span>
+        <span className="text-zinc-800 ml-2">Onwards per month</span>
       </div>
       
       <ul className="space-y-3">
@@ -47,7 +47,7 @@ const Price: React.FC = () => {
   const plans = [
     {
       title: "Core Plan",
-      price: "USD 100 Onwards",
+      price: "USD 100",
       features: [
         "Website Building & Development (+ Store)",
         "⁠Online Payment Integration",
@@ -56,7 +56,7 @@ const Price: React.FC = () => {
     },
     {
       title: "Pro Plan",
-      price: "USD 200 Onwards",
+      price: "USD 200",
       features: [
         "Core Plan",
         "Designated User Access",
@@ -66,7 +66,7 @@ const Price: React.FC = () => {
     },
     {
       title: "Essential Plan",
-      price: "USD 500 Onwards",
+      price: "USD 500",
       features: ["Pro Plan", "⁠Ai Voice Bots", "Automation"],
       isPopular: true,
     },
