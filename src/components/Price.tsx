@@ -9,18 +9,18 @@ const PriceCard: React.FC<{
 }> = ({ title, price, features, isPopular }) => (
   <div
     className={`bg-gray-300 rounded-3xl shadow-xl overflow-hidden transition-all duration-300 hover:scale-105 ${
-      isPopular ? "border-2 border-amber-500" : ""
+      isPopular ? "border-2 border-yellow-500" : ""
     } flex flex-col h-full`}
   >
     {isPopular && (
-      <div className="bg-amber-500 text-zinc-900 text-center py-2 font-semibold">
+      <div className="bg-yellow-500 text-zinc-900 text-center py-2 font-semibold">
         Most Popular
       </div>
     )}
     <div className="p-6 sm:p-8 flex-grow">
       <h3 className="text-2xl font-light text-zinc-900 mb-2">{title}</h3>
       <div className="mb-6">
-        <span className="text-3xl sm:text-4xl font-bold text-amber-500">
+        <span className="text-3xl sm:text-4xl font-bold text-yellow-500">
           {price}
         </span>
         <span className="text-zinc-800 ml-2">/ month</span>
@@ -29,14 +29,14 @@ const PriceCard: React.FC<{
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start text-zinc-700">
-            <Check className="h-5 w-5 text-amber-500 mr-2 flex-shrink-0 mt-1" />
+            <Check className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-1" />
             <span className="text-sm sm:text-base">{feature}</span>
           </li>
         ))}
       </ul>
     </div>
     <div className="p-6 sm:p-8 bg-gray-700 mt-auto">
-      <button className="w-full bg-amber-500 text-zinc-900 py-3 px-4 rounded-full font-semibold hover:bg-amber-400 transition-colors duration-300 text-sm sm:text-base">
+      <button className="w-full bg-yellow-500 text-zinc-900 py-3 px-4 rounded-full font-semibold hover:bg-yellow-400 transition-colors duration-300 text-sm sm:text-base">
         Get Started
       </button>
     </div>
@@ -47,7 +47,7 @@ const Price: React.FC = () => {
   const plans = [
     {
       title: "Core Plan",
-      price: "LKR 25,000 Onwards",
+      price: "USD 100 Onwards",
       features: [
         "Website Building & Development (+ Store)",
         "⁠Online Payment Integration",
@@ -56,7 +56,7 @@ const Price: React.FC = () => {
     },
     {
       title: "Pro Plan",
-      price: "LKR 50,000 Onwards",
+      price: "USD 200 Onwards",
       features: [
         "Core Plan",
         "Designated User Access",
@@ -66,7 +66,7 @@ const Price: React.FC = () => {
     },
     {
       title: "Essential Plan",
-      price: "LKR 100,000 Onwards",
+      price: "USD 500 Onwards",
       features: ["Pro Plan", "⁠Ai Voice Bots", "Automation"],
       isPopular: true,
     },

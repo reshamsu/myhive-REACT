@@ -6,7 +6,7 @@ const ContactForm: React.FC = () => {
     <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Contact Information Section */}
-        <div className="bg-amber-500 text-gray-800 p-8 w-full lg:w-2/5">
+        <div className="bg-yellow-500 text-gray-800 p-8 w-full lg:w-2/5">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Contact Information
           </h2>
@@ -46,7 +46,7 @@ const ContactForm: React.FC = () => {
                 id="name"
                 name="name"
                 required
-                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               />
             </div>
             <div>
@@ -58,7 +58,7 @@ const ContactForm: React.FC = () => {
                 id="email"
                 name="email"
                 required
-                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               />
             </div>
             <div>
@@ -69,7 +69,7 @@ const ContactForm: React.FC = () => {
                 type="tel"
                 id="phone"
                 name="phone"
-                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               />
             </div>
             <div>
@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
               <select
                 id="inquiryType"
                 name="inquiryType"
-                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               >
                 <option value="general">General Inquiry</option>
                 <option value="support">Support</option>
@@ -95,13 +95,13 @@ const ContactForm: React.FC = () => {
               id="message"
               name="message"
               rows={4}
-              className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
             ></textarea>
           </div>
           <div className="mt-6">
             <button
               type="submit"
-              className="w-full bg-amber-500 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-amber-400 transition duration-300"
+              className="w-full bg-yellow-500 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300"
             >
               Send Message
             </button>

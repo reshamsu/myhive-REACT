@@ -39,12 +39,12 @@ const CoreValues: React.FC = () => {
           {values.map((value, index) => (
             <motion.div
               key={index}
-              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg text-left transition-all duration-300 hover:bg-amber-500 group"
+              className="bg-white p-6 md:p-8 rounded-2xl shadow-lg text-left transition-all duration-300 hover:bg-yellow-500 group"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h4 className="text-2xl font-light text-amber-500 group-hover:text-gray-800 mb-4">
+              <h4 className="text-2xl font-light text-yellow-500 group-hover:text-gray-800 mb-4">
                 {value.title}
               </h4>
               <p className="text-gray-600 group-hover:text-gray-800">

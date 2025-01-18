@@ -37,7 +37,7 @@ const Testimonials: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
               <div className="bg-gray-700 mx-auto max-w-4xl p-12 rounded-2xl">
-                <FaQuoteLeft className="text-4xl text-amber-500 mb-6" />
+                <FaQuoteLeft className="text-4xl text-yellow-500 mb-6" />
                 <p className="text-lg text-zinc-100 mb-6">{testimonial.text}</p>
                 <p className="text-xl italic text-zinc-400">
                   - {testimonial.client}

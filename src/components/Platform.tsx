@@ -8,7 +8,7 @@ const PlatformFeature: React.FC<{ title: string; description: string }> = ({
   title,
   description,
 }) => (
-  <div className="bg-zinc-700 p-4 sm:p-6 rounded-2xl shadow-lg flex items-center justify-center text-zinc-100 transition-all duration-300 hover:bg-amber-600 hover:text-zinc-900 group">
+  <div className="bg-zinc-700 p-4 sm:p-6 rounded-2xl shadow-lg flex items-center justify-center text-zinc-100 transition-all duration-300 hover:bg-yellow-600 hover:text-zinc-900 group">
     <div>
       <h4 className="text-lg sm:text-xl font-semibold mb-2 group-hover:text-zinc-900">
         {title}
