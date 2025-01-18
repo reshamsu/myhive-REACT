@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
               <FaInstagram size={24} />
             </a>
             <a
-              href="https://www.linkedin.com/hive.biz/"
+              href="https://www.linkedin.com/company/hive-live/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-amber-600 transition duration-300"
