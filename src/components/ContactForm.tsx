@@ -3,10 +3,10 @@ import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const ContactForm: React.FC = () => {
   return (
-    <div className="bg-zinc-800 rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
+    <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
       <div className="flex flex-col lg:flex-row">
         {/* Contact Information Section */}
-        <div className="bg-amber-500 text-zinc-900 p-8 w-full lg:w-2/5">
+        <div className="bg-amber-500 text-gray-800 p-8 w-full lg:w-2/5">
           <h2 className="text-2xl md:text-3xl font-bold mb-6">
             Contact Information
           </h2>
@@ -32,13 +32,13 @@ const ContactForm: React.FC = () => {
         </div>
 
         {/* Contact Form Section */}
-        <form className="p-8 bg-zinc-800 w-full lg:w-3/5">
-          <h2 className="text-2xl md:text-3xl font-bold text-zinc-100 mb-6">
+        <form className="p-8 bg-gray-200 w-full lg:w-3/5">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
             Send us a message
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
-              <label className="block text-zinc-400 mb-2" htmlFor="name">
+              <label className="block text-gray-600 mb-2" htmlFor="name">
                 Name
               </label>
               <input
@@ -46,11 +46,11 @@ const ContactForm: React.FC = () => {
                 id="name"
                 name="name"
                 required
-                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
             <div>
-              <label className="block text-zinc-400 mb-2" htmlFor="email">
+              <label className="block text-gray-600 mb-2" htmlFor="email">
                 Email
               </label>
               <input
@@ -58,28 +58,28 @@ const ContactForm: React.FC = () => {
                 id="email"
                 name="email"
                 required
-                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
             <div>
-              <label className="block text-zinc-400 mb-2" htmlFor="phone">
+              <label className="block text-gray-600 mb-2" htmlFor="phone">
                 Phone
               </label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
               />
             </div>
             <div>
-              <label className="block text-zinc-400 mb-2" htmlFor="inquiryType">
+              <label className="block text-gray-600 mb-2" htmlFor="inquiryType">
                 Inquiry Type
               </label>
               <select
                 id="inquiryType"
                 name="inquiryType"
-                className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
               >
                 <option value="general">General Inquiry</option>
                 <option value="support">Support</option>
@@ -88,20 +88,20 @@ const ContactForm: React.FC = () => {
             </div>
           </div>
           <div className="mt-6">
-            <label className="block text-zinc-400 mb-2" htmlFor="message">
+            <label className="block text-gray-600 mb-2" htmlFor="message">
               Message
             </label>
             <textarea
               id="message"
               name="message"
               rows={4}
-              className="w-full p-3 bg-zinc-700 text-zinc-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
             ></textarea>
           </div>
           <div className="mt-6">
             <button
               type="submit"
-              className="w-full bg-amber-500 text-zinc-900 py-3 px-6 rounded-lg font-semibold hover:bg-amber-400 transition duration-300"
+              className="w-full bg-amber-500 text-gray-800 py-3 px-6 rounded-lg font-semibold hover:bg-amber-400 transition duration-300"
             >
               Send Message
             </button>

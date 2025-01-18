@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
-import { Check, X } from "lucide-react";
+import { Check, X } from 'lucide-react';
 
 // Import images
 import crmImage from "../assets/crm.jpeg";
@@ -65,7 +65,7 @@ const ServiceSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative px-4 md:px-0">
+    <div className="relative px-4 md:px-0 bg-gray-100 py-4">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -97,7 +97,7 @@ const ServiceSlider: React.FC = () => {
       >
         {pricingFeatures.map((feature, index) => (
           <SwiperSlide key={index}>
-            <div className="bg-gradient-to-br from-zinc-800 to-zinc-900 rounded-lg p-6 md:p-8 m-2 md:m-4 h-[450px] md:h-[500px] flex flex-col justify-between shadow-xl">
+            <div className="bg-white rounded-lg p-6 md:p-8 m-2 md:m-4 h-[450px] md:h-[500px] flex flex-col justify-between shadow-xl">
               <div>
                 <div className="relative h-48 mb-6 rounded-lg overflow-hidden">
                   <img
@@ -105,20 +105,20 @@ const ServiceSlider: React.FC = () => {
                     alt={feature.title}
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
                     <h3 className="text-3xl font-bold text-white mb-4">
                       {feature.title}
                     </h3>
                   </div>
                 </div>
-                <p className="text-zinc-300 mb-6 text-lg">
+                <p className="text-gray-600 mb-6 text-lg">
                   {feature.description}
                 </p>
               </div>
-              <div className="grid grid-cols-3 gap-4 bg-zinc-700 p-4 rounded-lg">
+              <div className="grid grid-cols-3 gap-4 bg-gray-200 p-4 rounded-lg">
                 {Object.entries(feature.plans).map(([plan, included], idx) => (
                   <div key={idx} className="text-center">
-                    <p className="text-zinc-300 mb-2 capitalize font-semibold">
+                    <p className="text-gray-700 mb-2 capitalize font-semibold">
                       {plan}
                     </p>
                     {included ? (
@@ -138,7 +138,7 @@ const ServiceSlider: React.FC = () => {
         ))}
       </Swiper>
       <div className="text-center mt-8">
-        <p className="text-zinc-300 text-lg">
+        <p className="text-gray-600 text-lg">
           Service {activeIndex + 1} of {pricingFeatures.length}
         </p>
       </div>
@@ -147,3 +147,4 @@ const ServiceSlider: React.FC = () => {
 };
 
 export default ServiceSlider;
+

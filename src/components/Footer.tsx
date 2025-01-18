@@ -1,104 +1,88 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Footer: React.FC = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle newsletter subscription
+    console.log("Subscribed:", email);
+    setEmail("");
+  };
+
   return (
-    <footer className="bg-zinc-900 text-white py-12 px-6 md:px-10">
+    <footer className="bg-gray-200 text-gray-800 py-12 px-6 md:px-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {/* Section 1: Logo and Description */}
-        <div className="flex flex-col">
-          <div className="text-2xl font-bold mb-4">HiVE</div>
-          <p className="text-gray-400">
-            Empowering businesses with AI-powered solutions.
+        {/* Social Media Section */}
+        <div className="flex space-x-4">
+          <Link
+            to="/"
+            className="text-2xl hover:text-amber-500 transition duration-300"
+          >
+            <FaFacebook />
+          </Link>
+          <Link
+            to="/"
+            className="text-2xl hover:text-amber-500 transition duration-300"
+          >
+            <FaInstagram />
+          </Link>
+          <Link
+            to="/"
+            className="text-2xl hover:text-amber-500 transition duration-300"
+          >
+            <FaLinkedin />
+          </Link>
+          <Link
+            to="/"
+            className="text-2xl hover:text-amber-500 transition duration-300"
+          >
+            <FaTiktok />
+          </Link>
+        </div>
+
+        {/* About Us Section */}
+        <div>
+          <h3 className="font-semibold mb-4">About Us</h3>
+          <p className="text-gray-600">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec
+            volutpat nisl.
           </p>
         </div>
 
-        {/* Section 2: Navigation Links */}
-        <div className="flex flex-col">
-          <h3 className="font-semibold mb-4">Navigation</h3>
-          <nav className="flex flex-col space-y-2">
-            <Link
-              to="/"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              About
-            </Link>
-            <Link
-              to="/pricing"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              Pricing
-            </Link>
-            <Link
-              to="/services"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              Features
-            </Link>
-            <Link
-              to="/contact"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              Contact
-            </Link>
-          </nav>
-        </div>
-
-        {/* Section 3: Contact Us Details */}
-        <div className="flex flex-col">
+        {/* Contact Us Section */}
+        <div>
           <h3 className="font-semibold mb-4">Contact Us</h3>
-          <p className="text-gray-400">Email: hello@myhive.biz</p>
-          <p className="text-gray-400">Phone: +1 (234) 567-890</p>
-          <p className="text-gray-400">Colombo 3, Sri Lanka</p>
+          <p className="text-gray-600">
+            Email: info@hive.com <br />
+            Phone: +1 555 123 4567
+          </p>
         </div>
 
-        {/* Section 4: Social Media Icons */}
+        {/* Newsletter Section */}
         <div className="flex flex-col">
-          <h3 className="font-semibold mb-4">Follow Us</h3>
-          <div className="flex space-x-4">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
+          <h3 className="font-semibold mb-4">Subscribe to Our Newsletter</h3>
+          <form onSubmit={handleSubmit} className="flex flex-col space-y-2">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Your email"
+              className="px-4 py-2 bg-white text-gray-800 rounded"
+              required
+            />
+            <button
+              type="submit"
+              className="px-4 py-2 bg-amber-500 text-zinc-900 rounded hover:bg-amber-400 transition duration-300"
             >
-              <FaFacebook size={24} />
-            </a>
-            <a
-              href="https://www.tiktok.com/@hive.biz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              <FaTiktok size={24} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/hive.biz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-amber-500 transition duration-300"
-            >
-              <FaInstagram size={24} />
-            </a>
-          </div>
+              Subscribe
+            </button>
+          </form>
         </div>
       </div>
-      <div className="text-center mt-8 pt-8 border-t border-zinc-800 text-gray-400">
+      <div className="text-center mt-8 pt-8 border-t border-gray-200 text-gray-600">
         &copy; {new Date().getFullYear()} HiVE. All rights reserved.
       </div>
     </footer>

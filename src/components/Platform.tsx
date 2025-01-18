@@ -38,7 +38,7 @@ const ImageScroller: React.FC = () => {
   }, [images.length]);
 
   return (
-    <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg">
+    <div className="relative h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-lg ">
       {images.map((image, index) => (
         <div
           key={index}
@@ -83,7 +83,7 @@ const Platform: React.FC = () => {
   ];
 
   return (
-    <div className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-amber-500 relative">
+    <div className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-gray-200 relative">
       <div 
         className="absolute inset-0 bg-contain opacity-50 hidden sm:block"
         style={{ backgroundImage: `url(${bg2})` }}

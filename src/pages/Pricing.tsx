@@ -3,7 +3,7 @@ import Price from "../components/Price";
 
 const Pricing: React.FC = () => {
   return (
-    <div className="bg-zinc-900 min-h-screen">
+    <div className="bg-gray-100 min-h-screen">
       <Price />
     </div>
   );

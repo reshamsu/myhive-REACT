@@ -6,7 +6,7 @@ import WhyHive from "../components/WhyHive";
 
 const About: React.FC = () => {
   return (
-    <div className="bg-zinc-900 text-zinc-100">
+    <div className="bg-gray-100 text-gray-800">
       <AboutSection />
       <Platform />
       <CoreValues />

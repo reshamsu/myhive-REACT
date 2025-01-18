@@ -3,7 +3,7 @@ import bg2 from "../assets/4.png";
 
 const WhyHive: React.FC = () => {
   return (
-    <div className="bg-amber-500 py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 relative">
+    <div className="bg-gray-200 py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 relative">
       <div
         className="absolute inset-0 bg-contain opacity-50 hidden sm:block"
         style={{ backgroundImage: `url(${bg2})` }}

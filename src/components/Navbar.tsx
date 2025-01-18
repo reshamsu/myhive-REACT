@@ -11,7 +11,10 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-zinc-900 p-4 md:p-6 sticky top-0 z-50">
+    <nav
+      className="bg-gray-100 p-4 md:p-6 sticky top-0 z-50"
+      aria-label="Main Navigation"
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <img
@@ -19,38 +22,38 @@ const Navbar: React.FC = () => {
             alt="HiVE Logo"
             className="w-10 h-10 mr-2"
           />
-          <Link to="/" className="text-amber-500 text-2xl font-bold">
+          <Link to="/" className="text-amber-600 text-2xl font-bold">
             HiVE
           </Link>
         </div>
         <div className="hidden md:flex space-x-6">
           <Link
             to="/"
-            className="text-zinc-100 hover:text-amber-500 transition duration-300"
+            className="text-gray-800 hover:text-amber-600 transition duration-300"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="text-zinc-100 hover:text-amber-500 transition duration-300"
+            className="text-gray-800 hover:text-amber-600 transition duration-300"
           >
             About
           </Link>
           <Link
             to="/pricing"
-            className="text-zinc-100 hover:text-amber-500 transition duration-300"
+            className="text-gray-800 hover:text-amber-600 transition duration-300"
           >
             Pricing
           </Link>
           <Link
             to="/services"
-            className="text-zinc-100 hover:text-amber-500 transition duration-300"
+            className="text-gray-800 hover:text-amber-600 transition duration-300"
           >
             Features
           </Link>
           <Link
             to="/contact"
-            className="text-zinc-100 hover:text-amber-500 transition duration-300"
+            className="text-gray-800 hover:text-amber-600 transition duration-300"
           >
             Contact
           </Link>
@@ -58,41 +61,43 @@ const Navbar: React.FC = () => {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
-            className="text-zinc-100 focus:outline-none"
+            className="text-gray-800 focus:outline-none"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
       {isMenuOpen && (
-        <div className="md:hidden mt-4 space-y-2">
+        <div className="md:hidden mt-4 space-y-2" role="menu">
           <Link
             to="/"
-            className="block text-zinc-100 hover:text-amber-500 py-2 transition duration-300"
+            className="block text-gray-800 hover:text-amber-600 py-2 transition duration-300"
           >
             Home
           </Link>
           <Link
             to="/about"
-            className="block text-zinc-100 hover:text-amber-500 py-2 transition duration-300"
+            className="block text-gray-800 hover:text-amber-600 py-2 transition duration-300"
           >
             About
           </Link>
           <Link
             to="/pricing"
-            className="block text-zinc-100 hover:text-amber-500 py-2 transition duration-300"
+            className="block text-gray-800 hover:text-amber-600 py-2 transition duration-300"
           >
             Pricing
           </Link>
           <Link
             to="/services"
-            className="block text-zinc-100 hover:text-amber-500 py-2 transition duration-300"
+            className="block text-gray-800 hover:text-amber-600 py-2 transition duration-300"
           >
             Features
           </Link>
           <Link
             to="/contact"
-            className="block text-zinc-100 hover:text-amber-500 py-2 transition duration-300"
+            className="block text-gray-800 hover:text-amber-600 py-2 transition duration-300"
           >
             Contact
           </Link>

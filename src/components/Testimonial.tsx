@@ -21,9 +21,9 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <div className="bg-zinc-900 py-32 px-4">
+    <div className="bg-gray-200 py-32 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-thin text-center mb-24 text-zinc-100">
+        <h2 className="text-5xl font-thin text-center mb-24 text-zinc-800">
           What Our <span className="font-bold">Clients Say</span>
         </h2>
         <Swiper
@@ -36,7 +36,7 @@ const Testimonials: React.FC = () => {
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-zinc-800 mx-auto max-w-4xl p-12 rounded-2xl">
+              <div className="bg-gray-700 mx-auto max-w-4xl p-12 rounded-2xl">
                 <FaQuoteLeft className="text-4xl text-amber-500 mb-6" />
                 <p className="text-lg text-zinc-100 mb-6">{testimonial.text}</p>
                 <p className="text-xl italic text-zinc-400">

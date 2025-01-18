@@ -6,10 +6,10 @@ const FeatureCard: React.FC<{
   title: string;
   description: string;
 }> = ({ icon, title, description }) => (
-  <div className="bg-zinc-800 rounded-2xl p-8 hover:bg-zinc-700 transition-all duration-300 flex flex-col items-start">
+  <div className="bg-gray-200 rounded-2xl p-8 hover:bg-gray-200 transition-all duration-300 flex flex-col items-start">
     <div className="text-4xl mb-6 text-amber-500">{icon}</div>
-    <h3 className="text-2xl font-light mb-4 text-zinc-100">{title}</h3>
-    <p className="text-zinc-400">{description}</p>
+    <h3 className="text-2xl font-light mb-4 text-zinc-900">{title}</h3>
+    <p className="text-zinc-700">{description}</p>
   </div>
 );
 
@@ -42,9 +42,9 @@ const Features: React.FC = () => {
   ];
 
   return (
-    <div className="bg-zinc-900 py-20 md:py-32 px-4 md:px-6">
+    <div className="bg-white py-20 md:py-32 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-thin text-center text-zinc-100 mb-16 md:mb-24">
+        <h2 className="text-4xl md:text-5xl font-thin text-center text-zinc-500 mb-16 md:mb-24">
           Key <span className="font-bold">Features</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">

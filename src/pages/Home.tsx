@@ -5,7 +5,7 @@ import Testimonials from '../components/Testimonial';
 
 const Home: React.FC = () => {
   return (
-    <div className="bg-zinc-900 text-zinc-100">
+    <div className="bg-gray-100 text-gray-800">
       <HeroSection />
       <Features />
       <Testimonials />
