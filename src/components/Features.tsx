@@ -7,7 +7,7 @@ const FeatureCard: React.FC<{
   description: string;
 }> = ({ icon, title, description }) => (
   <div className="bg-gray-200 rounded-2xl p-8 hover:bg-gray-200 transition-all duration-300 flex flex-col items-start">
-    <div className="text-4xl mb-6 text-yellow-500">{icon}</div>
+    <div className="text-4xl mb-6 text-yellow-600">{icon}</div>
     <h3 className="text-2xl font-light mb-4 text-zinc-900">{title}</h3>
     <p className="text-zinc-700">{description}</p>
   </div>

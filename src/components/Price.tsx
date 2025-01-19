@@ -9,18 +9,18 @@ const PriceCard: React.FC<{
 }> = ({ title, price, features, isPopular }) => (
   <div
     className={`bg-gray-300 rounded-3xl shadow-xl overflow-hidden transition-all duration-300 hover:scale-105 ${
-      isPopular ? "border-2 border-yellow-500" : ""
+      isPopular ? "border-2 border-yellow-600" : ""
     } flex flex-col h-full`}
   >
     {isPopular && (
-      <div className="bg-yellow-500 text-zinc-900 text-center py-2 font-semibold">
+      <div className="bg-yellow-600 text-zinc-900 text-center py-2 font-semibold">
         Most Popular
       </div>
     )}
     <div className="p-6 sm:p-8 flex-grow">
       <h3 className="text-2xl font-light text-zinc-900 mb-2">{title}</h3>
       <div className="mb-6">
-        <span className="text-3xl sm:text-4xl font-bold text-yellow-500">
+        <span className="text-3xl sm:text-4xl font-bold text-yellow-600">
           {price}
         </span>
         <span className="text-zinc-800 ml-2">Onwards per month</span>
@@ -29,14 +29,14 @@ const PriceCard: React.FC<{
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start text-zinc-700">
-            <Check className="h-5 w-5 text-yellow-500 mr-2 flex-shrink-0 mt-1" />
+            <Check className="h-5 w-5 text-yellow-600 mr-2 flex-shrink-0 mt-1" />
             <span className="text-sm sm:text-base">{feature}</span>
           </li>
         ))}
       </ul>
     </div>
     <div className="p-6 sm:p-8 bg-gray-700 mt-auto">
-      <button className="w-full bg-yellow-500 text-zinc-900 py-3 px-4 rounded-full font-semibold hover:bg-yellow-400 transition-colors duration-300 text-sm sm:text-base">
+      <button className="w-full bg-yellow-600 text-zinc-900 py-3 px-4 rounded-full font-semibold hover:bg-yellow-400 transition-colors duration-300 text-sm sm:text-base">
         Get Started
       </button>
     </div>

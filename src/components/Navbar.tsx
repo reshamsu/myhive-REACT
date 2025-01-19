@@ -1,17 +1,24 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Menu, X } from 'lucide-react';
 import logo from "../assets/OG.png";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (path: string) => {
     setIsMenuOpen(false);
+    navigate(path);
   };
 
   return (
@@ -26,41 +33,26 @@ const Navbar: React.FC = () => {
             alt="HiVE Logo"
             className="w-10 h-10 mr-2"
           />
-          <Link to="/" className="text-yellow-600 text-2xl font-bold">
+          <button onClick={() => handleLinkClick("/")} className="text-yellow-600 text-2xl font-bold">
             HiVE
-          </Link>
+          </button>
         </div>
         <div className="hidden md:flex space-x-6">
-          <Link
-            to="/"
-            className="text-gray-800 hover:text-yellow-600 transition duration-300"
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="text-gray-800 hover:text-yellow-600 transition duration-300"
-          >
-            About
-          </Link>
-          <Link
-            to="/pricing"
-            className="text-gray-800 hover:text-yellow-600 transition duration-300"
-          >
-            Pricing
-          </Link>
-          <Link
-            to="/services"
-            className="text-gray-800 hover:text-yellow-600 transition duration-300"
-          >
-            Features
-          </Link>
-          <Link
-            to="/contact"
-            className="text-gray-800 hover:text-yellow-600 transition duration-300"
-          >
-            Contact
-          </Link>
+          {[
+            { to: "/", label: "Home" },
+            { to: "/about", label: "About" },
+            { to: "/pricing", label: "Pricing" },
+            { to: "/services", label: "Features" },
+            { to: "/contact", label: "Contact" },
+          ].map((link) => (
+            <button
+              key={link.to}
+              onClick={() => handleLinkClick(link.to)}
+              className="text-gray-800 hover:text-yellow-600 transition duration-300"
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
         <div className="md:hidden">
           <button
@@ -75,41 +67,21 @@ const Navbar: React.FC = () => {
       </div>
       {isMenuOpen && (
         <div className="md:hidden mt-4 space-y-2" role="menu">
-          <Link
-            to="/"
-            className="block text-gray-800 hover:text-yellow-600 py-2 transition duration-300"
-            onClick={handleLinkClick}
-          >
-            Home
-          </Link>
-          <Link
-            to="/about"
-            className="block text-gray-800 hover:text-yellow-600 py-2 transition duration-300"
-            onClick={handleLinkClick}
-          >
-            About
-          </Link>
-          <Link
-            to="/pricing"
-            className="block text-gray-800 hover:text-yellow-600 py-2 transition duration-300"
-            onClick={handleLinkClick}
-          >
-            Pricing
-          </Link>
-          <Link
-            to="/services"
-            className="block text-gray-800 hover:text-yellow-600 py-2 transition duration-300"
-            onClick={handleLinkClick}
-          >
-            Features
-          </Link>
-          <Link
-            to="/contact"
-            className="block text-gray-800 hover:text-yellow-600 py-2 transition duration-300"
-            onClick={handleLinkClick}
-          >
-            Contact
-          </Link>
+          {[
+            { to: "/", label: "Home" },
+            { to: "/about", label: "About" },
+            { to: "/pricing", label: "Pricing" },
+            { to: "/services", label: "Features" },
+            { to: "/contact", label: "Contact" },
+          ].map((link) => (
+            <button
+              key={link.to}
+              onClick={() => handleLinkClick(link.to)}
+              className="block text-gray-800 hover:text-yellow-600 py-2 transition duration-300 w-full text-left"
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
       )}
     </nav>
@@ -117,3 +89,4 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
+

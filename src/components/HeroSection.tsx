@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
         >
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-normal leading-tight mb-6">
             Elevate Your
-            <span className="font-bold block mt-2 text-yellow-500">
+            <span className="font-bold block mt-2 text-yellow-600">
               Business
             </span>
           </h1>
@@ -47,7 +47,7 @@ const HeroSection: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-yellow-500 text-gray-800 rounded-full font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
+              className="px-8 py-4 bg-yellow-600 text-gray-800 rounded-full font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
               aria-label="Get Started with HiVE"
               onClick={handlePrice}
             >
@@ -56,7 +56,7 @@ const HeroSection: React.FC = () => {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-yellow-500 text-yellow-500 rounded-full font-bold text-lg hover:bg-yellow-500 hover:text-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
+              className="px-8 py-4 border-2 border-yellow-600 text-yellow-600 rounded-full font-bold text-lg hover:bg-yellow-600 hover:text-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
               aria-label="Learn More about HiVE"
               onClick={handleFeatuers}
             >
@@ -72,7 +72,7 @@ const HeroSection: React.FC = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="w-full h-full bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-3xl shadow-2xl transform md:rotate-3 transition-transform duration-500 hover:rotate-0"></div>
+          <div className="w-full h-full bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-3xl shadow-2xl transform md:rotate-3 transition-transform duration-500 hover:rotate-0"></div>
           <img
             src={bg1 || "/placeholder.svg"}
             alt="HiVE Platform"

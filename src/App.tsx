@@ -8,18 +8,19 @@ import Contact from './pages/Contact';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Services from './pages/Services';
+import Layout from './components/Layout';
 
 const App: React.FC = () => {
   return (
     <Router>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/pricing" element={<Pricing />} />
-        <Route path="/services" element={<Services/>} />
+        <Route path="/" element={<Layout><Home /></Layout>} />
+        <Route path="/about" element={<Layout><About /></Layout>} />
+        <Route path="/pricing" element={<Layout><Pricing /></Layout>} />
+        <Route path="/services" element={<Layout><Services/></Layout>} />
         {/* <Route path="/blog" element={<Blog />} /> */}
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Layout><Contact /></Layout>} />
       </Routes>
       <Footer/>
     </Router>

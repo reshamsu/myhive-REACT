@@ -42,7 +42,7 @@ const WhyHive: React.FC = () => {
               key={index}
               className="bg-zinc-700 p-6 sm:p-8 rounded-2xl shadow-lg text-center lg:text-left transition-all duration-300 hover:bg-yellow-600 group"
             >
-              <h4 className="text-xl sm:text-2xl font-light text-yellow-500 group-hover:text-zinc-900 mb-2 sm:mb-4">
+              <h4 className="text-xl sm:text-2xl font-light text-yellow-600 group-hover:text-zinc-900 mb-2 sm:mb-4">
                 {item.title}
               </h4>
               <p className="text-sm sm:text-base text-zinc-300 group-hover:text-zinc-900">
