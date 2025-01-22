@@ -21,7 +21,7 @@ const HeroSection: React.FC = () => {
     <div className="bg-gradient-to-b from-gray-100 to-gray-400 text-gray-800 py-20 md:py-32 px-4 md:px-6 overflow-hidden relative">
       {/* Background Image Overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-30 md:opacity-50"
+        className="absolute inset-0 bg-cover bg-center opacity-25 md:opacity-15"
         style={{ backgroundImage: `url(${bg2})` }}
       ></div>
 
@@ -33,13 +33,13 @@ const HeroSection: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-normal leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl leading-tight mb-6 uppercase font-bold">
             Elevate Your
             <span className="font-bold block mt-2 text-yellow-600">
               Business
             </span>
           </h1>
-          <p className="text-lg md:text-xl leading-relaxed mb-12 text-gray-700 font-medium max-w-xl mx-auto lg:mx-0">
+          <p className="text-lg md:text-xl leading-relaxed mb-12 text-zinc-900 font-medium max-w-xl mx-auto lg:mx-0">
             Experience the future of operations with HiVE – the all-in-one
             platform designed for unparalleled success.
           </p>

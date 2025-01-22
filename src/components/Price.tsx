@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import { Check } from "lucide-react";
 
 const PriceCard: React.FC<{
@@ -18,14 +18,15 @@ const PriceCard: React.FC<{
       </div>
     )}
     <div className="p-6 sm:p-8 flex-grow">
-      <h3 className="text-2xl font-light text-zinc-900 mb-2">{title}</h3>
+      <h3 className="text-2xl text-zinc-900 mb-2 font-bold">{title}</h3>
       <div className="mb-6">
         <span className="text-3xl sm:text-4xl font-bold text-yellow-600">
           {price}
         </span>
-        <span className="text-zinc-800 ml-2">Onwards per month</span>
+        <br />
+        <span className="text-zinc-800 ml-2 font-semibold">Onwards/month</span>
       </div>
-      
+
       <ul className="space-y-3">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start text-zinc-700">
@@ -37,9 +38,39 @@ const PriceCard: React.FC<{
     </div>
     <div className="p-6 sm:p-8 bg-gray-700 mt-auto">
       <button className="w-full bg-yellow-600 text-zinc-900 py-3 px-4 rounded-full font-semibold hover:bg-yellow-400 transition-colors duration-300 text-sm sm:text-base">
-        Get Started
+        Start Now
       </button>
     </div>
+  </div>
+);
+
+const SpecialPlan: React.FC = () => (
+  <div className="bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 p-8 text-center max-w-3xl mx-auto mt-16">
+    <h3 className="text-3xl text-zinc-900 mb-4 font-bold">
+      Special Partnership Plan
+    </h3>
+    <p className="text-lg text-zinc-800 mb-6 font-semibold">
+      Looking to create a partnership for services or bigger projects?
+    </p>
+    <ul className="space-y-3 text-left mb-8">
+      <li className="flex items-start text-zinc-900">
+        <Check className="h-6 w-6 text-zinc-900 mr-2 flex-shrink-0 mt-1" />
+        <span className="text-base">
+          Join Our New-Gen Community subscribed by many prestigious alliances
+        </span>
+      </li>
+      <li className="flex items-start text-zinc-900">
+        <Check className="h-6 w-6 text-zinc-900 mr-2 flex-shrink-0 mt-1" />
+        <span className="text-base">All exclusive LIFETIME PRO Plan</span>
+      </li>
+      <li className="flex items-start text-zinc-900">
+        <Check className="h-6 w-6 text-zinc-900 mr-2 flex-shrink-0 mt-1" />
+        <span className="text-base">Rates are subject to negotiations</span>
+      </li>
+    </ul>
+    <button className="bg-zinc-900 text-yellow-400 py-3 px-8 rounded-full font-semibold hover:bg-zinc-800 transition-colors duration-300 text-lg">
+      Contact Us
+    </button>
   </div>
 );
 
@@ -87,6 +118,7 @@ const Price: React.FC = () => {
             <PriceCard key={index} {...plan} />
           ))}
         </div>
+        <SpecialPlan />
       </div>
     </div>
   );
