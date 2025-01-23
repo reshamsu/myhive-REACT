@@ -26,7 +26,10 @@ const ContactForm: React.FC = () => {
             </li>
             <li className="flex items-center">
               <Clock className="mr-4 h-6 w-6" />
-              <span>9am - 5pm EST, Monday - Friday</span>
+              <span>
+                9am - 6pm IST,
+                <br /> Monday - Friday
+              </span>
             </li>
           </ul>
         </div>

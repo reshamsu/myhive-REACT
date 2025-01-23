@@ -68,7 +68,7 @@ const ServiceSlider: React.FC = () => {
   return (
     <div className="relative px-4 md:px-0 bg-gray-100 py-4">
       {/* Mobile View */}
-      <div className="md:hidden overflow-y-auto max-h-[80vh] space-y-6">
+      <div className="md:hidden overflow-y-auto max-h-[80vh] space-y-6 text-center">
         {pricingFeatures.map((feature, index) => (
           <ServiceCard key={index} feature={feature} />
         ))}
