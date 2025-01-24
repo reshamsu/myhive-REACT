@@ -21,7 +21,7 @@ const Testimonials: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gray-200 py-32 px-4">
+    <div className="bg-gradient-to-b from-gray-100 to-gray-500 py-32 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-5xl font-thin text-center mb-24 text-zinc-800">
           What Our <span className="font-bold">Clients Say</span>

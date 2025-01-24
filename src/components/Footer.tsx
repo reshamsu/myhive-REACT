@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
           </p>
           <div className="flex space-x-4">
             <a
-              href="https://www.facebook.com/hive.biz/"
+              href="https://www.facebook.com/people/HiVEAi/61567132149488/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-yellow-600 transition duration-300"
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="https://www.tiktok.com/hive.biz/"
+              href="https://www.tiktok.com/@hive.biz"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 hover:text-yellow-600 transition duration-300"

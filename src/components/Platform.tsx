@@ -85,7 +85,7 @@ const Platform: React.FC = () => {
   return (
     <div className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-gray-200 relative">
       <div 
-        className="absolute inset-0 bg-contain opacity-50 hidden sm:block"
+        className="absolute inset-0 bg-contain opacity-20 hidden sm:block"
         style={{ backgroundImage: `url(${bg2})` }}
       ></div>
       <div className="relative z-10 max-w-7xl mx-auto">

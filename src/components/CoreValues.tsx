@@ -44,7 +44,7 @@ const CoreValues: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h4 className="text-2xl font-light text-yellow-600 group-hover:text-gray-800 mb-4">
+              <h4 className="text-2xl font-bold text-yellow-600 group-hover:text-gray-800 mb-4">
                 {value.title}
               </h4>
               <p className="text-gray-600 group-hover:text-gray-800">

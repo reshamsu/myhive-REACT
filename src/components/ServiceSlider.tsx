@@ -66,7 +66,7 @@ const ServiceSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="relative px-4 md:px-0 bg-gray-100 py-4">
+    <div className="relative px-4 md:px-0 bg-gray-100 py-20 rounded-3xl">
       {/* Mobile View */}
       <div className="md:hidden overflow-y-auto max-h-[80vh] space-y-6 text-center">
         {pricingFeatures.map((feature, index) => (

@@ -3,9 +3,9 @@ import bg2 from "../assets/4.png";
 
 const WhyHive: React.FC = () => {
   return (
-    <div className="bg-gray-200 py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 relative">
+    <div className="bg-gradient-to-b from-gray-100 to-gray-500 py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 relative">
       <div
-        className="absolute inset-0 bg-contain opacity-50 hidden sm:block"
+        className="absolute inset-0 bg-contain opacity-20 hidden sm:block"
         style={{ backgroundImage: `url(${bg2})` }}
       ></div>
       <div className="relative z-10 max-w-7xl mx-auto text-center">
@@ -42,7 +42,7 @@ const WhyHive: React.FC = () => {
               key={index}
               className="bg-zinc-700 p-6 sm:p-8 rounded-2xl shadow-lg text-center lg:text-left transition-all duration-300 hover:bg-yellow-600 group"
             >
-              <h4 className="text-xl sm:text-2xl font-light text-yellow-600 group-hover:text-zinc-900 mb-2 sm:mb-4">
+              <h4 className="text-xl sm:text-2xl font-bold text-yellow-600 group-hover:text-zinc-900 mb-2 sm:mb-4">
                 {item.title}
               </h4>
               <p className="text-sm sm:text-base text-zinc-300 group-hover:text-zinc-900">

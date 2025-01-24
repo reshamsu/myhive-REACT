@@ -58,19 +58,11 @@ const PriceCard: React.FC<Plan & { onSelect: () => void }> = ({
 
 const SpecialPlan: React.FC<{ onSelect: () => void }> = ({ onSelect }) => (
   <div className="bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-3xl shadow-2xl overflow-hidden transition-all duration-300 hover:scale-105 p-8 text-center max-w-3xl mx-auto mt-16">
-    <h3 className="text-3xl text-zinc-900 mb-4 font-bold">
-      Special Partnership Plan
-    </h3>
+    <h3 className="text-3xl text-zinc-900 mb-4 font-bold">Exclusive Plan</h3>
     <p className="text-lg text-zinc-800 mb-6 font-semibold">
       Looking to create a partnership for services or bigger projects?
     </p>
     <ul className="space-y-3 text-left mb-8">
-      <li className="flex items-start text-zinc-900">
-        <Check className="h-6 w-6 text-zinc-900 mr-2 flex-shrink-0 mt-1" />
-        <span className="text-base">
-          Join Our New-Gen Community subscribed by many prestigious alliances
-        </span>
-      </li>
       <li className="flex items-start text-zinc-900">
         <Check className="h-6 w-6 text-zinc-900 mr-2 flex-shrink-0 mt-1" />
         <span className="text-base">All exclusive LIFETIME PRO Plan</span>
