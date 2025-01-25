@@ -10,7 +10,7 @@ const Services: React.FC = () => {
         className="absolute inset-0 bg-center opacity-25 md:opacity-15 bg-contain"
         style={{ backgroundImage: `url(${bg2})` }}
       ></div>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto relative z-10">
         <h1 className="text-5xl font-thin text-gray-800 text-center mb-12">
           Service <span className="font-bold text-yellow-600">Features</span>
         </h1>
