@@ -9,7 +9,6 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Services from './pages/Services';
 import Layout from './components/Layout';
-import SignupForm from './pages/SIgnUp';
 
 const App: React.FC = () => {
   return (
@@ -21,7 +20,6 @@ const App: React.FC = () => {
         <Route path="/pricing" element={<Layout><Pricing /></Layout>} />
         <Route path="/services" element={<Layout><Services/></Layout>} />
         {/* <Route path="/blog" element={<Blog />} /> */}
-        <Route path="/signup" element={<SignupForm />} />
         <Route path="/contact" element={<Layout><Contact /></Layout>} />
       </Routes>
       <Footer/>
