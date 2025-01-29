@@ -59,7 +59,7 @@ const pricingFeatures: PricingFeature[] = [
 const ServiceSlider: React.FC = () => {
   return (
     <div className="relative px-4 md:px-8 lg:px-12 bg-gray-100 py-20 rounded-3xl">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[80vh] overflow-y-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:max-h-[80vh] md:overflow-y-auto">
         {pricingFeatures.map((feature, index) => (
           <ServiceCard key={index} feature={feature} />
         ))}
