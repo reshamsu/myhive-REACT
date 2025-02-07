@@ -64,12 +64,8 @@ const Platform: React.FC = () => {
       description: "Boost your sales with AI-driven insights",
     },
     {
-      title: "Customer Support",
+      title: "Customer Support & Administration",
       description: "Provide exceptional support with automated tools",
-    },
-    {
-      title: "Human Resources",
-      description: "Streamline HR processes and employee management",
     },
     {
       title: "Finance & Accounting",
@@ -77,14 +73,14 @@ const Platform: React.FC = () => {
     },
     { title: "E-Commerce", description: "Manage your online store with ease" },
     {
-      title: "Website Management",
-      description: "Build and maintain your web presence effortlessly",
+      title: "Communication + More",
+      description: "Enhance collaboration with AI-powered messaging and tools",
     },
   ];
 
   return (
     <div className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-8 bg-gray-200 relative">
-      <div 
+      <div
         className="absolute inset-0 bg-contain opacity-20 hidden sm:block"
         style={{ backgroundImage: `url(${bg2})` }}
       ></div>
@@ -93,8 +89,8 @@ const Platform: React.FC = () => {
           Our <span className="font-bold">Platform</span>
         </h3>
         <p className="text-base sm:text-lg md:text-xl leading-relaxed text-zinc-800 max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 text-center">
-          The HiVE Solution integrates AI-driven automation and secure licensed
-          payment processing to optimize operations across:
+          HiVE’s solution integrates Ai - driven automation and content with
+          business CRM tools to evolve operations across:
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -112,4 +108,3 @@ const Platform: React.FC = () => {
 };
 
 export default Platform;
-

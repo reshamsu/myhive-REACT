@@ -1,59 +1,83 @@
 import type React from "react";
-import { X } from "lucide-react";
+
+interface Plan {
+  title: string;
+  price: string;
+  features: string[];
+}
 
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
-  planTitle: string;
+  plan: Plan;
+  countryCode: string;
 }
 
 const ContactModal: React.FC<ContactModalProps> = ({
   isOpen,
   onClose,
-  planTitle,
+  plan,
+  countryCode,
 }) => {
   if (!isOpen) return null;
 
-  const isSpecialPlan = planTitle === "Special Plan";
-  const email = isSpecialPlan ? "alliances@myhive.biz" : "hello@myhive.biz";
+  const getPhoneNumber = (code: string) => {
+    switch (code) {
+      case "CA":
+        return "+1 437 254 3077"; // Canada
+      case "US":
+        return "+1 236 939 1372"; // Vancouver number for US
+      default:
+        return "+94 720 333 863"; // Sri Lanka (default)
+    }
+  };
+
+  const getLocation = (code: string) => {
+    switch (code) {
+      case "CA":
+        return "HiVE Toronto - Ontario";
+      case "US":
+        return "HiVE Vancouver - British Columbia";
+      default:
+        return "HiVE Colombo";
+    }
+  };
+
+  const phoneNumber = getPhoneNumber(countryCode);
+  const location = getLocation(countryCode);
+
+  const getEmailAddress = (planTitle: string) => {
+    return planTitle === "Special Plan"
+      ? "alliances@myhive.biz"
+      : "hello@myhive.biz";
+  };
+
+  const emailAddress = getEmailAddress(plan.title);
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-8 max-w-md w-full relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-96 max-w-full relative">
         <button
+          className="absolute top-2 right-2 text-2xl font-bold text-gray-500 hover:text-gray-700"
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          aria-label="Close modal"
         >
-          <X className="h-6 w-6" />
+          &times;
         </button>
-        <h2 className="text-2xl font-bold mb-4 text-zinc-900">
-          Contact Us - {planTitle}
-        </h2>
-        <p className="mb-4 text-zinc-700">
-          Thank you for your interest in our {planTitle}. Please contact us
-          using the information below:
-        </p>
-        <div className="space-y-2">
-          <p className="flex items-center text-zinc-800">
-            <span className="font-semibold mr-2">Phone:</span>
-            <a
-              href="tel:+94720333863"
-              className="text-yellow-600 hover:underline"
-            >
-              +94 720 333 863
-            </a>
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Contact Us - {plan.title}</h2>
+          <p className="mb-4">
+            Thank you for your interest in our {plan.title}. Please contact us
+            using the information below:
           </p>
-          <p className="flex items-center text-zinc-800">
-            <span className="font-semibold mr-2">Email:</span>
-            <a
-              href={`mailto:${email}`}
-              className="text-yellow-600 hover:underline"
-            >
-              {email}
-            </a>
-          </p>
+          <p className="mb-2">Phone:</p>
+          <p className="font-bold text-yellow-600 mb-4">{phoneNumber}</p>
+          <p className="mb-2">Email:</p>
+          <p className="font-bold text-yellow-600 mb-4">{emailAddress}</p>
+          <p className="text-sm text-gray-600">{location}</p>
         </div>
       </div>
+      <div className="fixed inset-0 z-40" onClick={onClose}></div>
     </div>
   );
 };

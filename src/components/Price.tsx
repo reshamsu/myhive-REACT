@@ -1,5 +1,7 @@
+"use client";
+
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Check } from "lucide-react";
 import ContactModal from "./ContactModal";
 
@@ -80,9 +82,25 @@ const SpecialPlan: React.FC<{ onSelect: () => void }> = ({ onSelect }) => (
   </div>
 );
 
+const getCountryCode = async () => {
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    const data = await response.json();
+    return data.country_code;
+  } catch (error) {
+    console.error("Error fetching country:", error);
+    return "LK"; // Default to Sri Lanka if there's an error
+  }
+};
+
 const Price: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState("");
+  const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
+  const [countryCode, setCountryCode] = useState("LK");
+
+  useEffect(() => {
+    getCountryCode().then(setCountryCode);
+  }, []);
 
   const plans: Plan[] = [
     {
@@ -96,7 +114,7 @@ const Price: React.FC = () => {
     },
     {
       title: "Pro Plan",
-      price: "USD 200",
+      price: "USD 250",
       features: [
         "Core Plan",
         "Designated User Access",
@@ -112,9 +130,14 @@ const Price: React.FC = () => {
     },
   ];
 
-  const handlePlanSelect = (planTitle: string) => {
-    setSelectedPlan(planTitle);
+  const handlePlanSelect = (plan: Plan) => {
+    setSelectedPlan(plan);
     setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedPlan(null);
   };
 
   return (
@@ -133,17 +156,28 @@ const Price: React.FC = () => {
               <PriceCard
                 key={index}
                 {...plan}
-                onSelect={() => handlePlanSelect(plan.title)}
+                onSelect={() => handlePlanSelect(plan)}
               />
             ))}
           </div>
-          <SpecialPlan onSelect={() => handlePlanSelect("Special Plan")} />
+          <SpecialPlan
+            onSelect={() =>
+              handlePlanSelect({
+                title: "Special Plan",
+                price: "Custom",
+                features: [],
+              })
+            }
+          />
         </div>
-        <ContactModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          planTitle={selectedPlan}
-        />
+        {selectedPlan && (
+          <ContactModal
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+            plan={selectedPlan}
+            countryCode={countryCode}
+          />
+        )}
       </div>
     </div>
   );
