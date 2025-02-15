@@ -2,8 +2,6 @@ import type React from "react";
 import crmImage from "../assets/crm.jpeg";
 import webBuilderImage from "../assets/webBuilder.jpeg";
 import automationImage from "../assets/automation.jpeg";
-import emailMarketingImage from "../assets/emailMarketing.jpeg";
-import smsImage from "../assets/sms.jpeg";
 import detailReportingImage from "../assets/detailReporting.jpeg";
 
 interface PricingFeature {
