@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import type React from "react";
+import { useState, useEffect } from "react";
 import {
   FaFacebook,
   FaInstagram,
@@ -8,7 +11,65 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+interface ContactInfo {
+  phone: string;
+  email: string;
+  address: string;
+}
+
+const contactInfoByRegion: { [key: string]: ContactInfo } = {
+  LK: {
+    phone: "+94 720 333 863",
+    email: "hello@myhive.biz",
+    address: "Colombo 3, Sri Lanka",
+  },
+  CA_ON: {
+    phone: "+1 437 254 3077",
+    email: "hello@myhive.biz",
+    address: "Toronto, Ontario, Canada",
+  },
+  CA_BC: {
+    phone: "+1 236 939 1372",
+    email: "hello@myhive.biz",
+    address: "Vancouver, British Columbia, Canada",
+  },
+  US: {
+    phone: "+1 236 939 1372",
+    email: "hello@myhive.biz",
+    address: "Vancouver, British Columbia, Canada",
+  },
+};
+
+const getRegionCode = async (): Promise<string> => {
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    const data = await response.json();
+    if (data.country_code === "CA") {
+      if (data.region_code === "BC") {
+        return "CA_BC";
+      } else if (data.region_code === "ON") {
+        return "CA_ON";
+      }
+      return "CA_ON"; // Default to Ontario for other Canadian provinces
+    }
+    return data.country_code;
+  } catch (error) {
+    console.error("Error fetching region:", error);
+    return "LK"; // Default to Sri Lanka if there's an error
+  }
+};
+
 const Footer: React.FC = () => {
+  const [contactInfo, setContactInfo] = useState<ContactInfo>(
+    contactInfoByRegion.LK
+  );
+
+  useEffect(() => {
+    getRegionCode().then((code) => {
+      setContactInfo(contactInfoByRegion[code] || contactInfoByRegion.LK);
+    });
+  }, []);
+
   return (
     <footer className="bg-gray-100 text-gray-800 py-16 px-6 md:px-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -128,24 +189,22 @@ const Footer: React.FC = () => {
           <p className="text-gray-600 mb-2">
             Email:{" "}
             <a
-              href="mailto:hello@myhive.biz"
+              href={`mailto:${contactInfo.email}`}
               className="hover:text-yellow-600 transition duration-300"
             >
-              hello@myhive.biz
+              {contactInfo.email}
             </a>
           </p>
           <p className="text-gray-600 mb-2">
             Phone:{" "}
             <a
-              href="tel:+15551234567"
+              href={`tel:${contactInfo.phone}`}
               className="hover:text-yellow-600 transition duration-300"
             >
-              +1 555 123 4567
+              {contactInfo.phone}
             </a>
           </p>
-          <p className="text-gray-600">
-            Colombo 3, Sri Lanka
-          </p>
+          <p className="text-gray-600">{contactInfo.address}</p>
         </div>
       </div>
 

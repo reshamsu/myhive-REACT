@@ -46,16 +46,6 @@ const pricingFeatures: PricingFeature[] = [
     image: webBuilderImage,
   },
   {
-    title: "Email Marketing",
-    description: "Create and send targeted email campaigns",
-    image: emailMarketingImage,
-  },
-  {
-    title: "2-Way SMS Messaging",
-    description: "Engage with customers via text messages",
-    image: smsImage,
-  },
-  {
     title: "Detailed Reporting",
     description: "Access comprehensive business insights",
     image: detailReportingImage,

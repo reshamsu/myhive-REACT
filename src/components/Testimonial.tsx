@@ -7,9 +7,13 @@ import { FaQuoteLeft } from "react-icons/fa";
 const Testimonials: React.FC = () => {
   const testimonials = [
     {
-      text: "HiVE has been instrumental in revolutionizing our operations at Air Ceylon. From streamlining bookings and payments to enhancing customer engagement with their 24/7 Ai Live Bot, their technology has boosted our efficiency and customer satisfaction.The Digital Marketing tools have amplified our brand visibility, while Real-Time Tracking & Analytics provide invaluable insights for decision-making. Beyond the tools, HiVE’s exceptional support and dedication have made all the difference.Thank you, HiVE, for helping us deliver world-class travel experiences with world-class tech!",
+      text: [
+        "Partnering with HiVE has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we were unaware of that slowed us down. We have greater efficiency, consistent quality, and twice the profitability.",
+        "And beyond their service & technology, what truly sets HiVE apart is its exclusive partnership network. Being part of this Next-Gen Community, subscribed to by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It’s more than just a partnership— we’re proud to be a part of HiVE’s community and excited for what’s ahead!",
+      ],
       client: "Director of Air Ceylon International Pvt (Ltd.)",
     },
+
     // {
     //   text: "The automation features are a game changer! We've seen a 40% increase in productivity.",
     //   client: "Michael Chen, CTO of DataDrive",

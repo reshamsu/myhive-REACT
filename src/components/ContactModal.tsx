@@ -10,53 +10,59 @@ interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
   plan: Plan;
-  countryCode: string;
+  regionCode: string;
 }
+
+interface ContactInfo {
+  phone: string;
+  email: string;
+  location: string;
+}
+
+const contactInfoByRegion: { [key: string]: ContactInfo } = {
+  LK: {
+    phone: "+94 720 333 863",
+    email: "hello@myhive.biz",
+    location: "HiVE Colombo",
+  },
+  CA_ON: {
+    phone: "+1 437 254 3077",
+    email: "hello@myhive.biz",
+    location: "HiVE Toronto - Ontario",
+  },
+  CA_BC: {
+    phone: "+1 236 939 1372",
+    email: "hello@myhive.biz",
+    location: "HiVE Vancouver - British Columbia",
+  },
+  US: {
+    phone: "+1 236 939 1372",
+    email: "hello@myhive.biz",
+    location: "HiVE Vancouver - British Columbia",
+  },
+};
 
 const ContactModal: React.FC<ContactModalProps> = ({
   isOpen,
   onClose,
   plan,
-  countryCode,
+  regionCode,
 }) => {
   if (!isOpen) return null;
 
-  const getPhoneNumber = (code: string) => {
-    switch (code) {
-      case "CA":
-        return "+1 437 254 3077"; // Canada
-      case "US":
-        return "+1 236 939 1372"; // Vancouver number for US
-      default:
-        return "+94 720 333 863"; // Sri Lanka (default)
-    }
-  };
-
-  const getLocation = (code: string) => {
-    switch (code) {
-      case "CA":
-        return "HiVE Toronto - Ontario";
-      case "US":
-        return "HiVE Vancouver - British Columbia";
-      default:
-        return "HiVE Colombo";
-    }
-  };
-
-  const phoneNumber = getPhoneNumber(countryCode);
-  const location = getLocation(countryCode);
+  const contactInfo = contactInfoByRegion[regionCode] || contactInfoByRegion.LK;
 
   const getEmailAddress = (planTitle: string) => {
     return planTitle === "Special Plan"
       ? "alliances@myhive.biz"
-      : "hello@myhive.biz";
+      : contactInfo.email;
   };
 
   const emailAddress = getEmailAddress(plan.title);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white p-8 rounded-xl shadow-lg w-96 max-w-full relative">
+      <div className="bg-white p-8 rounded shadow-lg w-96 max-w-full relative">
         <button
           className="absolute top-2 right-2 text-2xl font-bold text-gray-500 hover:text-gray-700"
           onClick={onClose}
@@ -71,10 +77,10 @@ const ContactModal: React.FC<ContactModalProps> = ({
             using the information below:
           </p>
           <p className="mb-2">Phone:</p>
-          <p className="font-bold text-yellow-600 mb-4">{phoneNumber}</p>
+          <p className="font-bold mb-4">{contactInfo.phone}</p>
           <p className="mb-2">Email:</p>
-          <p className="font-bold text-yellow-600 mb-4">{emailAddress}</p>
-          <p className="text-sm text-gray-600">{location}</p>
+          <p className="font-bold mb-4">{emailAddress}</p>
+          <p className="text-sm text-gray-600">{contactInfo.location}</p>
         </div>
       </div>
       <div className="fixed inset-0 z-40" onClick={onClose}></div>

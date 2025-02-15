@@ -1,7 +1,75 @@
-import React from "react";
+"use client";
+
+import type React from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
+interface ContactInfo {
+  phone: string;
+  email: string;
+  address: string;
+  workingHours: string;
+}
+
+const contactInfoByRegion: { [key: string]: ContactInfo } = {
+  LK: {
+    phone: "+94 720 333 863",
+    email: "hello@myhive.biz",
+    address: "Colombo 3, Sri Lanka",
+    workingHours: "9am - 6pm IST, Monday - Friday",
+  },
+  CA_ON: {
+    phone: "+1 437 254 3077",
+    email: "hello@myhive.biz",
+    address: "Toronto, Ontario, Canada",
+    workingHours: "9am - 5pm EST, Monday - Friday",
+  },
+  CA_BC: {
+    phone: "+1 236 939 1372",
+    email: "hello@myhive.biz",
+    address: "Vancouver, British Columbia, Canada",
+    workingHours: "9am - 5pm PST, Monday - Friday",
+  },
+  US: {
+    phone: "+1 236 939 1372",
+    email: "hello@myhive.biz",
+    address: "Vancouver, British Columbia, Canada",
+    workingHours: "9am - 5pm PST, Monday - Friday",
+  },
+};
+
+const getRegionCode = async (): Promise<string> => {
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    const data = await response.json();
+    if (data.country_code === "CA") {
+      // For Canada, we'll use the region code to differentiate between provinces
+      if (data.region_code === "BC") {
+        return "CA_BC";
+      } else if (data.region_code === "ON") {
+        return "CA_ON";
+      }
+      // For other Canadian provinces, default to Ontario
+      return "CA_ON";
+    }
+    return data.country_code;
+  } catch (error) {
+    console.error("Error fetching region:", error);
+    return "LK"; // Default to Sri Lanka if there's an error
+  }
+};
+
 const ContactForm: React.FC = () => {
+  const [contactInfo, setContactInfo] = useState<ContactInfo>(
+    contactInfoByRegion.LK
+  );
+
+  useEffect(() => {
+    getRegionCode().then((code) => {
+      setContactInfo(contactInfoByRegion[code] || contactInfoByRegion.LK);
+    });
+  }, []);
+
   return (
     <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
       <div className="flex flex-col lg:flex-row">
@@ -14,22 +82,19 @@ const ContactForm: React.FC = () => {
           <ul className="space-y-6">
             <li className="flex items-center">
               <Phone className="mr-4 h-6 w-6" />
-              <span>+1 (234) 567-890</span>
+              <span>{contactInfo.phone}</span>
             </li>
             <li className="flex items-center">
               <Mail className="mr-4 h-6 w-6" />
-              <span>hello@myhive.biz</span>
+              <span>{contactInfo.email}</span>
             </li>
             <li className="flex items-center">
               <MapPin className="mr-4 h-6 w-6" />
-              <span>Colombo 3, Sri Lanka</span>
+              <span>{contactInfo.address}</span>
             </li>
             <li className="flex items-center">
               <Clock className="mr-4 h-6 w-6" />
-              <span>
-                9am - 6pm IST,
-                <br /> Monday - Friday
-              </span>
+              <span>{contactInfo.workingHours}</span>
             </li>
           </ul>
         </div>

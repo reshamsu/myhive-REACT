@@ -68,9 +68,13 @@ const SpecialPlan: React.FC<{ onSelect: () => void }> = ({ onSelect }) => (
       <li className="flex items-start text-zinc-900">
         <Check className="h-6 w-6 text-zinc-900 mr-2 flex-shrink-0 mt-1" />
         <span className="text-base">
-          Join our new gen community And become a part of our exclusive network
-          subscribed by many prestigious alliances
+          Join our New Gen Community & become a part of our Exclusive Network
+          subscribed by many prestigious alliances!
         </span>
+      </li>
+      <li className="flex items-start text-zinc-900">
+        <Check className="h-6 w-6 text-zinc-900 mr-2 flex-shrink-0 mt-1" />
+        <span>+ Full Service all included in the Life Time Pro Plan.</span>
       </li>
     </ul>
     <button
@@ -82,13 +86,21 @@ const SpecialPlan: React.FC<{ onSelect: () => void }> = ({ onSelect }) => (
   </div>
 );
 
-const getCountryCode = async () => {
+const getRegionCode = async (): Promise<string> => {
   try {
     const response = await fetch("https://ipapi.co/json/");
     const data = await response.json();
+    if (data.country_code === "CA") {
+      if (data.region_code === "BC") {
+        return "CA_BC";
+      } else if (data.region_code === "ON") {
+        return "CA_ON";
+      }
+      return "CA_ON"; // Default to Ontario for other Canadian provinces
+    }
     return data.country_code;
   } catch (error) {
-    console.error("Error fetching country:", error);
+    console.error("Error fetching region:", error);
     return "LK"; // Default to Sri Lanka if there's an error
   }
 };
@@ -96,10 +108,10 @@ const getCountryCode = async () => {
 const Price: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
-  const [countryCode, setCountryCode] = useState("LK");
+  const [regionCode, setRegionCode] = useState("LK");
 
   useEffect(() => {
-    getCountryCode().then(setCountryCode);
+    getRegionCode().then(setRegionCode);
   }, []);
 
   const plans: Plan[] = [
@@ -175,7 +187,7 @@ const Price: React.FC = () => {
             isOpen={isModalOpen}
             onClose={handleCloseModal}
             plan={selectedPlan}
-            countryCode={countryCode}
+            regionCode={regionCode}
           />
         )}
       </div>
