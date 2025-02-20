@@ -13,11 +13,11 @@ const AboutSection: React.FC = () => {
           About <span className="font-bold">Us</span>
         </h2>
         <p className="text-lg md:text-xl leading-relaxed text-gray-600 max-w-4xl mx-auto">
-          HiVE is a cutting-edge business tech company leading the way in
+        myhive is a cutting-edge business tech company leading the way in
           innovation. Our AI-powered, licensed merchant platform automates,
           integrates, and optimizes operations across departments, ensuring
           businesses thrive in the digital age. Whether you're a startup, SMB,
-          or enterprise, HiVE equips you with the tools to scale seamlessly and
+          or enterprise, myhive equips you with the tools to scale seamlessly and
           securely.
         </p>
       </motion.div>

@@ -40,7 +40,7 @@ const HeroSection: React.FC = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl leading-relaxed mb-12 text-zinc-900 font-medium max-w-xl mx-auto lg:mx-0">
-            Experience the future of operations with HiVE – the all-in-one
+            Experience the future of operations with myhive – the all-in-one
             platform designed for unparalleled success.
           </p>
           <div className="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center lg:justify-start">
@@ -48,7 +48,7 @@ const HeroSection: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-yellow-600 text-gray-800 rounded-full font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
-              aria-label="Get Started with HiVE"
+              aria-label="Get Started with myhive"
               onClick={handlePrice}
             >
               Get Started
@@ -57,7 +57,7 @@ const HeroSection: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-yellow-600 text-yellow-600 rounded-full font-bold text-lg hover:bg-yellow-600 hover:text-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
-              aria-label="Learn More about HiVE"
+              aria-label="Learn More about myhive"
               onClick={handleFeatuers}
             >
               Learn More
@@ -75,7 +75,7 @@ const HeroSection: React.FC = () => {
           <div className="w-full h-full bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-3xl shadow-2xl transform md:rotate-3 transition-transform duration-500 hover:rotate-0"></div>
           <img
             src={bg1 || "/placeholder.svg"}
-            alt="HiVE Platform"
+            alt="myhive Platform"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl shadow-2xl md:transform -rotate-3 transition-transform duration-500 hover:rotate-0"
             loading="eager"
           />

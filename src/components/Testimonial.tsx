@@ -8,8 +8,8 @@ const Testimonials: React.FC = () => {
   const testimonials = [
     {
       text: [
-        "Partnering with HiVE has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we were unaware of that slowed us down. We have greater efficiency, consistent quality, and twice the profitability.",
-        "And beyond their service & technology, what truly sets HiVE apart is its exclusive partnership network. Being part of this Next-Gen Community, subscribed to by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It’s more than just a partnership— we’re proud to be a part of HiVE’s community and excited for what’s ahead!",
+        "Partnering with myhive has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we were unaware of that slowed us down. We have greater efficiency, consistent quality, and twice the profitability.",
+        "And beyond their service & technology, what truly sets myhive apart is its exclusive partnership network. Being part of this Next-Gen Community, subscribed to by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It’s more than just a partnership— we’re proud to be a part of myhive's community and excited for what’s ahead!",
       ],
       client: "Director of Air Ceylon International Pvt (Ltd.)",
     },

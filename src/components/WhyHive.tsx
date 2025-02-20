@@ -10,7 +10,7 @@ const WhyHive: React.FC = () => {
       ></div>
       <div className="relative z-10 max-w-7xl mx-auto text-center">
         <h3 className="text-3xl sm:text-4xl font-thin mb-4 sm:mb-8 text-zinc-900">
-          Why Choose <span className="font-bold">HiVE</span>?
+          Why Choose <span className="font-bold">myhive</span>?
         </h3>
         <p className="text-lg sm:text-xl leading-relaxed text-zinc-800 max-w-4xl mx-auto mb-8 sm:mb-16">
           Here's what sets us apart from the competition:

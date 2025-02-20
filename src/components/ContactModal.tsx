@@ -23,22 +23,22 @@ const contactInfoByRegion: { [key: string]: ContactInfo } = {
   LK: {
     phone: "+94 720 333 863",
     email: "hello@myhive.biz",
-    location: "HiVE Colombo",
+    location: "myhive Colombo",
   },
   CA_ON: {
     phone: "+1 437 254 3077",
     email: "hello@myhive.biz",
-    location: "HiVE Toronto - Ontario",
+    location: "myhive Toronto - Ontario",
   },
   CA_BC: {
     phone: "+1 236 939 1372",
     email: "hello@myhive.biz",
-    location: "HiVE Vancouver - British Columbia",
+    location: "myhive Vancouver - British Columbia",
   },
   US: {
     phone: "+1 236 939 1372",
     email: "hello@myhive.biz",
-    location: "HiVE Vancouver - British Columbia",
+    location: "myhive Vancouver - British Columbia",
   },
 };
 

@@ -1,74 +1,51 @@
 "use client";
 
 import type React from "react";
-import { useState, useEffect } from "react";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { useState } from "react";
+import { Mail, Phone, MapPin, Clock, Building2 } from "lucide-react";
 
-interface ContactInfo {
+interface OfficeInfo {
+  name: string;
   phone: string;
+  whatsapp: string;
   email: string;
   address: string;
+  location: string;
   workingHours: string;
 }
 
-const contactInfoByRegion: { [key: string]: ContactInfo } = {
-  LK: {
+const officeLocations: OfficeInfo[] = [
+  {
+    name: "HiVE Colombo - Head Office",
     phone: "+94 720 333 863",
+    whatsapp: "+94 720 333 863",
     email: "hello@myhive.biz",
-    address: "Colombo 3, Sri Lanka",
+    address: "No. 146/5, Havelock Road",
+    location: "Colombo 05, Sri Lanka",
     workingHours: "9am - 6pm IST, Monday - Friday",
   },
-  CA_ON: {
+  {
+    name: "HiVE Toronto - Ontario Branch",
     phone: "+1 437 254 3077",
+    whatsapp: "+1 437 254 3077",
     email: "hello@myhive.biz",
-    address: "Toronto, Ontario, Canada",
+    address: "100 City Centre Dr",
+    location: "Mississauga, Ontario L5B 2C9, Canada",
     workingHours: "9am - 5pm EST, Monday - Friday",
   },
-  CA_BC: {
+  {
+    name: "HiVE Vancouver - British Columbia Branch",
     phone: "+1 236 939 1372",
+    whatsapp: "+1 236 939 1372",
     email: "hello@myhive.biz",
-    address: "Vancouver, British Columbia, Canada",
+    address: "1021 West Hastings Street",
+    location: "Vancouver, BC V6E 0C3, Canada",
     workingHours: "9am - 5pm PST, Monday - Friday",
   },
-  US: {
-    phone: "+1 236 939 1372",
-    email: "hello@myhive.biz",
-    address: "Vancouver, British Columbia, Canada",
-    workingHours: "9am - 5pm PST, Monday - Friday",
-  },
-};
-
-const getRegionCode = async (): Promise<string> => {
-  try {
-    const response = await fetch("https://ipapi.co/json/");
-    const data = await response.json();
-    if (data.country_code === "CA") {
-      // For Canada, we'll use the region code to differentiate between provinces
-      if (data.region_code === "BC") {
-        return "CA_BC";
-      } else if (data.region_code === "ON") {
-        return "CA_ON";
-      }
-      // For other Canadian provinces, default to Ontario
-      return "CA_ON";
-    }
-    return data.country_code;
-  } catch (error) {
-    console.error("Error fetching region:", error);
-    return "LK"; // Default to Sri Lanka if there's an error
-  }
-};
+];
 
 const ContactForm: React.FC = () => {
-  const [contactInfo, setContactInfo] = useState<ContactInfo>(
-    contactInfoByRegion.LK
-  );
-
-  useEffect(() => {
-    getRegionCode().then((code) => {
-      setContactInfo(contactInfoByRegion[code] || contactInfoByRegion.LK);
-    });
-  }, []);
+  const [selectedOffice, setSelectedOffice] = useState<number>(0);
 
   return (
     <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
@@ -79,24 +56,61 @@ const ContactForm: React.FC = () => {
             Contact Information
           </h2>
           <p className="mb-8">We're here to assist you with any inquiries.</p>
-          <ul className="space-y-6">
-            <li className="flex items-center">
-              <Phone className="mr-4 h-6 w-6" />
-              <span>{contactInfo.phone}</span>
-            </li>
-            <li className="flex items-center">
+
+          {/* Office Selection Tabs */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {officeLocations.map((office, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedOffice(index)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
+                  selectedOffice === index
+                    ? "bg-gray-800 text-yellow-400"
+                    : "bg-yellow-500 text-gray-800 hover:bg-yellow-400"
+                }`}
+              >
+                {office.name.split(" - ")[0]}
+              </button>
+            ))}
+          </div>
+
+          {/* Selected Office Details */}
+          <div className="space-y-6">
+            <div>
+              <div className="flex items-center mb-2">
+                <Building2 className="mr-4 h-6 w-6" />
+                <span className="font-semibold">
+                  {officeLocations[selectedOffice].name}
+                </span>
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center mb-2">
+                <Phone className="mr-4 h-6 w-6" />
+                <div>
+                  <p>Phone: {officeLocations[selectedOffice].phone}</p>
+                  <p>WhatsApp: {officeLocations[selectedOffice].whatsapp}</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center">
               <Mail className="mr-4 h-6 w-6" />
-              <span>{contactInfo.email}</span>
-            </li>
-            <li className="flex items-center">
-              <MapPin className="mr-4 h-6 w-6" />
-              <span>{contactInfo.address}</span>
-            </li>
-            <li className="flex items-center">
+              <span>{officeLocations[selectedOffice].email}</span>
+            </div>
+            <div>
+              <div className="flex items-start">
+                <MapPin className="mr-4 h-6 w-6 mt-1" />
+                <div>
+                  <p>{officeLocations[selectedOffice].address}</p>
+                  <p>{officeLocations[selectedOffice].location}</p>
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center">
               <Clock className="mr-4 h-6 w-6" />
-              <span>{contactInfo.workingHours}</span>
-            </li>
-          </ul>
+              <span>{officeLocations[selectedOffice].workingHours}</span>
+            </div>
+          </div>
         </div>
 
         {/* Contact Form Section */}
@@ -141,17 +155,21 @@ const ContactForm: React.FC = () => {
               />
             </div>
             <div>
-              <label className="block text-gray-600 mb-2" htmlFor="inquiryType">
-                Inquiry Type
+              <label className="block text-gray-600 mb-2" htmlFor="office">
+                Preferred Office
               </label>
               <select
-                id="inquiryType"
-                name="inquiryType"
+                id="office"
+                name="office"
                 className="w-full p-3 bg-white text-gray-800 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-600"
+                value={selectedOffice}
+                onChange={(e) => setSelectedOffice(Number(e.target.value))}
               >
-                <option value="general">General Inquiry</option>
-                <option value="support">Support</option>
-                <option value="sales">Sales</option>
+                {officeLocations.map((office, index) => (
+                  <option key={index} value={index}>
+                    {office.name}
+                  </option>
+                ))}
               </select>
             </div>
           </div>

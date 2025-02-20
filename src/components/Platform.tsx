@@ -22,9 +22,9 @@ const PlatformFeature: React.FC<{ title: string; description: string }> = ({
 
 const ImageScroller: React.FC = () => {
   const images = [
-    { src: csImage, alt: "HiVE Platform Customer Service" },
-    { src: accImage, alt: "HiVE Platform Sales and Marketing" },
-    { src: salesImage, alt: "HiVE Platform Accounting" },
+    { src: csImage, alt: "myhive Platform Customer Service" },
+    { src: accImage, alt: "myhive Platform Sales and Marketing" },
+    { src: salesImage, alt: "myhive Platform Accounting" },
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -89,7 +89,7 @@ const Platform: React.FC = () => {
           Our <span className="font-bold">Platform</span>
         </h3>
         <p className="text-base sm:text-lg md:text-xl leading-relaxed text-zinc-800 max-w-4xl mx-auto mb-8 sm:mb-12 md:mb-16 text-center">
-          HiVE’s solution integrates Ai - driven automation and content with
+          myhive's solution integrates Ai - driven automation and content with
           business CRM tools to evolve operations across:
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">

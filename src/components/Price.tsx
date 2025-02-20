@@ -160,7 +160,7 @@ const Price: React.FC = () => {
             Pricing <span className="font-bold">Plans</span>
           </h2>
           <p className="text-lg sm:text-xl text-center text-zinc-500 mb-12 sm:mb-16 max-w-3xl mx-auto">
-            Choose the perfect plan to elevate your business with HiVE's
+            Choose the perfect plan to elevate your business with myhive's
             cutting-edge solutions.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">

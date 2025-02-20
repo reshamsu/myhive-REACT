@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from "lucide-react";
 import logo from "../assets/OG.png";
 
 const Navbar: React.FC = () => {
@@ -30,11 +30,14 @@ const Navbar: React.FC = () => {
         <div className="flex items-center">
           <img
             src={logo || "/placeholder.svg"}
-            alt="HiVE Logo"
+            alt="myhive Logo"
             className="w-10 h-10 mr-2"
           />
-          <button onClick={() => handleLinkClick("/")} className="text-yellow-600 text-2xl font-bold">
-            HiVE
+          <button
+            onClick={() => handleLinkClick("/")}
+            className="text-yellow-600 text-2xl font-bold"
+          >
+            myhive
           </button>
         </div>
         <div className="hidden md:flex space-x-6">
@@ -89,4 +92,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
