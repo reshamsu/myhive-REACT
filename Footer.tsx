@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
 
         <div className="text-center mt-12 pt-8 border-t border-gray-200">
           <p className="text-gray-600">
-            &copy; {new Date().getFullYear()} HiVE. All rights reserved.
+            &copy; {new Date().getFullYear()} myhive. All rights reserved.
           </p>
         </div>
       </div>
