@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             {/* Company Info */}
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-yellow-600 mb-4">HiVE</h3>
+              <h3 className="text-2xl font-bold text-yellow-600 mb-4">myhive</h3>
               <p className="text-gray-600 mb-4">
                 Empowering businesses with innovative solutions for unparalleled
                 success.
