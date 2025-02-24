@@ -1,7 +1,14 @@
 "use client";
 
 import type React from "react";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaLinkedin,
+  FaTiktok,
+  FaWhatsapp,
+  FaEnvelope,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 interface OfficeInfo {
@@ -15,25 +22,25 @@ interface OfficeInfo {
 
 const officeLocations: OfficeInfo[] = [
   {
-    name: "HiVE Colombo - Head Office",
+    name: "HiVE Colombo - Head Quarters (Sri Lanka)",
     phone: "+94 720 333 863",
-    whatsapp: "+94 720 333 863",
+    whatsapp: "94720333863",
     email: "hello@myhive.biz",
     address: "No. 146/5, Havelock Road",
     location: "Colombo 05, Sri Lanka",
   },
   {
-    name: "HiVE Toronto - Ontario Branch",
+    name: "HiVE Toronto - Canada",
     phone: "+1 437 254 3077",
-    whatsapp: "+1 437 254 3077",
+    whatsapp: "14372543077",
     email: "hello@myhive.biz",
     address: "100 City Centre Dr",
     location: "Mississauga, Ontario L5B 2C9, Canada",
   },
   {
-    name: "HiVE Vancouver - British Columbia Branch",
+    name: "HiVE Vancouver - Canada",
     phone: "+1 236 939 1372",
-    whatsapp: "+1 236 939 1372",
+    whatsapp: "12369391372",
     email: "hello@myhive.biz",
     address: "1021 West Hastings Street",
     location: "Vancouver, BC V6E 0C3, Canada",
@@ -91,7 +98,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Quick Links */}
-            <div>
+            {/* <div>
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <div className="flex flex-wrap gap-4">
                 <Link
@@ -125,7 +132,7 @@ const Footer: React.FC = () => {
                   Contact
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Services */}
@@ -155,28 +162,28 @@ const Footer: React.FC = () => {
                     Phone: {office.phone}
                   </a>
                 </p>
-                <p className="text-gray-600">
+                <p className="text-gray-600 flex items-center gap-2">
                   <a
                     href={`https://wa.me/${office.whatsapp}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-yellow-600 transition duration-300"
+                    title="Chat on WhatsApp"
                   >
-                    WhatsApp: {office.whatsapp}
+                    <FaWhatsapp size={25} />
                   </a>
+                  WhatsApp
                 </p>
-                <p className="text-gray-600">
+                <p className="text-gray-600 flex items-center gap-2">
                   <a
                     href={`mailto:${office.email}`}
                     className="hover:text-yellow-600 transition duration-300"
+                    title="Send Email"
                   >
-                    {office.email}
+                    <FaEnvelope size={25} />
                   </a>
+                  Email
                 </p>
-                <div className="text-gray-600">
-                  <p>{office.address}</p>
-                  <p>{office.location}</p>
-                </div>
               </div>
             </div>
           ))}
