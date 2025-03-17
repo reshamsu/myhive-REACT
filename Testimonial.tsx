@@ -2,8 +2,7 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
-// Import avatar images if you have them
-// If you don't have actual avatar images, you can use placeholders
+// Define a placeholder - you can replace this with actual avatar imports if you have them
 const avatarPlaceholder = "/placeholder.svg?height=100&width=100";
 
 export default function Testimonials() {

@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-// Import the image directly
-import bg1 from "../assets/bg1.jpeg"; // Adjust path if needed
-import bg2 from "../assets/4.png"; // Adjust path if needed
+// Import images properly - exactly like in your ServiceSlider component
+import bg1 from "../assets/bg1.jpeg";
+import bg2 from "../assets/4.png";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -28,7 +28,7 @@ export default function HeroSection() {
 
       <div className="container relative z-10 mx-auto px-4 sm:px-6">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          {/* Content */}
+          {/* Content section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isLoaded ? { opacity: 1, y: 0 } : {}}
@@ -98,6 +98,7 @@ export default function HeroSection() {
           >
             <div className="absolute -right-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-xl"></div>
             <div className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-2xl">
+              {/* Use the imported image variable - exactly like in your ServiceSlider */}
               <img
                 src={bg1 || "/placeholder.svg"}
                 alt="myhive Platform"
