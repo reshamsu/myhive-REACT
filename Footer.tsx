@@ -9,7 +9,6 @@ import {
   FaWhatsapp,
   FaEnvelope,
 } from "react-icons/fa";
-// import { Link } from "react-router-dom";
 
 interface OfficeInfo {
   name: string;
@@ -22,9 +21,9 @@ interface OfficeInfo {
 
 const officeLocations: OfficeInfo[] = [
   {
-    name: "HiVE Colombo - Head Quarters (Sri Lanka)",
+    name: "HiVE Colombo - Sri Lanka (Head Quarters)",
     phone: "+94 720 333 863",
-    whatsapp: "94720333863",
+    whatsapp: "94720333863", // Sri Lanka format
     email: "hello@myhive.biz",
     address: "No. 146/5, Havelock Road",
     location: "Colombo 05, Sri Lanka",
@@ -32,15 +31,15 @@ const officeLocations: OfficeInfo[] = [
   {
     name: "HiVE Toronto - Canada",
     phone: "+1 437 254 3077",
-    whatsapp: "14372543077",
+    whatsapp: "14372543077", // Canada format
     email: "hello@myhive.biz",
     address: "100 City Centre Dr",
     location: "Mississauga, Ontario L5B 2C9, Canada",
   },
   {
     name: "HiVE Vancouver - Canada",
-    phone: "+1 236 939 1372",
-    whatsapp: "12369391372",
+    phone: "+1 236 979 1372",
+    whatsapp: "12369791372", // Canada format
     email: "hello@myhive.biz",
     address: "1021 West Hastings Street",
     location: "Vancouver, BC V6E 0C3, Canada",
@@ -56,7 +55,9 @@ const Footer: React.FC = () => {
           <div className="lg:col-span-1">
             {/* Company Info */}
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-yellow-600 mb-4">HiVE</h3>
+              <h3 className="text-2xl font-bold text-yellow-600 mb-4">
+                myhive
+              </h3>
               <p className="text-gray-600 mb-4">
                 Empowering businesses with innovative solutions for unparalleled
                 success.
@@ -97,42 +98,7 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Quick Links */}
-            {/* <div>
-              <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-              <div className="flex flex-wrap gap-4">
-                <Link
-                  to="/"
-                  className="text-gray-600 hover:text-yellow-600 transition duration-300"
-                >
-                  Home
-                </Link>
-                <Link
-                  to="/about"
-                  className="text-gray-600 hover:text-yellow-600 transition duration-300"
-                >
-                  About
-                </Link>
-                <Link
-                  to="/services"
-                  className="text-gray-600 hover:text-yellow-600 transition duration-300"
-                >
-                  Services
-                </Link>
-                <Link
-                  to="/pricing"
-                  className="text-gray-600 hover:text-yellow-600 transition duration-300"
-                >
-                  Pricing
-                </Link>
-                <Link
-                  to="/contact"
-                  className="text-gray-600 hover:text-yellow-600 transition duration-300"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div> */}
+            {/* Quick Links section is commented out in the provided code */}
           </div>
 
           {/* Services */}
