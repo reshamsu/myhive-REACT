@@ -1,51 +1,88 @@
 "use client";
 
 import type React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, MapPin, Clock, Building2 } from "lucide-react";
 
-interface OfficeInfo {
-  name: string;
+interface ContactInfo {
   phone: string;
   whatsapp: string;
   email: string;
   address: string;
   location: string;
   workingHours: string;
+  officeDetails: string;
 }
 
-const officeLocations: OfficeInfo[] = [
+const officeLocations: ContactInfo[] = [
   {
-    name: "HiVE Colombo - Head Office",
     phone: "+94 720 333 863",
-    whatsapp: "+94 720 333 863",
+    whatsapp: "94720333863", // Sri Lanka format
     email: "hello@myhive.biz",
     address: "No. 146/5, Havelock Road",
     location: "Colombo 05, Sri Lanka",
     workingHours: "9am - 6pm IST, Monday - Friday",
+    officeDetails: "HiVE Colombo - Head Office",
   },
   {
-    name: "HiVE Toronto - Ontario Branch",
     phone: "+1 437 254 3077",
-    whatsapp: "+1 437 254 3077",
+    whatsapp: "14372543077", // Canada format
     email: "hello@myhive.biz",
     address: "100 City Centre Dr",
     location: "Mississauga, Ontario L5B 2C9, Canada",
     workingHours: "9am - 5pm EST, Monday - Friday",
+    officeDetails: "HiVE Toronto - Ontario Branch",
   },
   {
-    name: "HiVE Vancouver - British Columbia Branch",
-    phone: "+1 236 939 1372",
-    whatsapp: "+1 236 939 1372",
+    phone: "+1 236 979 1372",
+    whatsapp: "12369791372", // Canada format
     email: "hello@myhive.biz",
     address: "1021 West Hastings Street",
     location: "Vancouver, BC V6E 0C3, Canada",
     workingHours: "9am - 5pm PST, Monday - Friday",
+    officeDetails: "HiVE Vancouver - British Columbia Branch",
   },
 ];
 
+const getRegionCode = async (): Promise<number> => {
+  try {
+    const response = await fetch("https://ipapi.co/json/");
+    const data = await response.json();
+    console.log("Region data in ContactForm:", data); // Add logging to debug
+
+    if (data.country_code === "LK") {
+      return 0; // Colombo
+    }
+
+    if (data.country_code === "CA") {
+      if (data.region_code === "BC") {
+        console.log("Detected British Columbia");
+        return 2; // Vancouver
+      } else if (data.region_code === "ON") {
+        console.log("Detected Ontario");
+        return 1; // Toronto
+      }
+      return 1; // Default to Ontario for other Canadian provinces
+    }
+
+    return 2; // Default to Vancouver for international users
+  } catch (error) {
+    console.error("Error fetching region:", error);
+    return 0; // Default to Colombo if there's an error
+  }
+};
+
 const ContactForm: React.FC = () => {
   const [selectedOffice, setSelectedOffice] = useState<number>(0);
+
+  useEffect(() => {
+    const fetchRegion = async () => {
+      const officeIndex = await getRegionCode();
+      setSelectedOffice(officeIndex);
+    };
+
+    fetchRegion();
+  }, []);
 
   return (
     <div className="bg-white rounded-2xl md:rounded-3xl shadow-xl overflow-hidden">
@@ -69,7 +106,7 @@ const ContactForm: React.FC = () => {
                     : "bg-yellow-500 text-gray-800 hover:bg-yellow-400"
                 }`}
               >
-                {office.name.split(" - ")[0]}
+                {office.officeDetails.split(" - ")[0]}
               </button>
             ))}
           </div>
@@ -80,7 +117,7 @@ const ContactForm: React.FC = () => {
               <div className="flex items-center mb-2">
                 <Building2 className="mr-4 h-6 w-6" />
                 <span className="font-semibold">
-                  {officeLocations[selectedOffice].name}
+                  {officeLocations[selectedOffice].officeDetails}
                 </span>
               </div>
             </div>
@@ -89,7 +126,16 @@ const ContactForm: React.FC = () => {
                 <Phone className="mr-4 h-6 w-6" />
                 <div>
                   <p>Phone: {officeLocations[selectedOffice].phone}</p>
-                  <p>WhatsApp: {officeLocations[selectedOffice].whatsapp}</p>
+                  <p>
+                    <a
+                      href={`https://wa.me/${officeLocations[selectedOffice].whatsapp}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-gray-900 transition duration-300"
+                    >
+                      WhatsApp: {officeLocations[selectedOffice].phone}
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>
@@ -167,7 +213,7 @@ const ContactForm: React.FC = () => {
               >
                 {officeLocations.map((office, index) => (
                   <option key={index} value={index}>
-                    {office.name}
+                    {office.officeDetails}
                   </option>
                 ))}
               </select>

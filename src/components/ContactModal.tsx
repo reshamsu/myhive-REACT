@@ -31,15 +31,15 @@ const contactInfoByRegion: { [key: string]: ContactInfo } = {
     location: "myhive Toronto - Ontario",
   },
   CA_BC: {
-    phone: "+1 236 939 1372",
+    phone: "+1 236 979 1372",
     email: "hello@myhive.biz",
     location: "myhive Vancouver - British Columbia",
   },
-  US: {
-    phone: "+1 236 939 1372",
-    email: "hello@myhive.biz",
-    location: "myhive Vancouver - British Columbia",
-  },
+  // US: {
+  //   phone: "+1 236 939 1372",
+  //   email: "hello@myhive.biz",
+  //   location: "myhive Vancouver - British Columbia",
+  // },
 };
 
 const ContactModal: React.FC<ContactModalProps> = ({

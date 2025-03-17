@@ -1,58 +1,110 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import "swiper/swiper-bundle.css";
-import { FaQuoteLeft } from "react-icons/fa";
+"use client";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 
-const Testimonials: React.FC = () => {
+// Import Swiper styles - these need to be imported in your main CSS file
+// We'll provide instructions for this below
+
+export default function Testimonials() {
   const testimonials = [
     {
       text: [
         "Partnering with myhive has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we were unaware of that slowed us down. We have greater efficiency, consistent quality, and twice the profitability.",
-        "And beyond their service & technology, what truly sets myhive apart is its exclusive partnership network. Being part of this Next-Gen Community, subscribed to by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It’s more than just a partnership— we’re proud to be a part of myhive's community and excited for what’s ahead!",
+        "And beyond their service & technology, what truly sets myhive apart is its exclusive partnership network. Being part of this Next-Gen Community, subscribed to by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It's more than just a partnership— we're proud to be a part of myhive's community and excited for what's ahead!",
       ],
       client: "Director of Air Ceylon International Pvt (Ltd.)",
+      company: "Air Ceylon International",
+      avatar: "/placeholder.svg?height=100&width=100",
     },
-
-    // {
-    //   text: "The automation features are a game changer! We've seen a 40% increase in productivity.",
-    //   client: "Michael Chen, CTO of DataDrive",
-    // },
-    // {
-    //   text: "Real-time analytics have improved our decision-making process significantly.",
-    //   client: "Emma Rodriguez, CFO of GrowthCorp",
-    // },
+    {
+      text: [
+        "The automation features are a game changer! We've seen a 40% increase in productivity since implementing myhive across our organization.",
+        "Their customer support team has been exceptional, always available to answer questions and provide guidance when needed.",
+      ],
+      client: "Michael Chen",
+      company: "CTO of DataDrive",
+      avatar: "/placeholder.svg?height=100&width=100",
+    },
+    {
+      text: [
+        "Real-time analytics have improved our decision-making process significantly. We can now respond to market changes faster than ever before.",
+        "The integration capabilities with our existing systems made the transition seamless and stress-free.",
+      ],
+      client: "Emma Rodriguez",
+      company: "CFO of GrowthCorp",
+      avatar: "/placeholder.svg?height=100&width=100",
+    },
   ];
 
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-500 py-32 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-5xl font-thin text-center mb-24 text-zinc-800">
-          What Our <span className="font-bold">Clients Say</span>
-        </h2>
-        <Swiper
-          modules={[Navigation, Pagination]}
-          navigation
-          pagination={{ clickable: true }}
-          spaceBetween={20}
-          slidesPerView={1}
-          className="w-full"
+    <section className="relative overflow-hidden bg-gray-900 py-20 md:py-32">
+      {/* Background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-yellow-500 blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-20 h-64 w-64 rounded-full bg-yellow-500 blur-3xl"></div>
+      </div>
+
+      <div className="container relative mx-auto px-4 sm:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-16 text-center md:mb-24"
         >
-          {testimonials.map((testimonial, index) => (
-            <SwiperSlide key={index}>
-              <div className="bg-gray-700 mx-auto max-w-4xl p-12 rounded-2xl">
-                <FaQuoteLeft className="text-4xl text-yellow-600 mb-6" />
-                <p className="text-lg text-zinc-100 mb-6">{testimonial.text}</p>
-                <p className="text-xl italic text-zinc-400">
-                  - {testimonial.client}
+          <span className="mb-2 inline-block rounded-full bg-yellow-900/30 px-4 py-1.5 text-sm font-medium text-yellow-400">
+            Testimonials
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
+            What Our <span className="text-yellow-500">Clients Say</span>
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
+            Hear from businesses that have transformed their operations with
+            myhive
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+          className="mx-auto max-w-5xl"
+        >
+          {/* Simple testimonial display without Swiper */}
+          <div className="rounded-2xl bg-gray-800 p-8 shadow-xl md:p-12">
+            <div className="mb-6 flex items-center">
+              <Quote className="h-10 w-10 text-yellow-500" />
+            </div>
+
+            <div className="mb-8 space-y-4">
+              {testimonials[0].text.map((paragraph, i) => (
+                <p key={i} className="text-lg leading-relaxed text-gray-200">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+
+            <div className="flex items-center">
+              <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-gray-700">
+                <img
+                  src={testimonials[0].avatar || "/placeholder.svg"}
+                  alt={testimonials[0].client}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="font-medium text-white">
+                  {testimonials[0].client}
+                </p>
+                <p className="text-sm text-gray-400">
+                  {testimonials[0].company}
                 </p>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+            </div>
+          </div>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Testimonials;
+}

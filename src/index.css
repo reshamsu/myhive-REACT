@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add these CSS variables to match our design */
+:root {
+  --radius: 0.5rem;
+}
+
+/* Custom Swiper Styles - Add these if you install Swiper later */
+.testimonial-swiper .swiper-button-next,
+.testimonial-swiper .swiper-button-prev {
+  color: #eab308;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-swiper .swiper-button-next:after,
+.testimonial-swiper .swiper-button-prev:after {
+  font-size: 18px;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+  background-color: #eab308;
+}

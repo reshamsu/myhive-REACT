@@ -1,90 +1,141 @@
-import React from "react";
-import bg2 from "../assets/4.png";
-import bg1 from "../assets/bg1.jpeg";
-import { useNavigate } from "react-router-dom";
+"use client";
+
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { ChevronRight } from "lucide-react";
 
-const HeroSection: React.FC = () => {
+export default function HeroSection() {
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  const goToPage = useNavigate();
-
-  const handlePrice = () => {
-    goToPage("/pricing");
-  };
-
-  const handleFeatuers = () => {
-    goToPage("/services");
-  };
-
+  useEffect(() => {
+    setIsLoaded(true);
+  }, []);
 
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-400 text-gray-800 py-20 md:py-32 px-4 md:px-6 overflow-hidden relative">
-      {/* Background Image Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-25 md:opacity-15"
-        style={{ backgroundImage: `url(${bg2})` }}
-      ></div>
-
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-center items-center relative z-10">
-        {/* Left Content */}
-        <motion.div
-          className="lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-7xl leading-tight mb-6 uppercase font-bold">
-            Elevate Your
-            <span className="font-bold block mt-2 text-yellow-600">
-              Business
-            </span>
-          </h1>
-          <p className="text-lg md:text-xl leading-relaxed mb-12 text-zinc-900 font-medium max-w-xl mx-auto lg:mx-0">
-            Experience the future of operations with myhive – the all-in-one
-            platform designed for unparalleled success.
-          </p>
-          <div className="space-y-4 sm:space-y-0 sm:space-x-4 flex flex-col sm:flex-row justify-center lg:justify-start">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-yellow-600 text-gray-800 rounded-full font-bold text-lg hover:bg-yellow-400 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
-              aria-label="Get Started with myhive"
-              onClick={handlePrice}
-            >
-              Get Started
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-yellow-600 text-yellow-600 rounded-full font-bold text-lg hover:bg-yellow-600 hover:text-gray-800 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-offset-2 focus:ring-offset-gray-800 shadow-lg"
-              aria-label="Learn More about myhive"
-              onClick={handleFeatuers}
-            >
-              Learn More
-            </motion.button>
-          </div>
-        </motion.div>
-
-        {/* Right Image Content */}
-        <motion.div
-          className="lg:w-1/2 w-full h-64 md:h-96 relative mt-12 lg:mt-0 flex justify-center items-center"
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <div className="w-full h-full bg-gradient-to-br from-yellow-600 to-yellow-700 rounded-3xl shadow-2xl transform md:rotate-3 transition-transform duration-500 hover:rotate-0"></div>
-          <img
-            src={bg1 || "/placeholder.svg"}
-            alt="myhive Platform"
-            className="absolute top-0 left-0 w-full h-full object-cover rounded-3xl shadow-2xl md:transform -rotate-3 transition-transform duration-500 hover:rotate-0"
-            loading="eager"
-          />
-          <div className="absolute -bottom-10 -right-10 w-32 h-32 md:w-40 md:h-40 bg-gray-700 rounded-full opacity-50 blur-2xl"></div>
-          <div className="absolute -top-10 -left-10 w-32 h-32 md:w-40 md:h-40 bg-yellow-700 rounded-full opacity-50 blur-2xl"></div>
-        </motion.div>
+    <section className="relative overflow-hidden py-20 md:py-28 lg:py-32">
+      {/* Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-0 h-full w-full bg-[url('/placeholder.svg?height=1080&width=1920')] bg-cover bg-center opacity-15"></div>
+        <div className="absolute -top-24 -left-24 h-64 w-64 rounded-full bg-yellow-500/20 blur-3xl"></div>
+        <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-yellow-500/20 blur-3xl"></div>
       </div>
-    </div>
-  );
-};
 
-export default HeroSection;
+      <div className="container relative z-10 mx-auto px-4 sm:px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          {/* Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center lg:text-left"
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-block rounded-full bg-yellow-100 px-4 py-1.5 text-sm font-medium text-yellow-800"
+            >
+              Transforming Businesses
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            >
+              Elevate Your
+              <span className="mt-2 block bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">
+                Business
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-6 max-w-xl text-lg text-gray-600 md:mx-auto lg:mx-0"
+            >
+              Experience the future of operations with myhive – the all-in-one
+              platform designed for unparalleled success and growth.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
+            >
+              <button
+                className="group w-full rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
+                onClick={() => (window.location.href = "/pricing")}
+              >
+                Get Started
+                <ChevronRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </button>
+
+              <button
+                className="w-full rounded-full border-2 border-yellow-600 px-8 py-4 font-bold text-yellow-600 transition-colors hover:bg-yellow-50 hover:text-yellow-700 sm:w-auto"
+                onClick={() => (window.location.href = "/services")}
+              >
+                Learn More
+              </button>
+            </motion.div>
+          </motion.div>
+
+          {/* Image */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative mx-auto h-[400px] w-full max-w-lg lg:h-[500px]"
+          >
+            <div className="absolute -right-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-xl"></div>
+            <div className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-2xl">
+              <img
+                src="/placeholder.svg?height=1000&width=800"
+                alt="myhive Platform"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            {/* Floating Elements */}
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: [-10, 10, -10] }}
+              transition={{
+                repeat: Number.POSITIVE_INFINITY,
+                duration: 5,
+                ease: "easeInOut",
+              }}
+              className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-white p-3 shadow-lg"
+            >
+              <div className="flex h-full w-full items-center justify-center rounded-full bg-yellow-50">
+                <span className="text-center text-sm font-bold text-yellow-800">
+                  100% Secure
+                </span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ y: 0 }}
+              animate={{ y: [10, -10, 10] }}
+              transition={{
+                repeat: Number.POSITIVE_INFINITY,
+                duration: 5,
+                ease: "easeInOut",
+              }}
+              className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-white p-3 shadow-lg"
+            >
+              <div className="flex h-full w-full items-center justify-center rounded-full bg-yellow-50">
+                <span className="text-center text-sm font-bold text-yellow-800">
+                  AI Powered
+                </span>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
