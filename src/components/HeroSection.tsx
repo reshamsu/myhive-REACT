@@ -3,8 +3,8 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
-import bg1 from "../assets/bg1.jpeg"
-import bg2 from "../assets/4.png"
+import bg1 from "../assets/bg1.jpeg";
+import bg2 from "../assets/4.png";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,7 +17,7 @@ export default function HeroSection() {
     <section className="relative overflow-hidden py-20 md:py-28 lg:py-32">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
-       <div
+        <div
           className="absolute top-0 left-0 h-full w-full bg-cover bg-center opacity-15"
           style={{ backgroundImage: `url(${bg2})` }}
         ></div>
@@ -95,10 +95,14 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative mx-auto h-[400px] w-full max-w-lg lg:h-[500px]"
           >
-           <div className="absolute -right-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-xl"></div>
+            <div className="absolute -right-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-xl"></div>
             <div className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-2xl">
               {/* Remove the fallback placeholder */}
-              <img src={bg1 || "/placeholder.svg"} alt="myhive Platform" className="h-full w-full object-cover" />
+              <img
+                src={bg1 || "/placeholder.svg"}
+                alt="myhive Platform"
+                className="h-full w-full object-cover"
+              />
             </div>
 
             {/* Floating Elements */}

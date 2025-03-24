@@ -1,23 +1,22 @@
-import React from "react";
+import CallToAction from "../components/CallToAction";
+import ServiceHeader from "../components/ServiceHeader";
 import ServiceSlider from "../components/ServiceSlider";
 import bg2 from "../assets/4.png";
 
-const Services: React.FC = () => {
+export default function Services() {
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-gray-500 min-h-screen py-20 px-4">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 text-gray-800 relative">
       {/* Background Image Overlay */}
       <div
-        className="absolute inset-0 bg-center opacity-25 md:opacity-15 bg-contain"
+        className="absolute inset-0 bg-center opacity-10 bg-contain pointer-events-none"
         style={{ backgroundImage: `url(${bg2})` }}
       ></div>
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h1 className="text-5xl font-thin text-gray-800 text-center mb-12">
-          Service <span className="font-bold text-yellow-600">Features</span>
-        </h1>
-        <ServiceSlider />
-      </div>
-    </div>
-  );
-};
 
-export default Services;
+      <div className="relative z-10">
+        <ServiceHeader />
+        <ServiceSlider />
+        <CallToAction />
+      </div>
+    </main>
+  );
+}

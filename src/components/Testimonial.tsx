@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 
-// Import Swiper styles - these need to be imported in your main CSS file
-// We'll provide instructions for this below
+// Define a placeholder - you can replace this with actual avatar imports if you have them
+const avatarPlaceholder = "/placeholder.svg?height=100&width=100";
 
 export default function Testimonials() {
   const testimonials = [
@@ -14,7 +14,7 @@ export default function Testimonials() {
       ],
       client: "Director of Air Ceylon International Pvt (Ltd.)",
       company: "Air Ceylon International",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: avatarPlaceholder,
     },
     {
       text: [
@@ -23,7 +23,7 @@ export default function Testimonials() {
       ],
       client: "Michael Chen",
       company: "CTO of DataDrive",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: avatarPlaceholder,
     },
     {
       text: [
@@ -32,7 +32,7 @@ export default function Testimonials() {
       ],
       client: "Emma Rodriguez",
       company: "CFO of GrowthCorp",
-      avatar: "/placeholder.svg?height=100&width=100",
+      avatar: avatarPlaceholder,
     },
   ];
 

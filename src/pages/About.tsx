@@ -1,18 +1,17 @@
-import React from "react";
 import AboutSection from "../components/AboutSection";
 import Platform from "../components/Platform";
 import CoreValues from "../components/CoreValues";
 import WhyHive from "../components/WhyHive";
+import CallToAction from "../components/CallToAction";
 
-const About: React.FC = () => {
+export default function About() {
   return (
-    <div className="bg-gray-100 text-gray-800">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 text-gray-800">
       <AboutSection />
       <Platform />
       <CoreValues />
       <WhyHive />
-    </div>
+      <CallToAction />
+    </main>
   );
-};
-
-export default About;
+}

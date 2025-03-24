@@ -1,18 +1,20 @@
-import React from "react";
+import bg2 from "../assets/4.png";
 import ContactForm from "../components/ContactForm";
+import ContactHeader from "../components/ContactHeader";
 
-const Contact: React.FC = () => {
+export default function Contact() {
   return (
-    <div className="bg-gray-100 min-h-screen py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl font-thin text-gray-800 text-center mb-12">
-          Get in <span className="font-bold">Touch</span>
-        </h1>
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 text-gray-800 relative">
+      {/* Background Image Overlay */}
+      <div
+        className="absolute inset-0 bg-center opacity-10 bg-contain pointer-events-none"
+        style={{ backgroundImage: `url(${bg2})` }}
+      ></div>
+
+      <div className="relative z-10">
+        <ContactHeader />
         <ContactForm />
       </div>
-    </div>
+    </main>
   );
-};
-
-export default Contact;
-
+}
