@@ -1,6 +1,5 @@
 "use client";
 
-import type React from "react";
 import { useState, useEffect } from "react";
 import { Check } from "lucide-react";
 import ContactModal from "./ContactModal";
@@ -9,7 +8,6 @@ interface Plan {
   title: string;
   price: string;
   monthlyPrice: string;
-  yearlyPrice: string;
   features: string[];
   isPopular?: boolean;
   description: string;
@@ -17,14 +15,11 @@ interface Plan {
 
 interface PriceCardProps {
   plan: Plan;
-  isYearly: boolean;
   onSelect: () => void;
 }
 
-const PriceCard: React.FC<PriceCardProps> = ({ plan, isYearly, onSelect }) => {
-  const { title, monthlyPrice, yearlyPrice, features, isPopular, description } =
-    plan;
-  const currentPrice = isYearly ? yearlyPrice : monthlyPrice;
+const PriceCard = ({ plan, onSelect }: PriceCardProps) => {
+  const { title, monthlyPrice, features, isPopular, description } = plan;
 
   return (
     <div
@@ -33,7 +28,7 @@ const PriceCard: React.FC<PriceCardProps> = ({ plan, isYearly, onSelect }) => {
       } flex flex-col h-full`}
     >
       {isPopular && (
-        <div className="bg-yellow-600 text-zinc-900 text-center py-2 font-medium text-sm">
+        <div className="bg-yellow-400 text-zinc-900 text-center py-2 font-medium text-sm">
           MOST POPULAR
         </div>
       )}
@@ -42,16 +37,9 @@ const PriceCard: React.FC<PriceCardProps> = ({ plan, isYearly, onSelect }) => {
         <p className="text-zinc-600 mb-4 text-sm">{description}</p>
         <div className="mb-6">
           <span className="text-3xl sm:text-4xl font-bold text-yellow-600">
-            {currentPrice}
+            {monthlyPrice}
           </span>
-          <span className="text-zinc-500 ml-2">
-            {isYearly ? "/year" : "/month"}
-          </span>
-          {isYearly && (
-            <div className="mt-2 text-sm text-yellow-600 font-medium">
-              Save with annual billing
-            </div>
-          )}
+          <span className="text-zinc-500 ml-2">/month</span>
         </div>
 
         <ul className="space-y-3">
@@ -79,8 +67,8 @@ const PriceCard: React.FC<PriceCardProps> = ({ plan, isYearly, onSelect }) => {
   );
 };
 
-const EnterpriseCard: React.FC<{ onSelect: () => void }> = ({ onSelect }) => (
-  <div className="bg-gradient-to-r from-yellow-400 to-yellow-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-8 text-zinc-900 max-w-3xl mx-auto mt-16">
+const EnterpriseCard = ({ onSelect }: { onSelect: () => void }) => (
+  <div className="bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-8 text-zinc-900 max-w-3xl mx-auto mt-16">
     <div className="flex flex-col md:flex-row items-center justify-between">
       <div className="mb-6 md:mb-0 md:mr-8">
         <h3 className="text-2xl font-bold mb-3">Enterprise</h3>
@@ -132,11 +120,10 @@ const getRegionCode = async (): Promise<string> => {
   }
 };
 
-const Price: React.FC = () => {
+export default function Price() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<Plan | null>(null);
   const [regionCode, setRegionCode] = useState("LK");
-  const [isYearly, setIsYearly] = useState(true);
 
   useEffect(() => {
     getRegionCode().then(setRegionCode);
@@ -144,62 +131,47 @@ const Price: React.FC = () => {
 
   const plans: Plan[] = [
     {
-      title: "Free",
-      monthlyPrice: "$0",
-      yearlyPrice: "$0",
-      description: "For individuals just getting started",
-      features: [
-        "Basic website building",
-        "Limited chatbot functionality",
-        "1 GB storage",
-        "Community support",
-      ],
-      price: "$0",
-    },
-    {
       title: "Core Plan",
       monthlyPrice: "$100",
-      yearlyPrice: "$960",
+      price: "USD 100",
       description: "For small businesses and startups",
       features: [
-        "Website Building & Development (+ Store)",
-        "⁠Online Payment Integration",
-        "⁠Live 24/7 Chatbot",
-        "5 GB storage",
-        "Email support",
+        "CRM System with Basic Features",
+        "⁠1-Page Website & Social Media Scheduling",
+        "⁠Basic Workflows & Automation",
+        "Email & SMS Communication",
+        "Basic Invoicing & Payment Tracking",
+        "Basic Performance Reports",
       ],
-      price: "USD 100",
     },
     {
       title: "Pro Plan",
       monthlyPrice: "$250",
-      yearlyPrice: "$2,400",
+      price: "USD 250",
       description: "For growing businesses and teams",
       features: [
-        "All Core Plan features",
-        "Designated User Access",
-        "⁠Social Media One-Click Marketing Tools",
-        "Ai Generated Content",
-        "20 GB storage",
-        "Priority support",
+        "Includes all Core Plan features",
+        "⁠Pro-Level CRM & Advanced Automation",
+        "Full Website with Blog & SEO",
+        "AI-Generated Content & Blog Writing",
+        "Voice AI Bot for Customer Interactions",
+        "Advanced Reports & Analytics",
       ],
       isPopular: true,
-      price: "USD 250",
     },
     {
       title: "Essential Plan",
       monthlyPrice: "$500",
-      yearlyPrice: "$4,800",
+      price: "USD 500",
       description: "For established businesses with advanced needs",
       features: [
-        "All Pro Plan features",
-        "⁠Ai Voice Bots",
-        "Automation workflows",
-        "Advanced analytics",
-        "Unlimited storage",
-        "24/7 dedicated support",
+        "Includes all Pro Plan features",
+        "Full AI-Driven Lead Management & Optimization",
+        "Multi-Channel AI Support (Email, SMS, Voice, Chatbots)⁠",
+        "Advanced Paid Ad & Social Media Management",
+        "AI-Optimized Customer Engagement & Retention Strategy",
+        "Deep Data Insights & Performance Forecasting",
       ],
-      price: "USD 500",
     },
   ];
 
@@ -214,7 +186,7 @@ const Price: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-400 via-yellow-500 to-yellow-600">
+    <div className="min-h-screen bg-gradient-to-br from-yellow-500 via-yellow-600 to-yellow-800">
       <div className="py-20 sm:py-32 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -225,34 +197,13 @@ const Price: React.FC = () => {
               Choose the perfect plan to elevate your business with HiVE's
               cutting-edge solutions.
             </p>
-
-            {/* Billing Toggle */}
-            <div className="mt-8 inline-flex items-center bg-white/20 p-1 rounded-full">
-              <button
-                onClick={() => setIsYearly(false)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  !isYearly ? "bg-white text-yellow-600" : "text-white"
-                }`}
-              >
-                Monthly
-              </button>
-              <button
-                onClick={() => setIsYearly(true)}
-                className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
-                  isYearly ? "bg-white text-yellow-600" : "text-white"
-                }`}
-              >
-                Yearly (Save 20%)
-              </button>
-            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {plans.map((plan, index) => (
               <PriceCard
                 key={index}
                 plan={plan}
-                isYearly={isYearly}
                 onSelect={() => handlePlanSelect(plan)}
               />
             ))}
@@ -264,9 +215,8 @@ const Price: React.FC = () => {
                 title: "Special Plan",
                 price: "Custom",
                 monthlyPrice: "Custom",
-                yearlyPrice: "Custom",
-                description: "Enterprise-grade solutions",
                 features: [],
+                description: "Enterprise-grade solutions",
               })
             }
           />
@@ -282,6 +232,4 @@ const Price: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default Price;
+}
