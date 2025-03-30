@@ -45,7 +45,7 @@ const Navbar: React.FC = () => {
             { to: "/", label: "Home" },
             { to: "/about", label: "About" },
             { to: "/pricing", label: "Pricing" },
-            { to: "/services", label: "Features" },
+            { to: "/services", label: "Solutions" },
             { to: "/contact", label: "Contact" },
           ].map((link) => (
             <button
