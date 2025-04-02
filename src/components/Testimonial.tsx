@@ -1,9 +1,13 @@
-"use client";
-import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+"use client"
+import { motion } from "framer-motion"
+import { Quote } from "lucide-react"
+import airCeylonLogo from "../assets/LogoIntext.jpg";
 
 // Define a placeholder - you can replace this with actual avatar imports if you have them
-const avatarPlaceholder = "/placeholder.svg?height=100&width=100";
+const avatarPlaceholder = "/placeholder.svg?height=100&width=100"
+
+// Air Ceylon logo
+// const airCeylonLogo = "/LogoInText.jpg?height=100&width=100"
 
 export default function Testimonials() {
   const testimonials = [
@@ -14,7 +18,7 @@ export default function Testimonials() {
       ],
       client: "Director of Air Ceylon International Pvt (Ltd.)",
       company: "Air Ceylon International",
-      avatar: avatarPlaceholder,
+      avatar: airCeylonLogo,
     },
     {
       text: [
@@ -34,7 +38,7 @@ export default function Testimonials() {
       company: "CFO of GrowthCorp",
       avatar: avatarPlaceholder,
     },
-  ];
+  ]
 
   return (
     <section className="relative overflow-hidden bg-gray-900 py-20 md:py-32">
@@ -59,8 +63,7 @@ export default function Testimonials() {
             What Our <span className="text-yellow-500">Clients Say</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
-            Hear from businesses that have transformed their operations with
-            myhive
+            Hear from businesses that have transformed their operations with myhive
           </p>
         </motion.div>
 
@@ -86,25 +89,22 @@ export default function Testimonials() {
             </div>
 
             <div className="flex items-center">
-              <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-gray-700">
+              <div className="mr-4 h-16 w-auto overflow-hidden rounded-md bg-white p-1">
                 <img
                   src={testimonials[0].avatar || "/placeholder.svg"}
-                  alt={testimonials[0].client}
-                  className="h-full w-full object-cover"
+                  alt={testimonials[0].company}
+                  className="h-full w-auto object-contain"
                 />
               </div>
               <div>
-                <p className="font-medium text-white">
-                  {testimonials[0].client}
-                </p>
-                <p className="text-sm text-gray-400">
-                  {testimonials[0].company}
-                </p>
+                <p className="font-medium text-white">{testimonials[0].client}</p>
+                <p className="text-sm text-gray-400">{testimonials[0].company}</p>
               </div>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
+
