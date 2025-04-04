@@ -24,7 +24,7 @@ const officeLocations: ContactInfo[] = [
     address: "No. 146/5, Havelock Road",
     location: "Colombo 05, Sri Lanka",
     workingHours: "9am - 6pm IST, Monday - Friday",
-    officeDetails: "HiVE Colombo - Head Office",
+    officeDetails: "myHiVE Colombo - Head Office",
   },
   {
     phone: "+1 437 254 3077",
@@ -33,7 +33,7 @@ const officeLocations: ContactInfo[] = [
     address: "100 City Centre Dr",
     location: "Mississauga, Ontario L5B 2C9, Canada",
     workingHours: "9am - 5pm EST, Monday - Friday",
-    officeDetails: "HiVE Toronto - Ontario Branch",
+    officeDetails: "myHiVE Toronto - Ontario Branch",
   },
   {
     phone: "+1 236 979 1372",
@@ -42,7 +42,7 @@ const officeLocations: ContactInfo[] = [
     address: "1021 West Hastings Street",
     location: "Vancouver, BC V6E 0C3, Canada",
     workingHours: "9am - 5pm PST, Monday - Friday",
-    officeDetails: "HiVE Vancouver - British Columbia Branch",
+    officeDetails: "myHiVE Vancouver - British Columbia Branch",
   },
 ];
 

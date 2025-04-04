@@ -1,10 +1,10 @@
-"use client"
-import { motion } from "framer-motion"
-import { Quote } from "lucide-react"
+"use client";
+import { motion } from "framer-motion";
+import { Quote } from "lucide-react";
 import airCeylonLogo from "../assets/LogoIntext.jpg";
 
 // Define a placeholder - you can replace this with actual avatar imports if you have them
-const avatarPlaceholder = "/placeholder.svg?height=100&width=100"
+const avatarPlaceholder = "/placeholder.svg?height=100&width=100";
 
 // Air Ceylon logo
 // const airCeylonLogo = "/LogoInText.jpg?height=100&width=100"
@@ -13,8 +13,9 @@ export default function Testimonials() {
   const testimonials = [
     {
       text: [
-        "Partnering with myhive has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we were unaware of that slowed us down. We have greater efficiency, consistent quality, and twice the profitability.",
-        "And beyond their service & technology, what truly sets myhive apart is its exclusive partnership network. Being part of this Next-Gen Community, subscribed to by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It's more than just a partnership— we're proud to be a part of myhive's community and excited for what's ahead!",
+        "Partnering with myhive has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we weren’t even aware were slowing us down. We now operate with greater efficiency, consistent quality, and double the profitability.",
+
+        "Beyond their service and technology, what truly sets myhive apart is its exclusive partnership network. Being part of this Next-Gen Community, endorsed by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It’s more than just a partnership—we’re proud to be part of the myhive community and excited for what’s ahead!",
       ],
       client: "Director of Air Ceylon International Pvt (Ltd.)",
       company: "Air Ceylon International",
@@ -38,7 +39,7 @@ export default function Testimonials() {
       company: "CFO of GrowthCorp",
       avatar: avatarPlaceholder,
     },
-  ]
+  ];
 
   return (
     <section className="relative overflow-hidden bg-gray-900 py-20 md:py-32">
@@ -63,7 +64,8 @@ export default function Testimonials() {
             What Our <span className="text-yellow-500">Clients Say</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
-            Hear from businesses that have transformed their operations with myhive
+            Hear from businesses that have transformed their operations with
+            myhive
           </p>
         </motion.div>
 
@@ -97,14 +99,17 @@ export default function Testimonials() {
                 />
               </div>
               <div>
-                <p className="font-medium text-white">{testimonials[0].client}</p>
-                <p className="text-sm text-gray-400">{testimonials[0].company}</p>
+                <p className="font-medium text-white">
+                  {testimonials[0].client}
+                </p>
+                <p className="text-sm text-gray-400">
+                  {testimonials[0].company}
+                </p>
               </div>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

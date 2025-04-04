@@ -21,7 +21,7 @@ interface OfficeInfo {
 
 const officeLocations: OfficeInfo[] = [
   {
-    name: "HiVE Colombo - Sri Lanka (Head Quarters)",
+    name: "myHiVE Colombo - Sri Lanka (Head Quarters)",
     phone: "+94 720 333 863",
     whatsapp: "94720333863", // Sri Lanka format
     email: "hello@myhive.biz",
@@ -29,7 +29,7 @@ const officeLocations: OfficeInfo[] = [
     location: "Colombo 05, Sri Lanka",
   },
   {
-    name: "HiVE Toronto - Canada",
+    name: "myHiVE Toronto - Canada",
     phone: "+1 437 254 3077",
     whatsapp: "14372543077", // Canada format
     email: "hello@myhive.biz",
@@ -37,7 +37,7 @@ const officeLocations: OfficeInfo[] = [
     location: "Mississauga, Ontario L5B 2C9, Canada",
   },
   {
-    name: "HiVE Vancouver - Canada",
+    name: "myHiVE Vancouver - Canada",
     phone: "+1 236 979 1372",
     whatsapp: "12369791372", // Canada format
     email: "hello@myhive.biz",
