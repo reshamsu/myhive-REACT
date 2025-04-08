@@ -40,9 +40,9 @@ export default function ServiceHeader() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mt-6 text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
           >
-            Service{" "}
+            Our{" "}
             <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">
-              Features
+              Solutions
             </span>
           </motion.h1>
 

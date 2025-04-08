@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function CallToAction() {
   return (
@@ -31,20 +32,20 @@ export default function CallToAction() {
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <button
-                className="group w-full rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
-                onClick={() => (window.location.href = "/pricing")}
+              <Link
+                to="/pricing"
+                className="group inline-flex w-full items-center justify-center rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
               >
                 Get Started Today
                 <ArrowRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </button>
+              </Link>
 
-              <button
-                className="w-full rounded-full border-2 border-yellow-600 px-8 py-4 font-bold text-yellow-600 transition-colors hover:bg-yellow-50 hover:text-yellow-700 sm:w-auto"
-                onClick={() => (window.location.href = "/contact")}
+              <Link
+                to="/contact"
+                className="inline-flex w-full items-center justify-center rounded-full border-2 border-yellow-600 px-8 py-4 font-bold text-yellow-600 transition-colors hover:bg-yellow-50 hover:text-yellow-700 sm:w-auto"
               >
                 Contact Sales
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

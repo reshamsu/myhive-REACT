@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const stats = [
   { value: "99 %", label: "Customer Satisfaction" },
   { value: "24/7", label: "Support Available" },
-  { value: "25%", label: "Revenue Growth" },
-  { value: "100k+", label: "Active Users" },
+  { value: "10X", label: "Time Saving" },
+  { value: "100k+", label: "Active Platform Users" },
 ];
 
 export default function Statistics() {

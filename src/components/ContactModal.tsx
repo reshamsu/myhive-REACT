@@ -21,7 +21,7 @@ interface ContactInfo {
 
 const contactInfoByRegion: { [key: string]: ContactInfo } = {
   LK: {
-    phone: "+94 720 333 863",
+    phone: "+94 71 766 8690",
     email: "hello@myhive.biz",
     location: "myhive Colombo",
   },

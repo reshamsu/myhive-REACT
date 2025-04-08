@@ -150,7 +150,7 @@ export default function Price() {
       price: "USD 500",
       description: "For established businesses with advanced needs",
       features: [
-        "Includes all Pro Plan features",
+        "Includes all Core Plan features",
         "Full AI-Driven Lead Management & Optimization",
         "Multi-Channel AI Support (Email, SMS, Voice, Chatbots)⁠",
         "Advanced Paid Ad & Social Media Management",
@@ -165,7 +165,7 @@ export default function Price() {
       price: "USD 1000",
       description: "For growing businesses and teams",
       features: [
-        "Includes all Core Plan features",
+        "Includes all Essential Plan features",
         "⁠Pro-Level CRM & Advanced Automation",
         "Full Website with Blog & SEO",
         "AI-Generated Content & Blog Writing",

@@ -33,53 +33,59 @@ interface ServiceSection {
 
 const productSection: ServiceSection = {
   title: "All-in-one-CRM",
-  subtitle: "Our Product",
+  subtitle: "Product",
   description:
     "A comprehensive solution that streamlines your business operations and enhances customer relationships.",
   mainIcon: Server,
-  ctaText: "Explore Our CRM",
+  ctaText: "Explore Your Benefits",
   features: [
     {
-      title: "Fully Integrated System",
-      description: "Seamlessly connects with other business tools.",
+      title: "All-In-One CRM",
+      description:
+        "Saves time & cost with a cross-functional platform specialized in multiple business functions.",
       icon: Globe,
     },
     {
-      title: "Automated Workflows",
-      description: "AI-powered automation for sales and operations.",
-      icon: Zap,
+      title: "Integratable",
+      description:
+        "User flexible with options to integrate preferred applications like WordPress, WhatsApp & more.",
+      icon: Share2,
     },
     {
-      title: "Pipeline & Funnel Management",
-      description: "Optimize your sales strategy.",
+      title: "Cross Functional",
+      description:
+        "One platform for multiple business functions, unlike niche CRMs offering limited functionality.",
       icon: BarChart3,
     },
     {
-      title: "B2B Lead Generation",
-      description: "Capture and convert high-quality leads.",
-      icon: CheckCircle,
+      title: "AI Driven",
+      description:
+        "Innovative advantage with AI-powered features evolving daily, staying ahead of the industry.",
+      icon: Zap,
     },
     {
-      title: "Payments & Invoices",
-      description: "Simplify billing and transactions.",
+      title: "Cloud Platform",
+      description:
+        "Saves space with no installation or updates required, accessible from anywhere.",
       icon: Server,
+    },
+    {
+      title: "Consistent Performance",
+      description:
+        "AI-driven functions ensure reliable operation every second of the day.",
+      icon: CheckCircle,
     },
     {
       title: "Text & Voice AI Communication",
       description: "Automate client interactions via emails, SMS, and voice.",
       icon: MessageCircle,
     },
-    {
-      title: "Tracking & Real-Time Analytics",
-      description: "Monitor performance effortlessly.",
-      icon: BarChart3,
-    },
   ],
 };
 
 const serviceSection: ServiceSection = {
   title: "Digital Services",
-  subtitle: "Our Services",
+  subtitle: "Services",
   description:
     "Expert digital solutions to elevate your brand presence and engage your audience effectively.",
   mainIcon: MessageSquare,
@@ -122,6 +128,13 @@ export default function ServiceSlider() {
     setIsLoaded(true);
   }, []);
 
+  const scrollToKeyBenefits = () => {
+    const keyBenefitsSection = document.getElementById("key-benefits");
+    if (keyBenefitsSection) {
+      keyBenefitsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section className="py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6">
@@ -136,7 +149,7 @@ export default function ServiceSlider() {
                   : "text-gray-600 hover:text-gray-800"
               }`}
             >
-              Our Product
+              Product
             </button>
             <button
               onClick={() => setActiveTab("service")}
@@ -146,7 +159,7 @@ export default function ServiceSlider() {
                   : "text-gray-600 hover:text-gray-800"
               }`}
             >
-              Our Services
+              Services
             </button>
           </div>
         </div>
@@ -214,7 +227,10 @@ export default function ServiceSlider() {
 
               {/* CTA Button */}
               <div className="text-center">
-                <button className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200">
+                <button
+                  onClick={scrollToKeyBenefits}
+                  className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
+                >
                   {productSection.ctaText}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </button>
