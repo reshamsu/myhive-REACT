@@ -55,7 +55,7 @@ const benefits: Benefit[] = [
 export default function KeyBenefits() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<number | null>(null);
   const touchStartX = useRef(0);
   const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -86,7 +86,7 @@ export default function KeyBenefits() {
     }
 
     // Set up new timer
-    timerRef.current = setInterval(() => {
+    timerRef.current = window.setInterval(() => {
       setCurrentSlide((prev) => (prev === benefits.length - 1 ? 0 : prev + 1));
     }, 3000);
   };
