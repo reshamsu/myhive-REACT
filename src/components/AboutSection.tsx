@@ -53,7 +53,7 @@ export default function AboutSection() {
             className="mt-8 text-lg leading-relaxed text-gray-600 md:text-xl"
           >
             myhive is a cutting-edge business tech company leading the way in
-            innovation. Our AI-powered, licensed merchant platform automates,
+            innovation. Our Ai-powered, licensed merchant platform automates,
             integrates, and optimizes operations across departments, ensuring
             businesses thrive in the digital age. Whether you're a startup, SMB,
             or enterprise, myhive equips you with the tools to scale seamlessly

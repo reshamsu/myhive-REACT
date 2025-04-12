@@ -111,7 +111,7 @@ export default function Platform() {
   const features = [
     {
       title: "Sales & Marketing",
-      description: "Boost your sales with AI-driven insights",
+      description: "Boost your sales with Ai-driven insights",
       icon: BarChart3,
     },
     {
@@ -131,7 +131,7 @@ export default function Platform() {
     },
     {
       title: "Communication",
-      description: "Enhance collaboration with AI-powered messaging",
+      description: "Enhance collaboration with Ai-powered messaging",
       icon: MessageSquare,
     },
   ];
@@ -157,7 +157,7 @@ export default function Platform() {
             Our <span className="text-yellow-600">Platform</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-            myhive's solution integrates AI-driven automation and content with
+            myhive's solution integrates Ai-driven automation and content with
             business CRM tools to evolve operations across:
           </p>
         </div>

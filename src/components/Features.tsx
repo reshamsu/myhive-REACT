@@ -59,7 +59,7 @@ export default function Features() {
   const features = [
     {
       icon: <BotIcon className="h-8 w-8" />,
-      title: "AI-Powered Automation",
+      title: "Ai-Powered Automation",
       description:
         "Transform your business with intelligent workflows that save time and reduce errors.",
     },

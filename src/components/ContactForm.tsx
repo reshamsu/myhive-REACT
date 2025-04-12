@@ -32,7 +32,7 @@ const officeLocations: ContactInfo[] = [
     email: "hello@myhive.biz",
     address: "100 City Centre Dr",
     location: "Mississauga, Ontario L5B 2C9, Canada",
-    workingHours: "9am - 5pm EST, Monday - Friday",
+    workingHours: "9am - 6pm EST, Monday - Friday",
     officeDetails: "myHiVE Toronto - Ontario Branch",
   },
   {
@@ -41,7 +41,7 @@ const officeLocations: ContactInfo[] = [
     email: "hello@myhive.biz",
     address: "1021 West Hastings Street",
     location: "Vancouver, BC V6E 0C3, Canada",
-    workingHours: "9am - 5pm PST, Monday - Friday",
+    workingHours: "9am - 6pm PST, Monday - Friday",
     officeDetails: "myHiVE Vancouver - British Columbia Branch",
   },
 ];

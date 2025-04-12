@@ -58,7 +58,7 @@ export default function WhyHive() {
       icon: TrendingUp,
     },
     {
-      title: "AI-Driven Efficiency",
+      title: "Ai-Driven Efficiency",
       description:
         "Intelligent systems that improve performance and decision-making.",
       icon: Cpu,

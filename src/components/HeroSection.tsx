@@ -3,15 +3,21 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import bg1 from "../assets/bg1.jpeg";
 import bg2 from "../assets/4.png";
 
 export default function HeroSection() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsLoaded(true);
   }, []);
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
 
   return (
     <section className="relative overflow-hidden py-20 md:py-28 lg:py-32">
@@ -73,7 +79,7 @@ export default function HeroSection() {
             >
               <button
                 className="group w-full rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
-                onClick={() => (window.location.href = "/pricing")}
+                onClick={() => handleNavigation("/pricing")}
               >
                 Get Started
                 <ChevronRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -81,7 +87,7 @@ export default function HeroSection() {
 
               <button
                 className="w-full rounded-full border-2 border-yellow-600 px-8 py-4 font-bold text-yellow-600 transition-colors hover:bg-yellow-50 hover:text-yellow-700 sm:w-auto"
-                onClick={() => (window.location.href = "/services")}
+                onClick={() => handleNavigation("/services")}
               >
                 Learn More
               </button>
@@ -97,7 +103,6 @@ export default function HeroSection() {
           >
             <div className="absolute -right-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-xl"></div>
             <div className="absolute inset-0 h-full w-full overflow-hidden rounded-2xl shadow-2xl">
-              {/* Remove the fallback placeholder */}
               <img
                 src={bg1 || "/placeholder.svg"}
                 alt="myhive Platform"
@@ -135,7 +140,7 @@ export default function HeroSection() {
             >
               <div className="flex h-full w-full items-center justify-center rounded-full bg-yellow-50">
                 <span className="text-center text-sm font-bold text-yellow-800">
-                  AI Powered
+                  Ai Powered
                 </span>
               </div>
             </motion.div>

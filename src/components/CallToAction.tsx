@@ -2,9 +2,15 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function CallToAction() {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <section className="relative overflow-hidden py-20 md:py-28">
       {/* Background gradient */}
@@ -32,20 +38,20 @@ export default function CallToAction() {
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                to="/pricing"
+              <button
+                onClick={() => handleNavigation("/pricing")}
                 className="group inline-flex w-full items-center justify-center rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
               >
                 Get Started Today
                 <ArrowRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
+              </button>
 
-              <Link
-                to="/contact"
+              <button
+                onClick={() => handleNavigation("/contact")}
                 className="inline-flex w-full items-center justify-center rounded-full border-2 border-yellow-600 px-8 py-4 font-bold text-yellow-600 transition-colors hover:bg-yellow-50 hover:text-yellow-700 sm:w-auto"
               >
                 Contact Sales
-              </Link>
+              </button>
             </div>
           </motion.div>
         </div>

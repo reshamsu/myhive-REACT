@@ -54,7 +54,7 @@ export default function ServiceHeader() {
           >
             Discover our comprehensive suite of business solutions designed to
             streamline your operations, boost efficiency, and drive growth with
-            cutting-edge AI technology.
+            cutting-edge Ai technology.
           </motion.p>
         </motion.div>
       </div>

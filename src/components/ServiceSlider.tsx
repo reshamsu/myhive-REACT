@@ -54,13 +54,13 @@ const productSection: ServiceSection = {
     {
       title: "Cross Functional",
       description:
-        "One platform for multiple business functions, unlike niche CRMs offering limited functionality.",
+        "One Platform for multiple lines of business functions that work together, unlike traditional CRMs limited to one line of functions.",
       icon: BarChart3,
     },
     {
-      title: "AI Driven",
+      title: "Ai Driven",
       description:
-        "Innovative advantage with AI-powered features evolving daily, staying ahead of the industry.",
+        "Innovative advantage with Ai-powered features evolving daily, staying ahead of the industry.",
       icon: Zap,
     },
     {
@@ -72,14 +72,14 @@ const productSection: ServiceSection = {
     {
       title: "Consistent Performance",
       description:
-        "AI-driven functions ensure reliable operation every second of the day.",
+        "Ai - Driven functions ensure reliable operation at peak performance every second of the day.",
       icon: CheckCircle,
     },
-    {
-      title: "Text & Voice AI Communication",
-      description: "Automate client interactions via emails, SMS, and voice.",
-      icon: MessageCircle,
-    },
+    // {
+    //   title: "Text & Voice Ai Communication",
+    //   description: "Automate client interactions via emails, SMS, and voice.",
+    //   icon: MessageCircle,
+    // },
   ],
 };
 
@@ -98,11 +98,11 @@ const serviceSection: ServiceSection = {
     },
     {
       title: "Marketing Automation",
-      description: "AI-driven workflows for customer engagement.",
+      description: "Ai-driven workflows for customer engagement.",
       icon: Zap,
     },
     {
-      title: "Live Chatbots & AI Voice Assistants",
+      title: "Live Chatbots & Ai Voice Assistants",
       description: "24/7 automated customer support.",
       icon: MessageCircle,
     },
@@ -114,7 +114,7 @@ const serviceSection: ServiceSection = {
     {
       title: "Content Creation",
       description:
-        "AI-generated content for blogs, emails, and marketing campaigns.",
+        "Ai-generated content for blogs, emails, and marketing campaigns.",
       icon: PenTool,
     },
   ],

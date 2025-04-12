@@ -36,12 +36,12 @@ const benefits: Benefit[] = [
   {
     title: "Innovative Advantage",
     description:
-      "AI Driven platform evolving every day offering future developments and features ahead of the industry & now.",
+      "Ai Driven platform evolving every day offering future developments and features ahead of the industry & now.",
     icon: Sparkles,
   },
   {
     title: "Consistent Performance",
-    description: "Functions and platform as a whole driven by AI every second.",
+    description: "Functions and platform as a whole driven by Ai every second.",
     icon: BarChart3,
   },
   {
