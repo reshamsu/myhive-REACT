@@ -1,3 +1,5 @@
+"use client";
+
 import type React from "react";
 
 interface Plan {
@@ -23,17 +25,17 @@ const contactInfoByRegion: { [key: string]: ContactInfo } = {
   LK: {
     phone: "+94 71 766 8690",
     email: "hello@myhive.biz",
-    location: "myhive Colombo",
+    location: "Hive Colombo",
   },
   CA_ON: {
     phone: "+1 437 254 3077",
     email: "hello@myhive.biz",
-    location: "myhive Toronto - Ontario",
+    location: "Hive Toronto",
   },
   CA_BC: {
     phone: "+1 236 979 1372",
     email: "hello@myhive.biz",
-    location: "myhive Vancouver - British Columbia",
+    location: "Hive Doha",
   },
   // US: {
   //   phone: "+1 236 939 1372",
@@ -53,12 +55,19 @@ const ContactModal: React.FC<ContactModalProps> = ({
   const contactInfo = contactInfoByRegion[regionCode] || contactInfoByRegion.LK;
 
   const getEmailAddress = (planTitle: string) => {
-    return planTitle === "Special Plan"
+    return planTitle === "Alliance Plan" || planTitle === "Special Plan"
       ? "alliances@myhive.biz"
       : contactInfo.email;
   };
 
+  const getPhoneNumber = (planTitle: string) => {
+    return planTitle === "Alliance Plan" || planTitle === "Special Plan"
+      ? "+1 (437) 254-3077"
+      : contactInfo.phone;
+  };
+
   const emailAddress = getEmailAddress(plan.title);
+  const phoneNumber = getPhoneNumber(plan.title);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -77,7 +86,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
             using the information below:
           </p>
           <p className="mb-2">Phone:</p>
-          <p className="font-bold mb-4">{contactInfo.phone}</p>
+          <p className="font-bold mb-4">{phoneNumber}</p>
           <p className="mb-2">Email:</p>
           <p className="font-bold mb-4">{emailAddress}</p>
           <p className="text-sm text-gray-600">{contactInfo.location}</p>

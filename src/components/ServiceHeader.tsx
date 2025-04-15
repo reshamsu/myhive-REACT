@@ -52,9 +52,7 @@ export default function ServiceHeader() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-8 text-lg leading-relaxed text-gray-600 md:text-xl"
           >
-            Discover our comprehensive suite of business solutions designed to
-            streamline your operations, boost efficiency, and drive growth with
-            cutting-edge Ai technology.
+            Discover our comprehensive suite of business solutions designed to automate and streamline your operations to boost efficiency and drive growth with AI technology.
           </motion.p>
         </motion.div>
       </div>

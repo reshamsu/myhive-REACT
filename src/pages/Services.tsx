@@ -1,7 +1,7 @@
 import CallToAction from "../components/CallToAction";
 import ServiceHeader from "../components/ServiceHeader";
 import ServiceSlider from "../components/ServiceSlider";
-import KeyBenefits from "../components/KeyBenefits";
+// import KeyBenefits from "../components/KeyBenefits";
 import bg2 from "../assets/4.png";
 
 export default function Services() {
@@ -16,7 +16,7 @@ export default function Services() {
       <div className="relative z-10">
         <ServiceHeader />
         <ServiceSlider />
-        <KeyBenefits />
+        {/* <KeyBenefits /> */}
         <CallToAction />
       </div>
     </main>

@@ -19,7 +19,7 @@ interface PriceCardProps {
 }
 
 const PriceCard = ({ plan, onSelect }: PriceCardProps) => {
-  const { title, monthlyPrice, features, isPopular, description } = plan;
+  const { title, monthlyPrice, features, isPopular } = plan;
 
   return (
     <div
@@ -33,13 +33,12 @@ const PriceCard = ({ plan, onSelect }: PriceCardProps) => {
         </div>
       )}
       <div className="p-6 sm:p-8 flex-grow">
-        <h3 className="text-2xl font-bold text-zinc-900 mb-2">{title}</h3>
-        <p className="text-zinc-600 mb-4 text-sm">{description}</p>
+        <h3 className="text-2xl font-bold text-zinc-900 mb-4">{title}</h3>
         <div className="mb-6">
           <span className="text-3xl sm:text-4xl font-bold text-yellow-600">
             {monthlyPrice}
           </span>
-          <span className="text-zinc-500 ml-2">/month</span>
+          <span className="text-zinc-500 ml-2">/month upwards</span>
         </div>
 
         <ul className="space-y-3">
@@ -72,22 +71,34 @@ const EnterpriseCard = ({ onSelect }: { onSelect: () => void }) => (
     <div className="flex flex-col md:flex-row items-center justify-between">
       <div className="mb-6 md:mb-0 md:mr-8">
         <h3 className="text-2xl font-bold mb-3">Alliance</h3>
-        <p className="mb-4">
+        {/* <p className="mb-4">
           Custom solutions for organizations with advanced needs and larger
           teams
-        </p>
+        </p> */}
         <ul className="space-y-3">
           <li className="flex items-start">
             <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
-            <span>Join our exclusive network of prestigious alliances</span>
+            <span>Lifetime Pro Plan (Pro Product & Service)</span>
           </li>
           <li className="flex items-start">
             <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
-            <span>Custom integrations and dedicated support</span>
+            <span>Exclusive Global Network of Prestigious Alliances!</span>
           </li>
           <li className="flex items-start">
             <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
-            <span>All Pro features plus enterprise-grade security</span>
+            <span>All Future Developments & Features FREE of Cost!</span>
+          </li>
+          <li className="flex items-start">
+            <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
+            <span>⁠FREE Training</span>
+          </li>
+          <li className="flex items-start">
+            <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
+            <span>Priority Level Support!</span>
+          </li>
+          <li className="flex items-start">
+            <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
+            <span>⁠Designated Team Just For You!</span>
           </li>
         </ul>
       </div>
@@ -135,28 +146,14 @@ export default function Price() {
       monthlyPrice: "$100",
       price: "USD 100",
       description: "For small businesses and startups",
-      features: [
-        "CRM System with Basic Features",
-        "⁠1-Page Website & Social Media Scheduling",
-        "⁠Basic Workflows & Automation",
-        "Email & SMS Communication",
-        "Basic Invoicing & Payment Tracking",
-        "Basic Performance Reports",
-      ],
+      features: ["Startups", "⁠Freelances", "Brand Builders"],
     },
     {
       title: "Essential Plan",
       monthlyPrice: "$500",
       price: "USD 500",
       description: "For established businesses with advanced needs",
-      features: [
-        "Includes all Core Plan features",
-        "Full Ai-Driven Lead Management & Optimization",
-        "Multi-Channel Ai Support (Email, SMS, Voice, Chatbots)⁠",
-        "Advanced Paid Ad & Social Media Management",
-        "Ai-Optimized Customer Engagement & Retention Strategy",
-        "Deep Data Insights & Performance Forecasting",
-      ],
+      features: ["Brand Builders", "Startups", "Small Scale Businesses"],
       isPopular: true,
     },
     {
@@ -165,12 +162,10 @@ export default function Price() {
       price: "USD 1000",
       description: "For growing businesses and teams",
       features: [
-        "Includes all Essential Plan features",
-        "⁠Pro-Level CRM & Advanced Automation",
-        "Full Website with Blog & SEO",
-        "Ai-Generated Content & Blog Writing",
-        "Voice Ai Bot for Customer Interactions",
-        "Advanced Reports & Analytics",
+        "Brand Builders",
+        "Startups",
+        "Small Scale Businesses",
+        "Medium Scale Businesses",
       ],
     },
   ];
@@ -194,8 +189,8 @@ export default function Price() {
               Pricing <span className="font-bold">Plans</span>
             </h2>
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
-              Choose the perfect plan to elevate your business with myHiVE's
-              cutting-edge solutions.
+              Choose the perfect plan to elevate your brand and empower your
+              business with myhives solutions
             </p>
           </div>
 

@@ -67,8 +67,8 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-6 max-w-xl text-lg text-gray-600 md:mx-auto lg:mx-0"
             >
-              Experience the future of operations with myhive – the all-in-one
-              platform designed for unparalleled success and growth.
+              Ready to transform brands and business and empowered their
+              operations with our platform
             </motion.p>
 
             <motion.div
@@ -79,9 +79,9 @@ export default function HeroSection() {
             >
               <button
                 className="group w-full rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
-                onClick={() => handleNavigation("/pricing")}
+                onClick={() => handleNavigation("/about")}
               >
-                Get Started
+                Explore Our Locations
                 <ChevronRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
 

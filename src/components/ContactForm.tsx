@@ -4,7 +4,7 @@ import type React from "react";
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Building2, Send } from "lucide-react";
+import { Mail, Phone, Clock, Building2, Send } from "lucide-react";
 
 interface ContactInfo {
   phone: string;
@@ -20,29 +20,29 @@ const officeLocations: ContactInfo[] = [
   {
     phone: "+94 71 766 8690",
     whatsapp: "94717668690", // Sri Lanka format
-    email: "hello@myhive.biz",
+    email: "hello@myhive.biz, support@myhive.biz, alliances@myhive.biz",
     address: "No. 146/5, Havelock Road",
     location: "Colombo 05, Sri Lanka",
     workingHours: "9am - 6pm IST, Monday - Friday",
-    officeDetails: "myHiVE Colombo - Head Office",
+    officeDetails: "Hive Colombo - Head Office",
   },
   {
     phone: "+1 437 254 3077",
     whatsapp: "14372543077", // Canada format
-    email: "hello@myhive.biz",
+    email: "hello@myhive.biz, support@myhive.biz, alliances@myhive.biz",
     address: "100 City Centre Dr",
     location: "Mississauga, Ontario L5B 2C9, Canada",
     workingHours: "9am - 6pm EST, Monday - Friday",
-    officeDetails: "myHiVE Toronto - Ontario Branch",
+    officeDetails: "Hive Toronto - Ontario",
   },
   {
     phone: "+1 236 979 1372",
     whatsapp: "12369791372", // Canada format
-    email: "hello@myhive.biz",
+    email: "hello@myhive.biz, support@myhive.biz, alliances@myhive.biz",
     address: "1021 West Hastings Street",
     location: "Vancouver, BC V6E 0C3, Canada",
     workingHours: "9am - 6pm PST, Monday - Friday",
-    officeDetails: "myHiVE Vancouver - British Columbia Branch",
+    officeDetails: "Hive Doha - Qatar",
   },
 ];
 
@@ -142,7 +142,7 @@ export default function ContactForm() {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="mb-8 text-gray-800/90"
               >
-                We're here to assist you with any inquiries about our services.
+                We're here to assist you with any inquiries about our solutions.
               </motion.p>
 
               {/* Office Selection Tabs */}
@@ -213,17 +213,27 @@ export default function ContactForm() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.8 }}
-                  className="flex items-center"
+                  className="flex items-start"
                 >
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-500/30">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <span className="ml-4">
-                    {officeLocations[selectedOffice].email}
-                  </span>
+                  <div className="ml-4 flex flex-col">
+                    {officeLocations[selectedOffice].email
+                      .split(", ")
+                      .map((email, index) => (
+                        <a
+                          key={index}
+                          href={`mailto:${email}`}
+                          className="hover:text-gray-900 transition duration-300"
+                        >
+                          {email}
+                        </a>
+                      ))}
+                  </div>
                 </motion.div>
 
-                <motion.div
+                {/* <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.9 }}
@@ -237,7 +247,7 @@ export default function ContactForm() {
                       <p>{officeLocations[selectedOffice].location}</p>
                     </div>
                   </div>
-                </motion.div>
+                </motion.div> */}
 
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}

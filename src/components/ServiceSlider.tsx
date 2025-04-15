@@ -1,19 +1,24 @@
 "use client";
 
-import type React from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   Server,
   MessageSquare,
   CheckCircle,
-  ArrowRight,
   Zap,
   Globe,
   BarChart3,
-  MessageCircle,
+  Bot,
   PenTool,
   Share2,
+  Mic,
+  LineChart,
+  Clock,
+  Users,
+  Phone,
+  ArrowRight,
 } from "lucide-react";
 
 interface FeatureItem {
@@ -34,90 +39,108 @@ interface ServiceSection {
 const productSection: ServiceSection = {
   title: "All-in-one-CRM",
   subtitle: "Product",
-  description:
-    "A comprehensive solution that streamlines your business operations and enhances customer relationships.",
+  description: "",
   mainIcon: Server,
-  ctaText: "Explore Your Benefits",
+  ctaText: "Explore More Featuers",
   features: [
     {
-      title: "All-In-One CRM",
-      description:
-        "Saves time & cost with a cross-functional platform specialized in multiple business functions.",
+      title: "CRM",
+      description: "",
       icon: Globe,
     },
     {
       title: "Integratable",
-      description:
-        "User flexible with options to integrate preferred applications like WordPress, WhatsApp & more.",
+      description: "",
       icon: Share2,
     },
     {
       title: "Cross Functional",
-      description:
-        "One Platform for multiple lines of business functions that work together, unlike traditional CRMs limited to one line of functions.",
+      description: "",
       icon: BarChart3,
     },
     {
-      title: "Ai Driven",
-      description:
-        "Innovative advantage with Ai-powered features evolving daily, staying ahead of the industry.",
+      title: "AI Powered",
+      description: "",
       icon: Zap,
     },
     {
       title: "Cloud Platform",
-      description:
-        "Saves space with no installation or updates required, accessible from anywhere.",
+      description: "",
       icon: Server,
     },
     {
       title: "Consistent Performance",
-      description:
-        "Ai - Driven functions ensure reliable operation at peak performance every second of the day.",
+      description: "",
       icon: CheckCircle,
     },
-    // {
-    //   title: "Text & Voice Ai Communication",
-    //   description: "Automate client interactions via emails, SMS, and voice.",
-    //   icon: MessageCircle,
-    // },
   ],
 };
 
+// Key benefits for product section
+const productBenefits: FeatureItem[] = [
+  {
+    title: "Saves Time & Cost",
+    description: "",
+    icon: Clock,
+  },
+  {
+    title: "User Flexible",
+    description: "",
+    icon: Zap,
+  },
+  {
+    title: "Innovative Advantage",
+    description: "",
+    icon: Globe,
+  },
+  {
+    title: "Consistent Performance",
+    description: "",
+    icon: BarChart3,
+  },
+  {
+    title: "Saves Space",
+    description: "",
+    icon: Server,
+  },
+];
+
+// Key services for service section
+const serviceFeatures: FeatureItem[] = [
+  {
+    title: "Automation",
+    description: "",
+    icon: Zap,
+  },
+  {
+    title: "Website Building Design & Development",
+    description: "",
+    icon: PenTool,
+  },
+  {
+    title: "Live & AI Chatbots",
+    description: "",
+    icon: Bot,
+  },
+  {
+    title: "AI Voice Assistants & Employees",
+    description: "",
+    icon: Mic,
+  },
+  {
+    title: "Business Consultation",
+    description: "",
+    icon: LineChart,
+  },
+];
+
 const serviceSection: ServiceSection = {
-  title: "Digital Services",
+  title: "Business Technology",
   subtitle: "Services",
-  description:
-    "Expert digital solutions to elevate your brand presence and engage your audience effectively.",
+  description: "",
   mainIcon: MessageSquare,
-  ctaText: "View Our Services",
-  features: [
-    {
-      title: "Website Building & Development",
-      description: "Professional, SEO-optimized, and conversion-focused sites.",
-      icon: PenTool,
-    },
-    {
-      title: "Marketing Automation",
-      description: "Ai-driven workflows for customer engagement.",
-      icon: Zap,
-    },
-    {
-      title: "Live Chatbots & Ai Voice Assistants",
-      description: "24/7 automated customer support.",
-      icon: MessageCircle,
-    },
-    {
-      title: "Social Media Management",
-      description: "One-click posting and performance tracking.",
-      icon: Share2,
-    },
-    {
-      title: "Content Creation",
-      description:
-        "Ai-generated content for blogs, emails, and marketing campaigns.",
-      icon: PenTool,
-    },
-  ],
+  ctaText: "Explore More Featuers",
+  features: serviceFeatures,
 };
 
 export default function ServiceSlider() {
@@ -128,10 +151,19 @@ export default function ServiceSlider() {
     setIsLoaded(true);
   }, []);
 
-  const scrollToKeyBenefits = () => {
-    const keyBenefitsSection = document.getElementById("key-benefits");
-    if (keyBenefitsSection) {
-      keyBenefitsSection.scrollIntoView({ behavior: "smooth" });
+  // Function to scroll to benefits section
+  const scrollToProductBenefits = () => {
+    const benefitsSection = document.getElementById("product-benefits");
+    if (benefitsSection) {
+      benefitsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Function to scroll to services section
+  const scrollToServiceBenefits = () => {
+    const servicesSection = document.getElementById("service-benefits");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -225,10 +257,38 @@ export default function ServiceSlider() {
                 ))}
               </div>
 
+              {/* Key Benefits Section */}
+              <div className="mt-16" id="product-benefits">
+                <div className="text-center mb-10">
+                  <h3 className="text-2xl font-bold mb-4">Explore More Services</h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto">Our busines technology offers the following services</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {productBenefits.map((benefit, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.5, delay: 0.1 + idx * 0.1 }}
+                      className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                    >
+                      <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6">
+                        {React.createElement(benefit.icon, {
+                          className: "h-6 w-6",
+                        })}
+                      </div>
+                      <h3 className="text-lg mb-3">{benefit.title}</h3>
+                      <p className="text-gray-600">{benefit.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
               {/* CTA Button */}
-              <div className="text-center">
+              <div className="text-center mt-8">
                 <button
-                  onClick={scrollToKeyBenefits}
+                  onClick={scrollToProductBenefits}
                   className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
                 >
                   {productSection.ctaText}
@@ -256,6 +316,7 @@ export default function ServiceSlider() {
                   <div className="h-16 w-16 rounded-2xl bg-yellow-600 text-white flex items-center justify-center shadow-lg">
                     <serviceSection.mainIcon className="h-8 w-8" />
                   </div>
+                  .
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-yellow-600 uppercase tracking-wider mb-2">
@@ -270,39 +331,97 @@ export default function ServiceSlider() {
                 </div>
               </div>
 
-              {/* Features Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-                {serviceSection.features.map((feature, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.1 + idx * 0.05 }}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
-                  >
-                    <div className="flex items-start">
-                      <div className="mr-4 mt-1 h-10 w-10 rounded-lg bg-yellow-600/10 text-yellow-600 flex items-center justify-center">
-                        <feature.icon className="h-5 w-5" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          {feature.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
+              {/* Key Services Section */}
+              <div className="mt-8">
+                <div className="text-center mb-10">
+                  <h3 className="text-2xl font-bold mb-4">Key Services</h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto"></p>
+                </div>
 
-              {/* CTA Button */}
-              <div className="text-center">
-                <button className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200">
-                  {serviceSection.ctaText}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                  {serviceFeatures.map((feature, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.4, delay: 0.1 + idx * 0.05 }}
+                      className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+                    >
+                      <div className="flex items-start">
+                        <div className="mr-4 mt-1 h-10 w-10 rounded-lg bg-yellow-600/10 text-yellow-600 flex items-center justify-center">
+                          <feature.icon className="h-5 w-5" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 mb-2">
+                            {feature.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm">
+                            {feature.description}
+                          </p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Service Benefits Section */}
+                <div className="mt-16" id="service-benefits">
+                  <div className="text-center mb-10">
+                    <h3 className="text-2xl font-bold mb-4">
+                      Service Benefits
+                    </h3>
+                    <p className="text-gray-600 max-w-2xl mx-auto"></p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                      <div className="flex items-center mb-4">
+                        <Clock className="h-6 w-6 text-yellow-600 mr-3" />
+                        <h4 className="">Saves Time</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm"></p>
+                    </div>
+                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                      <div className="flex items-center mb-4">
+                        <Zap className="h-6 w-6 text-yellow-600 mr-3" />
+                        <h4 className="">Saves Cost</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm"></p>
+                    </div>
+                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                      <div className="flex items-center mb-4">
+                        <Users className="h-6 w-6 text-yellow-600 mr-3" />
+                        <h4 className="">Real-Life Engagement</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm"></p>
+                    </div>
+                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                      <div className="flex items-center mb-4">
+                        <Phone className="h-6 w-6 text-yellow-600 mr-3" />
+                        <h4 className="">Real-Time Engagement</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm"></p>
+                    </div>
+                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
+                      <div className="flex items-center mb-4">
+                        <LineChart className="h-6 w-6 text-yellow-600 mr-3" />
+                        <h4 className="">Advanced Consultation</h4>
+                      </div>
+                      <p className="text-gray-600 text-sm"></p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Button */}
+                <div className="text-center mt-8">
+                  <button
+                    onClick={scrollToServiceBenefits}
+                    className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
+                  >
+                    {serviceSection.ctaText}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>
