@@ -45,8 +45,8 @@ const officeLocations: OfficeInfo[] = [
   },
   {
     name: "Hive Doha - Qatar",
-    phone: "+1 236 979 1372",
-    whatsapp: "12369791372", // Qatar format
+    phone: "+974 3120 7455",
+    whatsapp: "97431207455", // Qatar format
     email: "hello@myhive.biz",
     address: "1021 West Hastings Street",
     location: "Vancouver, BC V6E 0C3, Canada",
