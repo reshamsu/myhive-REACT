@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const stats = [
   { value: "99%", label: "Customer Satisfaction" },
   { value: "24/7", label: "Support Available" },
-  { value: "10x", label: "Time Saving" },
+  { value: "10x Plus", label: "Time Saving" },
   { value: "100k+", label: "Active Platform Users" },
 ];
 

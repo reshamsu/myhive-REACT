@@ -24,7 +24,7 @@ const officeLocations: ContactInfo[] = [
     address: "No. 146/5, Havelock Road",
     location: "Colombo 05, Sri Lanka",
     workingHours: "9am - 6pm IST, Monday - Friday",
-    officeDetails: "Hive Colombo - Head Office",
+    officeDetails: "Hive Colombo - Sri Lanka (HQ)",
   },
   {
     phone: "+1 437 254 3077",
@@ -33,7 +33,7 @@ const officeLocations: ContactInfo[] = [
     address: "100 City Centre Dr",
     location: "Mississauga, Ontario L5B 2C9, Canada",
     workingHours: "9am - 6pm EST, Monday - Friday",
-    officeDetails: "Hive Toronto - Ontario",
+    officeDetails: "Hive Toronto - Canada",
   },
   {
     phone: "+974 3120 7455",

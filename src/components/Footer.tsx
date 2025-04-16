@@ -6,7 +6,6 @@ import {
   FaFacebook,
   FaInstagram,
   FaLinkedin,
-  FaTiktok,
   FaWhatsapp,
   FaEnvelope,
 } from "react-icons/fa";
@@ -103,7 +102,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-gray-100 text-gray-800 py-16 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* First Column with Company Info and Quick Links */}
           <div className="lg:col-span-1">
             {/* Company Info */}
@@ -141,49 +140,14 @@ const Footer: React.FC = () => {
                   <FaLinkedin size={24} />
                 </a>
                 <a
-                  href="https://www.tiktok.com/@hive.biz"
+                  href={`https://wa.me/${officeLocations[selectedOffice].whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-yellow-600 transition duration-300"
                 >
-                  <FaTiktok size={24} />
+                  <FaWhatsapp size={24} />
                 </a>
               </div>
-            </div>
-          </div>
-
-          {/* Google Map Column */}
-          <div className="lg:col-span-1">
-            <h3 className="text-lg font-semibold mb-4">Find Us</h3>
-            <div className="h-48 w-full rounded-lg overflow-hidden shadow-md mb-2">
-              <iframe
-                title="Office Location Map"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                style={{ border: 0 }}
-                src={`https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=${
-                  officeLocations[selectedOffice].mapLocation
-                }&zoom=15&maptype=roadmap&language=en&region=${
-                  officeLocations[selectedOffice].countryCode.split("_")[0]
-                }&style=feature:administrative|element:geometry|visibility:off&style=feature:poi|visibility:simplified&style=feature:road|element:labels.icon|visibility:off&style=feature:transit|visibility:off&style=feature:water|color:0xe0f2f7&style=feature:landscape|color:0xf5f5f5&style=feature:road|element:geometry|color:0xffffff&style=feature:poi|element:geometry|color:0xf0f0f0&style=feature:all|element:labels.text.fill|color:0x616161&style=feature:all|element:labels.text.stroke|color:0xffffff&style=feature:road|element:geometry.stroke|color:0xf5f5f5`}
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="flex flex-wrap gap-2 mt-2">
-              {officeLocations.map((office, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedOffice(index)}
-                  className={`px-2 py-1 text-xs rounded-full transition-colors ${
-                    selectedOffice === index
-                      ? "bg-yellow-600 text-white"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
-                >
-                  {office.name.split(" - ")[0]}
-                </button>
-              ))}
             </div>
           </div>
 

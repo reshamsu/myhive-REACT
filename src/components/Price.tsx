@@ -78,7 +78,7 @@ const EnterpriseCard = ({ onSelect }: { onSelect: () => void }) => (
         <ul className="space-y-3">
           <li className="flex items-start">
             <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
-            <span>Lifetime Pro Plan (Pro Product & Service)</span>
+            <span>Lifetime Pro Plan</span>
           </li>
           <li className="flex items-start">
             <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
@@ -90,7 +90,7 @@ const EnterpriseCard = ({ onSelect }: { onSelect: () => void }) => (
           </li>
           <li className="flex items-start">
             <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
-            <span>⁠FREE Training</span>
+            <span>⁠FREE Training!</span>
           </li>
           <li className="flex items-start">
             <Check className="h-5 w-5 mr-2 flex-shrink-0 mt-1" />
@@ -146,14 +146,14 @@ export default function Price() {
       monthlyPrice: "$100",
       price: "USD 100",
       description: "For small businesses and startups",
-      features: ["Startups", "⁠Freelances", "Brand Builders"],
+      features: ["Startups", "⁠Freelancers", "Brand Builders"],
     },
     {
       title: "Essential Plan",
       monthlyPrice: "$500",
       price: "USD 500",
       description: "For established businesses with advanced needs",
-      features: ["Brand Builders", "Startups", "Small Scale Businesses"],
+      features: ["Brand Builders","Freelancers", "Startups", "Small Scale Businesses"],
       isPopular: true,
     },
     {
@@ -162,7 +162,6 @@ export default function Price() {
       price: "USD 1000",
       description: "For growing businesses and teams",
       features: [
-        "Brand Builders",
         "Startups",
         "Small Scale Businesses",
         "Medium Scale Businesses",
@@ -190,7 +189,7 @@ export default function Price() {
             </h2>
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
               Choose the perfect plan to elevate your brand and empower your
-              business with myhives solutions
+              business with myhives' solutions
             </p>
           </div>
 

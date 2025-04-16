@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import {
   Server,
   MessageSquare,
-  CheckCircle,
   Zap,
   Globe,
   BarChart3,
@@ -37,41 +36,42 @@ interface ServiceSection {
 }
 
 const productSection: ServiceSection = {
-  title: "All-in-one-CRM",
+  title: "CRM Platform",
   subtitle: "Product",
-  description: "",
+  description:
+    "A comprehensive solution that streamlines your business operations and enhances customer relationships.",
   mainIcon: Server,
-  ctaText: "Explore More Featuers",
+  ctaText: "Explore Your Features",
   features: [
     {
-      title: "CRM",
-      description: "",
+      title: "All-In-One CRM",
+      description:
+        "Manage all your customer relationships and interactions in one centralized platform.",
       icon: Globe,
     },
     {
       title: "Integratable",
-      description: "",
+      description:
+        "Seamlessly connect with your favorite tools like WordPress, WhatsApp, and other business applications.",
       icon: Share2,
     },
     {
       title: "Cross Functional",
-      description: "",
+      description:
+        "One platform handling multiple business functions, eliminating the need for separate specialized systems.",
       icon: BarChart3,
     },
     {
       title: "AI Powered",
-      description: "",
+      description:
+        "Advanced artificial intelligence that learns from your data to provide smarter insights and automation.",
       icon: Zap,
     },
     {
       title: "Cloud Platform",
-      description: "",
+      description:
+        "Access your business data securely from anywhere without the need for local installations.",
       icon: Server,
-    },
-    {
-      title: "Consistent Performance",
-      description: "",
-      icon: CheckCircle,
     },
   ],
 };
@@ -80,27 +80,32 @@ const productSection: ServiceSection = {
 const productBenefits: FeatureItem[] = [
   {
     title: "Saves Time & Cost",
-    description: "",
+    description:
+      "Reduce operational expenses and increase efficiency with our all-in-one platform.",
     icon: Clock,
   },
   {
     title: "User Flexible",
-    description: "",
+    description:
+      "Customize your experience by integrating with your preferred tools and applications.",
     icon: Zap,
   },
   {
     title: "Innovative Advantage",
-    description: "",
+    description:
+      "Stay ahead of competitors with cutting-edge AI technology that continuously evolves.",
     icon: Globe,
   },
   {
     title: "Consistent Performance",
-    description: "",
+    description:
+      "Experience reliable operation with AI-driven functions that maintain peak performance 24/7.",
     icon: BarChart3,
   },
   {
     title: "Saves Space",
-    description: "",
+    description:
+      "Eliminate the need for physical servers with our cloud-based platform that scales with your business.",
     icon: Server,
   },
 ];
@@ -109,27 +114,32 @@ const productBenefits: FeatureItem[] = [
 const serviceFeatures: FeatureItem[] = [
   {
     title: "Automation",
-    description: "",
+    description:
+      "Streamline repetitive tasks and workflows with intelligent automation that saves time and reduces errors.",
     icon: Zap,
   },
   {
-    title: "Website Building Design & Development",
-    description: "",
+    title: "Website Building, Design & Development",
+    description:
+      "Create professional, responsive websites tailored to your brand with SEO optimization and conversion-focused design.",
     icon: PenTool,
   },
   {
     title: "Live & AI Chatbots",
-    description: "",
+    description:
+      "Provide 24/7 customer support with intelligent conversational interfaces that handle inquiries efficiently.",
     icon: Bot,
   },
   {
     title: "AI Voice Assistants & Employees",
-    description: "",
+    description:
+      "Deploy natural-sounding voice solutions for customer service that sound like real human interactions.",
     icon: Mic,
   },
   {
     title: "Business Consultation",
-    description: "",
+    description:
+      "Receive expert guidance on optimizing your operations with data-driven insights and recommendations.",
     icon: LineChart,
   },
 ];
@@ -137,9 +147,10 @@ const serviceFeatures: FeatureItem[] = [
 const serviceSection: ServiceSection = {
   title: "Business Technology",
   subtitle: "Services",
-  description: "",
+  description:
+    "Expert digital solutions to elevate your brand presence and engage your audience effectively.",
   mainIcon: MessageSquare,
-  ctaText: "Explore More Featuers",
+  ctaText: "Explore More Features",
   features: serviceFeatures,
 };
 
@@ -230,38 +241,55 @@ export default function ServiceSlider() {
                 </div>
               </div>
 
-              {/* Features Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-                {productSection.features.map((feature, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.1 + idx * 0.05 }}
-                    className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
-                  >
-                    <div className="flex items-start">
-                      <div className="mr-4 mt-1 h-10 w-10 rounded-lg bg-yellow-600/10 text-yellow-600 flex items-center justify-center">
-                        <feature.icon className="h-5 w-5" />
+              {/* Key Features Card */}
+              <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 mb-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold mb-4">Key Features</h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto">
+                    Our platform offers powerful capabilities to transform your
+                    business operations
+                  </p>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {productSection.features.map((feature, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.4, delay: 0.1 + idx * 0.05 }}
+                      className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
+                    >
+                      <div className="flex flex-col items-center">
+                        <div className="mb-4 h-12 w-12 rounded-lg bg-yellow-600/10 text-yellow-600 flex items-center justify-center">
+                          <feature.icon className="h-6 w-6" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-gray-900 mb-2">
+                            {feature.title}
+                          </h3>
+                          <p className="text-gray-600 text-sm">
+                            {feature.description}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">
-                          {feature.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          {feature.description}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
               </div>
 
-              {/* Key Benefits Section */}
-              <div className="mt-16" id="product-benefits">
-                <div className="text-center mb-10">
-                  <h3 className="text-2xl font-bold mb-4">Explore More Services</h3>
-                  <p className="text-gray-600 max-w-2xl mx-auto">Our busines technology offers the following services</p>
+              {/* Explore More Services Card */}
+              <div
+                className="bg-white rounded-2xl shadow-md p-6 md:p-8"
+                id="product-benefits"
+              >
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold mb-4">
+                    Explore More Services
+                  </h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto">
+                    Our business technology offers the following services to
+                    enhance your operations
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -271,9 +299,9 @@ export default function ServiceSlider() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.5, delay: 0.1 + idx * 0.1 }}
-                      className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+                      className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center"
                     >
-                      <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6">
+                      <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
                         {React.createElement(benefit.icon, {
                           className: "h-6 w-6",
                         })}
@@ -283,17 +311,17 @@ export default function ServiceSlider() {
                     </motion.div>
                   ))}
                 </div>
-              </div>
 
-              {/* CTA Button */}
-              <div className="text-center mt-8">
-                <button
-                  onClick={scrollToProductBenefits}
-                  className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
-                >
-                  {productSection.ctaText}
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </button>
+                {/* CTA Button */}
+                <div className="text-center mt-8">
+                  <button
+                    onClick={scrollToProductBenefits}
+                    className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
+                  >
+                    {productSection.ctaText}
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -316,7 +344,6 @@ export default function ServiceSlider() {
                   <div className="h-16 w-16 rounded-2xl bg-yellow-600 text-white flex items-center justify-center shadow-lg">
                     <serviceSection.mainIcon className="h-8 w-8" />
                   </div>
-                  .
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold text-yellow-600 uppercase tracking-wider mb-2">
@@ -331,25 +358,28 @@ export default function ServiceSlider() {
                 </div>
               </div>
 
-              {/* Key Services Section */}
-              <div className="mt-8">
-                <div className="text-center mb-10">
+              {/* Key Services Card */}
+              <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 mb-8">
+                <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-4">Key Services</h3>
-                  <p className="text-gray-600 max-w-2xl mx-auto"></p>
+                  <p className="text-gray-600 max-w-2xl mx-auto">
+                    Our comprehensive range of services designed to elevate your
+                    business
+                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {serviceFeatures.map((feature, idx) => (
                     <motion.div
                       key={idx}
                       initial={{ opacity: 0, y: 20 }}
                       animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.4, delay: 0.1 + idx * 0.05 }}
-                      className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+                      className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
                     >
-                      <div className="flex items-start">
-                        <div className="mr-4 mt-1 h-10 w-10 rounded-lg bg-yellow-600/10 text-yellow-600 flex items-center justify-center">
-                          <feature.icon className="h-5 w-5" />
+                      <div className="flex flex-col items-center">
+                        <div className="mb-4 h-12 w-12 rounded-lg bg-yellow-600/10 text-yellow-600 flex items-center justify-center">
+                          <feature.icon className="h-6 w-6" />
                         </div>
                         <div>
                           <h3 className="font-semibold text-gray-900 mb-2">
@@ -363,52 +393,73 @@ export default function ServiceSlider() {
                     </motion.div>
                   ))}
                 </div>
+              </div>
 
-                {/* Service Benefits Section */}
-                <div className="mt-16" id="service-benefits">
-                  <div className="text-center mb-10">
-                    <h3 className="text-2xl font-bold mb-4">
-                      Service Benefits
-                    </h3>
-                    <p className="text-gray-600 max-w-2xl mx-auto"></p>
+              {/* Service Benefits Card */}
+              <div
+                className="bg-white rounded-2xl shadow-md p-6 md:p-8"
+                id="service-benefits"
+              >
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold mb-4">Service Benefits</h3>
+                  <p className="text-gray-600 max-w-2xl mx-auto">
+                    How our services create value and transform your business
+                    operations
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
+                      <Clock className="h-6 w-6" />
+                    </div>
+                    <h4 className="text-lg mb-3">Saves Time</h4>
+                    <p className="text-gray-600 text-sm">
+                      AI-driven automation executes business functions in
+                      seconds, reducing manual workload and boosting
+                      productivity.
+                    </p>
                   </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <Clock className="h-6 w-6 text-yellow-600 mr-3" />
-                        <h4 className="">Saves Time</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm"></p>
+                  <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
+                      <Zap className="h-6 w-6" />
                     </div>
-                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <Zap className="h-6 w-6 text-yellow-600 mr-3" />
-                        <h4 className="">Saves Cost</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm"></p>
+                    <h4 className="text-lg mb-3">Saves Cost</h4>
+                    <p className="text-gray-600 text-sm">
+                      Consistent AI-powered performance eliminates
+                      inefficiencies and reduces operational expenses.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
+                      <Users className="h-6 w-6" />
                     </div>
-                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <Users className="h-6 w-6 text-yellow-600 mr-3" />
-                        <h4 className="">Real-Life Engagement</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm"></p>
+                    <h4 className="text-lg mb-3">Real-Life Engagement</h4>
+                    <p className="text-gray-600 text-sm">
+                      Activity-based approach with brand-resonating
+                      personalities creates authentic connections with your
+                      audience.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
+                      <Phone className="h-6 w-6" />
                     </div>
-                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <Phone className="h-6 w-6 text-yellow-600 mr-3" />
-                        <h4 className="">Real-Time Engagement</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm"></p>
+                    <h4 className="text-lg mb-3">Real-Time Engagement</h4>
+                    <p className="text-gray-600 text-sm">
+                      Inquiry-based approach with brand-representing personas
+                      provides immediate, personalized customer responses.
+                    </p>
+                  </div>
+                  <div className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center">
+                    <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
+                      <LineChart className="h-6 w-6" />
                     </div>
-                    <div className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm">
-                      <div className="flex items-center mb-4">
-                        <LineChart className="h-6 w-6 text-yellow-600 mr-3" />
-                        <h4 className="">Advanced Consultation</h4>
-                      </div>
-                      <p className="text-gray-600 text-sm"></p>
-                    </div>
+                    <h4 className="text-lg mb-3">Advanced Consultation</h4>
+                    <p className="text-gray-600 text-sm">
+                      Deep data insights, AI forecasting, and real-time
+                      analytics inform strategic business decisions.
+                    </p>
                   </div>
                 </div>
 
