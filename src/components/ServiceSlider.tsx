@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Server,
@@ -41,7 +41,7 @@ const productSection: ServiceSection = {
   description:
     "A comprehensive solution that streamlines your business operations and enhances customer relationships.",
   mainIcon: Server,
-  ctaText: "Explore Your Features",
+  ctaText: "Explore Key Features",
   features: [
     {
       title: "All-In-One CRM",
@@ -62,7 +62,7 @@ const productSection: ServiceSection = {
       icon: BarChart3,
     },
     {
-      title: "AI Powered",
+      title: "Ai Powered",
       description:
         "Advanced artificial intelligence that learns from your data to provide smarter insights and automation.",
       icon: Zap,
@@ -93,13 +93,13 @@ const productBenefits: FeatureItem[] = [
   {
     title: "Innovative Advantage",
     description:
-      "Stay ahead of competitors with cutting-edge AI technology that continuously evolves.",
+      "Stay ahead of competitors with cutting-edge Ai technology that continuously evolves.",
     icon: Globe,
   },
   {
     title: "Consistent Performance",
     description:
-      "Experience reliable operation with AI-driven functions that maintain peak performance 24/7.",
+      "Experience reliable operation with Ai-driven functions that maintain peak performance 24/7.",
     icon: BarChart3,
   },
   {
@@ -125,13 +125,13 @@ const serviceFeatures: FeatureItem[] = [
     icon: PenTool,
   },
   {
-    title: "Live & AI Chatbots",
+    title: "Live & Ai Chatbots",
     description:
       "Provide 24/7 customer support with intelligent conversational interfaces that handle inquiries efficiently.",
     icon: Bot,
   },
   {
-    title: "AI Voice Assistants & Employees",
+    title: "Ai Voice Assistants & Employees",
     description:
       "Deploy natural-sounding voice solutions for customer service that sound like real human interactions.",
     icon: Mic,
@@ -150,7 +150,7 @@ const serviceSection: ServiceSection = {
   description:
     "Expert digital solutions to elevate your brand presence and engage your audience effectively.",
   mainIcon: MessageSquare,
-  ctaText: "Explore More Features",
+  ctaText: "Explore Key Services",
   features: serviceFeatures,
 };
 
@@ -158,24 +158,31 @@ export default function ServiceSlider() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeTab, setActiveTab] = useState<"product" | "service">("product");
 
+  // Create refs for scrolling to sections
+  const productFeaturesRef = useRef<HTMLDivElement>(null);
+  const productBenefitsRef = useRef<HTMLDivElement>(null);
+  const serviceFeaturesRef = useRef<HTMLDivElement>(null);
+  const serviceBenefitsRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
-  // Function to scroll to benefits section
-  const scrollToProductBenefits = () => {
-    const benefitsSection = document.getElementById("product-benefits");
-    if (benefitsSection) {
-      benefitsSection.scrollIntoView({ behavior: "smooth" });
-    }
+  // Scroll functions for each section
+  const scrollToProductFeatures = () => {
+    productFeaturesRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // Function to scroll to services section
+  const scrollToProductBenefits = () => {
+    productBenefitsRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToServiceFeatures = () => {
+    serviceFeaturesRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   const scrollToServiceBenefits = () => {
-    const servicesSection = document.getElementById("service-benefits");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
-    }
+    serviceBenefitsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -242,7 +249,11 @@ export default function ServiceSlider() {
               </div>
 
               {/* Key Features Card */}
-              <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 mb-8">
+              <div
+                ref={productFeaturesRef}
+                className="bg-white rounded-2xl shadow-md p-6 md:p-8 mb-8"
+                id="product-features"
+              >
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-4">Key Features</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
@@ -267,24 +278,36 @@ export default function ServiceSlider() {
                           <h3 className="font-semibold text-gray-900 mb-2">
                             {feature.title}
                           </h3>
-                          <p className="text-gray-600 text-sm">
+                          {/* <p className="text-gray-600 text-sm">
                             {feature.description}
-                          </p>
+                          </p> */}
                         </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Button to navigate to Benefits section */}
+                <div className="text-center mt-8">
+                  <button
+                    onClick={scrollToProductBenefits}
+                    className="inline-flex items-center px-6 py-3 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium hover:bg-yellow-50 transition-colors duration-200"
+                  >
+                    Explore Your Benefits
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
+                </div>
               </div>
 
               {/* Explore More Services Card */}
               <div
+                ref={productBenefitsRef}
                 className="bg-white rounded-2xl shadow-md p-6 md:p-8"
                 id="product-benefits"
               >
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-4">
-                    Explore More Services
+                    Explore YOUR Benefits
                   </h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
                     Our business technology offers the following services to
@@ -306,16 +329,18 @@ export default function ServiceSlider() {
                           className: "h-6 w-6",
                         })}
                       </div>
-                      <h3 className="text-lg mb-3">{benefit.title}</h3>
+                      <h3 className="text-lg mb-3 font-semibold">
+                        {benefit.title}
+                      </h3>
                       <p className="text-gray-600">{benefit.description}</p>
                     </motion.div>
                   ))}
                 </div>
 
-                {/* CTA Button */}
+                {/* Button to navigate to Features section */}
                 <div className="text-center mt-8">
                   <button
-                    onClick={scrollToProductBenefits}
+                    onClick={scrollToProductFeatures}
                     className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
                   >
                     {productSection.ctaText}
@@ -359,7 +384,11 @@ export default function ServiceSlider() {
               </div>
 
               {/* Key Services Card */}
-              <div className="bg-white rounded-2xl shadow-md p-6 md:p-8 mb-8">
+              <div
+                ref={serviceFeaturesRef}
+                className="bg-white rounded-2xl shadow-md p-6 md:p-8 mb-8"
+                id="service-features"
+              >
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-4">Key Services</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
@@ -385,18 +414,30 @@ export default function ServiceSlider() {
                           <h3 className="font-semibold text-gray-900 mb-2">
                             {feature.title}
                           </h3>
-                          <p className="text-gray-600 text-sm">
+                          {/* <p className="text-gray-600 text-sm">
                             {feature.description}
-                          </p>
+                          </p> */}
                         </div>
                       </div>
                     </motion.div>
                   ))}
                 </div>
+
+                {/* Button to navigate to Service Benefits section */}
+                <div className="text-center mt-8">
+                  <button
+                    onClick={scrollToServiceBenefits}
+                    className="inline-flex items-center px-6 py-3 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium hover:bg-yellow-50 transition-colors duration-200"
+                  >
+                    Explore Your Benefits
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </button>
+                </div>
               </div>
 
               {/* Service Benefits Card */}
               <div
+                ref={serviceBenefitsRef}
                 className="bg-white rounded-2xl shadow-md p-6 md:p-8"
                 id="service-benefits"
               >
@@ -413,9 +454,9 @@ export default function ServiceSlider() {
                     <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
                       <Clock className="h-6 w-6" />
                     </div>
-                    <h4 className="text-lg mb-3">Saves Time</h4>
+                    <h4 className="text-lg mb-3 font-semibold">Saves Time</h4>
                     <p className="text-gray-600 text-sm">
-                      AI-driven automation executes business functions in
+                      Ai-driven automation executes business functions in
                       seconds, reducing manual workload and boosting
                       productivity.
                     </p>
@@ -424,9 +465,9 @@ export default function ServiceSlider() {
                     <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
                       <Zap className="h-6 w-6" />
                     </div>
-                    <h4 className="text-lg mb-3">Saves Cost</h4>
+                    <h4 className="text-lg mb-3 font-semibold">Saves Cost</h4>
                     <p className="text-gray-600 text-sm">
-                      Consistent AI-powered performance eliminates
+                      Consistent Ai-powered performance eliminates
                       inefficiencies and reduces operational expenses.
                     </p>
                   </div>
@@ -434,7 +475,9 @@ export default function ServiceSlider() {
                     <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
                       <Users className="h-6 w-6" />
                     </div>
-                    <h4 className="text-lg mb-3">Real-Life Engagement</h4>
+                    <h4 className="text-lg mb-3 font-semibold">
+                      Real-Life Engagement
+                    </h4>
                     <p className="text-gray-600 text-sm">
                       Activity-based approach with brand-resonating
                       personalities creates authentic connections with your
@@ -445,7 +488,9 @@ export default function ServiceSlider() {
                     <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
                       <Phone className="h-6 w-6" />
                     </div>
-                    <h4 className="text-lg mb-3">Real-Time Engagement</h4>
+                    <h4 className="text-lg mb-3 font-semibold">
+                      Real-Time Engagement
+                    </h4>
                     <p className="text-gray-600 text-sm">
                       Inquiry-based approach with brand-representing personas
                       provides immediate, personalized customer responses.
@@ -455,18 +500,20 @@ export default function ServiceSlider() {
                     <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
                       <LineChart className="h-6 w-6" />
                     </div>
-                    <h4 className="text-lg mb-3">Advanced Consultation</h4>
+                    <h4 className="text-lg mb-3 font-semibold">
+                      Advanced Consultation
+                    </h4>
                     <p className="text-gray-600 text-sm">
-                      Deep data insights, AI forecasting, and real-time
+                      Deep data insights, Ai forecasting, and real-time
                       analytics inform strategic business decisions.
                     </p>
                   </div>
                 </div>
 
-                {/* CTA Button */}
+                {/* Button to navigate to Key Services section */}
                 <div className="text-center mt-8">
                   <button
-                    onClick={scrollToServiceBenefits}
+                    onClick={scrollToServiceFeatures}
                     className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
                   >
                     {serviceSection.ctaText}

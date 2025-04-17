@@ -157,8 +157,11 @@ export default function Platform() {
             Our <span className="text-yellow-600">Platform</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-            myhive's solution integrates Ai-driven automation and content with
-            business CRM tools to evolve operations across:
+            <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">
+              Myhive's
+            </span>{" "}
+            solution integrates Ai-driven automation and content with business
+            CRM tools to evolve operations across:
           </p>
         </div>
 

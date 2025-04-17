@@ -4,7 +4,8 @@ import type React from "react";
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { BotIcon, BarChart3, Lock, Cog } from "lucide-react";
+import { BotIcon, Cog } from "lucide-react";
+import { TbFriends } from "react-icons/tb";
 
 const FeatureCard = ({
   icon,
@@ -61,25 +62,31 @@ export default function Features() {
       icon: <BotIcon className="h-8 w-8" />,
       title: "Ai-Powered Automation",
       description:
-        "Transform your business with intelligent workflows that save time and reduce errors.",
+        "Evolving businesses activities and functions with Artificial Intelligence.",
     },
+    // {
+    //   icon: <BarChart3 className="h-8 w-8" />,
+    //   title: "Real-Time Analytics",
+    //   description:
+    //     "Make data-driven decisions with real-time insights into your sales, finances, and operations.",
+    // },
+    // {
+    //   icon: <Lock className="h-8 w-8" />,
+    //   title: "Secure Payment Processing",
+    //   description:
+    //     "Secure, multi-currency payment solutions with built-in fraud detection to protect your business.",
+    // },
     {
-      icon: <BarChart3 className="h-8 w-8" />,
-      title: "Real-Time Analytics",
+      icon: <TbFriends className="h-8 w-8" />,
+      title: "User Friendly",
       description:
-        "Make data-driven decisions with real-time insights into your sales, finances, and operations.",
-    },
-    {
-      icon: <Lock className="h-8 w-8" />,
-      title: "Secure Payment Processing",
-      description:
-        "Secure, multi-currency payment solutions with built-in fraud detection to protect your business.",
+        "Creating ultimate user friendliness with flexibility, convenience and preference.",
     },
     {
       icon: <Cog className="h-8 w-8" />,
       title: "End-to-End Integration",
       description:
-        "Unified solutions for seamless collaboration across sales, marketing, HR, and finance.",
+        "Unifying functions and operational lines across all business activities or departments of a brand.",
     },
   ];
 
@@ -97,15 +104,14 @@ export default function Features() {
             Powerful Capabilities
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
-            Key <span className="text-yellow-600">Features</span>
+            Core <span className="text-yellow-600">Components</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-            Discover how our platform can transform your business operations and
-            drive growth
+            Discover the core components of our solutions below.
           </p>
         </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <FeatureCard key={index} {...feature} index={index} />
           ))}

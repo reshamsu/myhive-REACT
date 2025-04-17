@@ -108,7 +108,7 @@ export default function CoreValues() {
             Our Core <span className="text-yellow-600">Values</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
-            The principles that guide everything we do at myhive
+            The principles that guide everything we do at <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>
           </p>
         </motion.div>
 

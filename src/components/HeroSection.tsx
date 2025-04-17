@@ -44,9 +44,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-block rounded-full bg-yellow-100 px-4 py-1.5 text-sm font-medium text-yellow-800"
+              className="inline-block rounded-full bg-yellow-100 px-4 py-1.5 text-lg font-medium text-yellow-800"
             >
-              Transforming Businesses
+              Empower Your Business
             </motion.div>
 
             <motion.h1
@@ -57,7 +57,7 @@ export default function HeroSection() {
             >
               Elevate Your
               <span className="mt-2 block bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">
-                Business
+                Brand
               </span>
             </motion.h1>
 
@@ -67,8 +67,8 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="mt-6 max-w-xl text-lg text-gray-600 md:mx-auto lg:mx-0"
             >
-              Ready to transform brands and business and empowered their
-              operations with our platform
+              Technology that Empowers Visionary Ideas to Ignite Brands and
+              Transform Businesses!
             </motion.p>
 
             <motion.div

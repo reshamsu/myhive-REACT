@@ -13,7 +13,7 @@ export default function Testimonials() {
   const testimonials = [
     {
       text: [
-        "Partnering with myhive has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we weren’t even aware were slowing us down. We now operate with greater efficiency, consistent quality, and double the profitability.",
+        "Partnering with myhive has been a transformative experience for our business. Their cutting-edge automation and CRM tools have helped us eliminate time-wasting processes—especially repetitive tasks we weren’t even aware were slowing us down. We now operate with greater efficiency, consistent optimum performance and double the profitability.",
 
         "Beyond their service and technology, what truly sets myhive apart is its exclusive partnership network. Being part of this Next-Gen Community, endorsed by prestigious alliances, has opened doors to new opportunities, collaborations, and growth. It’s more than just a partnership—we’re proud to be part of the myhive community and excited for what’s ahead!",
       ],

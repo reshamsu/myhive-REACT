@@ -108,7 +108,7 @@ const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-yellow-600 mb-4">
-                myhive
+              <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>
               </h3>
               <p className="text-gray-600 mb-4">
                 Empowering business and elevating brands with innovative and
@@ -124,7 +124,7 @@ const Footer: React.FC = () => {
                   <FaFacebook size={24} />
                 </a>
                 <a
-                  href="https://www.instagram.com/hive.biz/"
+                  href="https://www.instagram.com/myhive.biz/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-600 hover:text-yellow-600 transition duration-300"
@@ -193,7 +193,7 @@ const Footer: React.FC = () => {
 
         <div className="text-center mt-12 pt-8 border-t border-gray-200">
           <p className="text-gray-600">
-            &copy; {new Date().getFullYear()} myhive. All rights reserved.
+            &copy; {new Date().getFullYear()} <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>. All rights reserved.
           </p>
         </div>
       </div>

@@ -153,7 +153,12 @@ export default function Price() {
       monthlyPrice: "$500",
       price: "USD 500",
       description: "For established businesses with advanced needs",
-      features: ["Brand Builders","Freelancers", "Startups", "Small Scale Businesses"],
+      features: [
+        "Brand Builders",
+        "Freelancers",
+        "Startups",
+        "Small Scale Businesses",
+      ],
       isPopular: true,
     },
     {
@@ -189,7 +194,11 @@ export default function Price() {
             </h2>
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
               Choose the perfect plan to elevate your brand and empower your
-              business with myhives' solutions
+              business with{" "}
+              <span className="text-black font-bold">
+                myhives'
+              </span>{" "}
+              solutions
             </p>
           </div>
 

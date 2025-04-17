@@ -52,11 +52,11 @@ export default function AboutSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-8 text-lg leading-relaxed text-gray-600 md:text-xl"
           >
-            myhive is a cutting-edge business tech company leading the way in
+            <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">Myhive</span> is a cutting-edge business tech company leading the way in
             innovation. Our Ai-powered, licensed merchant platform automates,
             integrates, and optimizes operations across departments, ensuring
             businesses thrive in the digital age. Whether you're a startup, SMB,
-            or enterprise, myhive equips you with the tools to scale seamlessly
+            or enterprise, <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span> equips you with the tools to scale seamlessly
             and securely.
           </motion.p>
         </motion.div>

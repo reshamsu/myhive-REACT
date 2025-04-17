@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
               onClick={() => handleLinkClick("/")}
               className="text-yellow-600 text-2xl font-bold"
             >
-              myhive
+              <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>
             </button>
           </div>
           <div className="hidden md:flex space-x-6">

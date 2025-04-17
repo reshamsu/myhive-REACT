@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const stats = [
   { value: "99%", label: "Customer Satisfaction" },
   { value: "24/7", label: "Support Available" },
-  { value: "10x Plus", label: "Time Saving" },
+  { value: "10x Plus", label: "Time Savings" },
   { value: "100k+", label: "Active Platform Users" },
 ];
 
@@ -33,8 +33,7 @@ export default function Statistics() {
               Worldwide
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Our platform delivers measurable results that help businesses
-              thrive
+              We deliver unparalleled results that help You thrive!
             </p>
           </motion.div>
 
