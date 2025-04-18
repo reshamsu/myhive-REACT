@@ -34,7 +34,7 @@ export default function CallToAction() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
               Join thousands of businesses that have already elevated their
-              operations with <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>.
+              operations with our platform and services..
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">

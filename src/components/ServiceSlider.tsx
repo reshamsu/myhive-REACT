@@ -38,8 +38,8 @@ interface ServiceSection {
 const productSection: ServiceSection = {
   title: "CRM Platform",
   subtitle: "Product",
-  description:
-    "A comprehensive solution that streamlines your business operations and enhances customer relationships.",
+  description: "",
+  // A comprehensive solution that streamlines your business operations and enhances customer relationships.
   mainIcon: Server,
   ctaText: "Explore Key Features",
   features: [
@@ -81,31 +81,30 @@ const productBenefits: FeatureItem[] = [
   {
     title: "Saves Time & Cost",
     description:
-      "Reduce operational expenses and increase efficiency with our all-in-one platform.",
+      "It is an All-in-One Cross-Functional platform specialized in a range of business functions, compared to the usual niched CRMs offering one line of function.",
     icon: Clock,
   },
   {
     title: "User Flexible",
     description:
-      "Customize your experience by integrating with your preferred tools and applications.",
+      "The option to integrate user preferred applications & business tools such as Wordpress, Whatsapp & more.",
     icon: Zap,
   },
   {
     title: "Innovative Advantage",
     description:
-      "Stay ahead of competitors with cutting-edge Ai technology that continuously evolves.",
+      "An Ai Driven platform evolving every day offering future developments and features ahead of the industry & now.",
     icon: Globe,
   },
   {
     title: "Consistent Performance",
-    description:
-      "Experience reliable operation with Ai-driven functions that maintain peak performance 24/7.",
+    description: "Functions and platform as a whole driven by Ai every second.",
     icon: BarChart3,
   },
   {
     title: "Saves Space",
     description:
-      "Eliminate the need for physical servers with our cloud-based platform that scales with your business.",
+      "A Cloud Platform, compared to the usual applications that require installation & updates.",
     icon: Server,
   },
 ];
@@ -147,8 +146,8 @@ const serviceFeatures: FeatureItem[] = [
 const serviceSection: ServiceSection = {
   title: "Business Technology",
   subtitle: "Services",
-  description:
-    "Expert digital solutions to elevate your brand presence and engage your audience effectively.",
+  description: "",
+  // Expert digital solutions to elevate your brand presence and engage your audience effectively.
   mainIcon: MessageSquare,
   ctaText: "Explore Key Services",
   features: serviceFeatures,
@@ -258,7 +257,7 @@ export default function ServiceSlider() {
                   <h3 className="text-2xl font-bold mb-4">Key Features</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
                     Our platform offers powerful capabilities to transform your
-                    business operations
+                    business operations.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -310,8 +309,8 @@ export default function ServiceSlider() {
                     Explore YOUR Benefits
                   </h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
-                    Our business technology offers the following services to
-                    enhance your operations
+                    How our services create value and transform your business
+                    operations.
                   </p>
                 </div>
 
@@ -393,7 +392,7 @@ export default function ServiceSlider() {
                   <h3 className="text-2xl font-bold mb-4">Key Services</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
                     Our comprehensive range of services designed to elevate your
-                    business
+                    business.
                   </p>
                 </div>
 
@@ -445,7 +444,7 @@ export default function ServiceSlider() {
                   <h3 className="text-2xl font-bold mb-4">Service Benefits</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
                     How our services create value and transform your business
-                    operations
+                    operations.
                   </p>
                 </div>
 

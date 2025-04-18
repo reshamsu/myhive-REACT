@@ -37,11 +37,6 @@ const contactInfoByRegion: { [key: string]: ContactInfo } = {
     email: "hello@myhive.biz",
     location: "Hive Doha",
   },
-  // US: {
-  //   phone: "+1 236 939 1372",
-  //   email: "hello@myhive.biz",
-  //   location: "myhive Vancouver - British Columbia",
-  // },
 };
 
 const ContactModal: React.FC<ContactModalProps> = ({
@@ -54,20 +49,16 @@ const ContactModal: React.FC<ContactModalProps> = ({
 
   const contactInfo = contactInfoByRegion[regionCode] || contactInfoByRegion.LK;
 
-  const getEmailAddress = (planTitle: string) => {
-    return planTitle === "Alliance Plan" || planTitle === "Special Plan"
-      ? "alliances@myhive.biz"
-      : contactInfo.email;
-  };
+  const isAlliancePlan =
+    plan.title === "Alliance Plan" || plan.title === "Special Plan";
 
-  const getPhoneNumber = (planTitle: string) => {
-    return planTitle === "Alliance Plan" || planTitle === "Special Plan"
-      ? "+1 (437) 254-3077"
-      : contactInfo.phone;
-  };
+  const emailAddress = isAlliancePlan
+    ? "alliances@myhive.biz"
+    : contactInfo.email;
 
-  const emailAddress = getEmailAddress(plan.title);
-  const phoneNumber = getPhoneNumber(plan.title);
+  const phoneNumber = isAlliancePlan ? "+1 (437) 254-3077" : contactInfo.phone;
+
+  const displayPlanTitle = isAlliancePlan ? "Alliance Plan" : plan.title;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -80,10 +71,12 @@ const ContactModal: React.FC<ContactModalProps> = ({
           &times;
         </button>
         <div>
-          <h2 className="text-2xl font-bold mb-4">Contact Us - {plan.title}</h2>
+          <h2 className="text-2xl font-bold mb-4">
+            Contact Us - {displayPlanTitle}
+          </h2>
           <p className="mb-4">
-            Thank you for your interest in our {plan.title}. Please contact us
-            using the information below:
+            Thank you for your interest in our {displayPlanTitle}. Please
+            contact us using the information below:
           </p>
           <p className="mb-2">Phone:</p>
           <p className="font-bold mb-4">{phoneNumber}</p>
