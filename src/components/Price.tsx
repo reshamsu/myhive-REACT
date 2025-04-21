@@ -153,7 +153,7 @@ export default function Price() {
       price: "USD 100",
       description: "For small businesses and startups",
       features: ["⁠Freelancers", "Startups"],
-      label: "For starters",
+      label: "For Starters",
     },
     {
       title: "Essential Plan",
