@@ -55,8 +55,8 @@ export default function AboutSection() {
             <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span> is a cutting-edge business tech company leading the way in
             innovation. Our Ai-powered, licensed merchant platform automates,
             integrates, and optimizes operations across departments, ensuring
-            businesses thrive in the digital age. Whether you're a startup, SMB,
-            or enterprise, <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span> equips you with the tools to scale seamlessly
+            businesses thrive in the digital age. Whether you're a Freelancer, Startup, Small Scale Business,
+            or Medium Scale Business - <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span> equips you with the tools to scale seamlessly
             and securely.
           </motion.p>
         </motion.div>

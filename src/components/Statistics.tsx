@@ -33,7 +33,7 @@ export default function Statistics() {
               Worldwide
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              We deliver unparalleled results that help You thrive!
+              We deliver unparalleled results that help YOU thrive!
             </p>
           </motion.div>
 

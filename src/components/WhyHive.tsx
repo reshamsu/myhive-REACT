@@ -60,7 +60,7 @@ export default function WhyHive() {
     {
       title: "Ai-Driven Efficiency",
       description:
-        "Intelligent systems that improve performance and decision-making.",
+        "Intelligent systems that improve performance and foster decision-making.",
       icon: Cpu,
     },
     {
@@ -98,7 +98,7 @@ export default function WhyHive() {
             Why Choose <span className="text-yellow-500">myhive</span>?
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
-            Here's what sets us apart from the competition
+            Here's what sets us apart from the competition.
           </p>
         </motion.div>
 

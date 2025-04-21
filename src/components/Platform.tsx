@@ -8,7 +8,7 @@ import {
   BarChart3,
   Users,
   DollarSign,
-  ShoppingCart,
+  // ShoppingCart,
   MessageSquare,
 } from "lucide-react";
 import csImage from "../assets/cs.jpeg";
@@ -115,7 +115,7 @@ export default function Platform() {
       icon: BarChart3,
     },
     {
-      title: "Customer Support",
+      title: "Customer Service",
       description: "Provide exceptional support with automated tools",
       icon: Users,
     },
@@ -124,11 +124,11 @@ export default function Platform() {
       description: "Automate financial tasks and reporting",
       icon: DollarSign,
     },
-    {
-      title: "E-Commerce",
-      description: "Manage your online store with ease",
-      icon: ShoppingCart,
-    },
+    // {
+    //   title: "E-Commerce",
+    //   description: "Manage your online store with ease",
+    //   icon: ShoppingCart,
+    // },
     {
       title: "Communication",
       description: "Enhance collaboration with Ai-powered messaging",
@@ -160,7 +160,7 @@ export default function Platform() {
             <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">
               myhive's
             </span>{" "}
-            solution integrates Ai-driven automation and content with business
+            solution integrates Ai-driven automation and functions with business
             CRM tools to evolve operations across:
           </p>
         </div>

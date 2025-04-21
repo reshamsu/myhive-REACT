@@ -34,7 +34,7 @@ export default function CallToAction() {
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
               Join thousands of businesses that have already elevated their
-              operations with our platform and services..
+              operations with our platform and services.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -50,7 +50,7 @@ export default function CallToAction() {
                 onClick={() => handleNavigation("/contact")}
                 className="inline-flex w-full items-center justify-center rounded-full border-2 border-yellow-600 px-8 py-4 font-bold text-yellow-600 transition-colors hover:bg-yellow-50 hover:text-yellow-700 sm:w-auto"
               >
-                Contact Sales
+                Contact Us
               </button>
             </div>
           </motion.div>

@@ -92,7 +92,8 @@ export default function HeroSection() {
                 className="group w-full rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
                 onClick={() => handleNavigation("/about")}
               >
-                Explore Our Locations
+                {/* Explore Our Locations */}
+                About Us
                 <ChevronRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
               </button>
 

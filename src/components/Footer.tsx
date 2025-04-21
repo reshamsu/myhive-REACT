@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
               </h3>
               <p className="text-gray-600 mb-4">
                 Empowering business and elevating brands with innovative and
-                advanced business technology solutions
+                advanced business technology solutions.
               </p>
               <div className="flex space-x-4">
                 <a

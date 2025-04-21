@@ -57,6 +57,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
     : contactInfo.email;
 
   const phoneNumber = isAlliancePlan ? "+1 (437) 254-3077" : contactInfo.phone;
+  const address = isAlliancePlan ? "Hive - Toronto" : contactInfo.location;
 
   const displayPlanTitle = isAlliancePlan ? "Alliance Plan" : plan.title;
 
@@ -82,7 +83,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
           <p className="font-bold mb-4">{phoneNumber}</p>
           <p className="mb-2">Email:</p>
           <p className="font-bold mb-4">{emailAddress}</p>
-          <p className="text-sm text-gray-600">{contactInfo.location}</p>
+          <p className="text-sm text-gray-600">{address}</p>
         </div>
       </div>
       <div className="fixed inset-0 z-40" onClick={onClose}></div>

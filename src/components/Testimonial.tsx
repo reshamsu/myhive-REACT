@@ -65,7 +65,7 @@ export default function Testimonials() {
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-300">
             Hear from businesses that have transformed their operations with
-            myhive
+            <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>.
           </p>
         </motion.div>
 

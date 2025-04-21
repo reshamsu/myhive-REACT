@@ -11,6 +11,7 @@ interface Plan {
   features: string[];
   isPopular?: boolean;
   description: string;
+  label?: string;
 }
 
 interface PriceCardProps {
@@ -30,6 +31,11 @@ const PriceCard = ({ plan, onSelect }: PriceCardProps) => {
       {isPopular && (
         <div className="bg-yellow-400 text-zinc-900 text-center py-2 font-medium text-sm">
           MOST POPULAR
+        </div>
+      )}
+      {plan.label && !isPopular && (
+        <div className="bg-gray-200 text-zinc-900 text-center py-2 font-medium text-sm">
+          {plan.label}
         </div>
       )}
       <div className="p-6 sm:p-8 flex-grow">
@@ -146,19 +152,15 @@ export default function Price() {
       monthlyPrice: "$100",
       price: "USD 100",
       description: "For small businesses and startups",
-      features: ["Startups", "⁠Freelancers", "Brand Builders"],
+      features: ["⁠Freelancers", "Startups"],
+      label: "For starters",
     },
     {
       title: "Essential Plan",
       monthlyPrice: "$500",
       price: "USD 500",
       description: "For established businesses with advanced needs",
-      features: [
-        "Brand Builders",
-        "Freelancers",
-        "Startups",
-        "Small Scale Businesses",
-      ],
+      features: ["Freelancers", "Startups", "Small Scale Businesses"],
       isPopular: true,
     },
     {
@@ -171,6 +173,7 @@ export default function Price() {
         "Small Scale Businesses",
         "Medium Scale Businesses",
       ],
+      label: "For Pros",
     },
   ];
 
@@ -195,10 +198,7 @@ export default function Price() {
             <p className="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
               Choose the perfect plan to elevate your brand and empower your
               business with{" "}
-              <span className="text-black font-bold">
-                myhives'
-              </span>{" "}
-              solutions
+              <span className="text-black font-bold">myhive's</span> solutions.
             </p>
           </div>
 
@@ -210,6 +210,14 @@ export default function Price() {
                 onSelect={() => handlePlanSelect(plan)}
               />
             ))}
+          </div>
+          <div className="text-center mt-16">
+            <a
+              href="/services"
+              className="inline-block bg-white text-yellow-600 py-4 px-8 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 text-lg shadow-lg"
+            >
+              Explore our solutions
+            </a>
           </div>
 
           <EnterpriseCard

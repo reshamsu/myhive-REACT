@@ -81,13 +81,13 @@ const productBenefits: FeatureItem[] = [
   {
     title: "Saves Time & Cost",
     description:
-      "It is an All-in-One Cross-Functional platform specialized in a range of business functions, compared to the usual niched CRMs offering one line of function.",
+      "An All-in-One Cross-Functional platform specialized in a range of business functions - compared to the usual niched CRMs offering one line of function.",
     icon: Clock,
   },
   {
     title: "User Flexible",
     description:
-      "The option to integrate user preferred applications & business tools such as Wordpress, Whatsapp & more.",
+      "Option to integrate user preferred applications & business tools such as Wordpress, Whatsapp & more.",
     icon: Zap,
   },
   {
@@ -104,7 +104,7 @@ const productBenefits: FeatureItem[] = [
   {
     title: "Saves Space",
     description:
-      "A Cloud Platform, compared to the usual applications that require installation & updates.",
+      "A Cloud Platform, that saves space - compared to the usual applications that require installation, updates and takes up space.",
     icon: Server,
   },
 ];
@@ -156,6 +156,7 @@ const serviceSection: ServiceSection = {
 export default function ServiceSlider() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [activeTab, setActiveTab] = useState<"product" | "service">("product");
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
   // Create refs for scrolling to sections
   const productFeaturesRef = useRef<HTMLDivElement>(null);
@@ -183,6 +184,83 @@ export default function ServiceSlider() {
   const scrollToServiceBenefits = () => {
     serviceBenefitsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  // Navigation Card component
+  const NavigationCard = ({
+    onClick,
+    text,
+    id,
+    icon = ArrowRight,
+  }: {
+    onClick: () => void;
+    text: string;
+    id: string;
+    icon?: React.ElementType;
+  }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.4, delay: 0.3 }}
+      className="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center cursor-pointer"
+      onClick={onClick}
+      onMouseEnter={() => setHoveredCard(id)}
+      onMouseLeave={() => setHoveredCard(null)}
+      whileHover={{ scale: 1.03 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div className="flex flex-col items-center justify-between h-full">
+        <h3 className="font-semibold text-white mb-2">{text}</h3>
+        <div className="mb-4 h-12 w-12 rounded-lg bg-white text-yellow-600 flex items-center justify-center">
+          {React.createElement(icon, { className: "h-6 w-6" })}
+        </div>
+
+        {/* Animated particles effect when hovered */}
+        {hoveredCard === id && (
+          <>
+            <motion.div
+              className="absolute top-1/4 left-1/4 h-1 w-1 rounded-full bg-white opacity-70"
+              animate={{
+                y: [0, -20],
+                x: [0, -5],
+                opacity: [0.7, 0],
+              }}
+              transition={{
+                duration: 1,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "loop",
+              }}
+            />
+            <motion.div
+              className="absolute top-1/3 right-1/4 h-1 w-1 rounded-full bg-white opacity-70"
+              animate={{
+                y: [0, -15],
+                x: [0, 10],
+                opacity: [0.7, 0],
+              }}
+              transition={{
+                duration: 1.3,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "loop",
+              }}
+            />
+            <motion.div
+              className="absolute bottom-1/3 right-1/3 h-1 w-1 rounded-full bg-white opacity-70"
+              animate={{
+                y: [0, -25],
+                x: [0, -10],
+                opacity: [0.7, 0],
+              }}
+              transition={{
+                duration: 0.8,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "loop",
+              }}
+            />
+          </>
+        )}
+      </div>
+    </motion.div>
+  );
 
   return (
     <section className="py-16 md:py-24 overflow-hidden">
@@ -256,8 +334,8 @@ export default function ServiceSlider() {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-4">Key Features</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
-                    Our platform offers powerful capabilities to transform your
-                    business operations.
+                    Our platform offers powerful featuers to elevate your
+                    business.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -284,17 +362,13 @@ export default function ServiceSlider() {
                       </div>
                     </motion.div>
                   ))}
-                </div>
 
-                {/* Button to navigate to Benefits section */}
-                <div className="text-center mt-8">
-                  <button
+                  {/* Navigation Card in the same grid */}
+                  <NavigationCard
                     onClick={scrollToProductBenefits}
-                    className="inline-flex items-center px-6 py-3 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium hover:bg-yellow-50 transition-colors duration-200"
-                  >
-                    Explore Your Benefits
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
+                    text="Explore Your Benefits"
+                    id="product-benefits-btn"
+                  />
                 </div>
               </div>
 
@@ -306,11 +380,11 @@ export default function ServiceSlider() {
               >
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-4">
-                    Explore YOUR Benefits
+                    Explore Your Benefits
                   </h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
-                    How our services create value and transform your business
-                    operations.
+                    How our solutions create value and empower your business or
+                    brand.
                   </p>
                 </div>
 
@@ -334,17 +408,13 @@ export default function ServiceSlider() {
                       <p className="text-gray-600">{benefit.description}</p>
                     </motion.div>
                   ))}
-                </div>
 
-                {/* Button to navigate to Features section */}
-                <div className="text-center mt-8">
-                  <button
+                  {/* Navigation Card in the same grid */}
+                  <NavigationCard
                     onClick={scrollToProductFeatures}
-                    className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
-                  >
-                    {productSection.ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
+                    text={productSection.ctaText}
+                    id="product-features-btn"
+                  />
                 </div>
               </div>
             </div>
@@ -391,8 +461,8 @@ export default function ServiceSlider() {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold mb-4">Key Services</h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
-                    Our comprehensive range of services designed to elevate your
-                    business.
+                    Our comprehensive range of services designed to transform
+                    your business.
                   </p>
                 </div>
 
@@ -420,17 +490,13 @@ export default function ServiceSlider() {
                       </div>
                     </motion.div>
                   ))}
-                </div>
 
-                {/* Button to navigate to Service Benefits section */}
-                <div className="text-center mt-8">
-                  <button
+                  {/* Navigation Card in the same grid */}
+                  <NavigationCard
                     onClick={scrollToServiceBenefits}
-                    className="inline-flex items-center px-6 py-3 rounded-full border-2 border-yellow-600 text-yellow-600 font-medium hover:bg-yellow-50 transition-colors duration-200"
-                  >
-                    Explore Your Benefits
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
+                    text="Explore Your Benefits"
+                    id="service-benefits-btn"
+                  />
                 </div>
               </div>
 
@@ -441,10 +507,12 @@ export default function ServiceSlider() {
                 id="service-benefits"
               >
                 <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold mb-4">Service Benefits</h3>
+                  <h3 className="text-2xl font-bold mb-4">
+                    Explore Your Benefits
+                  </h3>
                   <p className="text-gray-600 max-w-2xl mx-auto">
-                    How our services create value and transform your business
-                    operations.
+                    How our solutions create value and empower your business or
+                    brand.
                   </p>
                 </div>
 
@@ -507,17 +575,13 @@ export default function ServiceSlider() {
                       analytics inform strategic business decisions.
                     </p>
                   </div>
-                </div>
 
-                {/* Button to navigate to Key Services section */}
-                <div className="text-center mt-8">
-                  <button
+                  {/* Navigation Card in the same grid */}
+                  <NavigationCard
                     onClick={scrollToServiceFeatures}
-                    className="inline-flex items-center px-6 py-3 rounded-full bg-yellow-600 text-white font-medium hover:bg-yellow-500 transition-colors duration-200"
-                  >
-                    {serviceSection.ctaText}
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </button>
+                    text={serviceSection.ctaText}
+                    id="service-features-btn"
+                  />
                 </div>
               </div>
             </div>
