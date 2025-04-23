@@ -25,17 +25,17 @@ const contactInfoByRegion: { [key: string]: ContactInfo } = {
   LK: {
     phone: "+94 71 766 8690",
     email: "hello@myhive.biz",
-    location: "Hive Colombo",
+    location: "Hive Colombo - Sri Lanka",
   },
   CA_ON: {
     phone: "+1 437 254 3077",
     email: "hello@myhive.biz",
-    location: "Hive Toronto",
+    location: "Hive Toronto - Canada",
   },
   CA_BC: {
     phone: "+1 236 979 1372",
     email: "hello@myhive.biz",
-    location: "Hive Doha",
+    location: "Hive Doha - Qatar",
   },
 };
 
@@ -57,7 +57,7 @@ const ContactModal: React.FC<ContactModalProps> = ({
     : contactInfo.email;
 
   const phoneNumber = isAlliancePlan ? "+1 (437) 254-3077" : contactInfo.phone;
-  const address = isAlliancePlan ? "Hive - Toronto" : contactInfo.location;
+  const address = isAlliancePlan ? "Hive Toronto - Canada" : contactInfo.location;
 
   const displayPlanTitle = isAlliancePlan ? "Alliance Plan" : plan.title;
 

@@ -93,7 +93,7 @@ const productBenefits: FeatureItem[] = [
   {
     title: "Innovative Advantage",
     description:
-      "An Ai Driven platform evolving every day offering future developments and features ahead of the industry & now.",
+      "An Ai Powered platform evolving every day offering future developments and features ahead of the industry & now.",
     icon: Globe,
   },
   {

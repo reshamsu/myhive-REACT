@@ -33,7 +33,7 @@ export default function CallToAction() {
               Ready to Transform Your Business?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-600">
-              Join thousands of businesses that have already elevated their
+              Join hundreds of businesses that have already elevated their
               operations with our platform and services.
             </p>
 

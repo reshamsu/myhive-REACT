@@ -108,7 +108,9 @@ const Footer: React.FC = () => {
             {/* Company Info */}
             <div className="mb-8">
               <h3 className="text-2xl font-bold text-yellow-600 mb-4">
-              <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>
+                <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">
+                  myhive
+                </span>
               </h3>
               <p className="text-gray-600 mb-4">
                 Empowering business and elevating brands with innovative and
@@ -193,7 +195,10 @@ const Footer: React.FC = () => {
 
         <div className="text-center mt-12 pt-8 border-t border-gray-200">
           <p className="text-gray-600">
-            &copy; {new Date().getFullYear()} <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">myhive</span>. All rights reserved.
+            <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent font-bold">
+              myhive
+            </span>{" "}
+            &copy; {new Date().getFullYear()} . All rights reserved.
           </p>
         </div>
       </div>
