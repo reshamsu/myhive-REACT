@@ -198,15 +198,15 @@ export default function ServiceSlider() {
     icon?: React.ElementType;
   }) => (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, x: 6 }}
       animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.4, delay: 0.3 }}
-      className="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 text-center cursor-pointer"
+      transition={{ duration: 0.2, delay: 0.1 }}
+      className="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-100 transform hover:-translate-x-1 text-center cursor-pointer"
       onClick={onClick}
       onMouseEnter={() => setHoveredCard(id)}
       onMouseLeave={() => setHoveredCard(null)}
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.98 }}
+      whileHover={{ scale: 1.04 }}
+      whileTap={{ scale: 0.40 }}
     >
       <div className="flex flex-col items-center justify-between h-full">
         <h3 className="font-semibold text-white mb-2">{text}</h3>
@@ -392,10 +392,10 @@ export default function ServiceSlider() {
                   {productBenefits.map((benefit, idx) => (
                     <motion.div
                       key={idx}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.5, delay: 0.1 + idx * 0.1 }}
-                      className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 text-center"
+                      transition={{ duration: 0.3, delay: 0.1 + idx * 0.1 }}
+                      className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-200 transform hover:-translate-y-1 text-center"
                     >
                       <div className="h-12 w-12 rounded-xl bg-yellow-600 text-white flex items-center justify-center mb-6 mx-auto">
                         {React.createElement(benefit.icon, {
@@ -422,10 +422,10 @@ export default function ServiceSlider() {
 
           {/* Service Section */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             animate={{
               opacity: activeTab === "service" ? 1 : 0,
-              x: activeTab === "service" ? 0 : 20,
+              x: activeTab === "service" ? 0 : 10,
               display: activeTab === "service" ? "block" : "none",
             }}
             transition={{ duration: 0.4 }}
@@ -470,9 +470,9 @@ export default function ServiceSlider() {
                   {serviceFeatures.map((feature, idx) => (
                     <motion.div
                       key={idx}
-                      initial={{ opacity: 0, y: 20 }}
+                      initial={{ opacity: 0, y: 10 }}
                       animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.4, delay: 0.1 + idx * 0.05 }}
+                      transition={{ duration: 0.2, delay: 0.1 + idx * 0.02 }}
                       className="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
                     >
                       <div className="flex flex-col items-center">

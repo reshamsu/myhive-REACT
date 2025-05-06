@@ -47,9 +47,9 @@ export default function ServiceHeader() {
           </motion.h1>
 
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
             className="mt-8 text-lg leading-relaxed text-gray-600 md:text-xl"
           >
             Discover our comprehensive suite of business solutions designed to automate and streamline your operations to boost efficiency and drive growth with Ai technology.

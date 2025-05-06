@@ -28,20 +28,19 @@ const PlatformFeature = ({
   index: number;
 }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
+    transition={{ duration: 0.1, ease: "easeOut", delay: index * 0.005 }}
     viewport={{ once: true, margin: "-100px" }}
-    className="group relative overflow-hidden rounded-2xl bg-gray-800 p-6 shadow-lg transition-all duration-300 hover:bg-yellow-600"
-  >
-    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-yellow-600/20 text-yellow-500 group-hover:bg-gray-800/20 group-hover:text-gray-800">
+    className="group relative overflow-hidden rounded-2xl bg-gray-800 p-6 shadow-lg transition-all duration-100 hover:bg-yellow-600">
+    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-yellow-600/20 text-yellow-500 group-hover:bg-white group-hover:text-white-800">
       <Icon className="h-6 w-6" />
     </div>
-    <h4 className="mb-2 text-xl font-semibold text-white group-hover:text-gray-900">
+    <h4 className="mb-2 text-xl font-semibold text-white group-hover:text-white-900">
       {title}
     </h4>
-    <p className="text-gray-300 group-hover:text-gray-800">{description}</p>
-    <div className="absolute -bottom-2 -right-2 h-12 w-12 rounded-tl-xl bg-yellow-500/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+    <p className="text-gray-300 group-hover:text-white-800">{description}</p>
+    <div className="absolute -bottom-2 -right-2 h-12 w-12 rounded-tl-xl bg-yellow-500/10 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
   </motion.div>
 );
 
@@ -67,9 +66,10 @@ const ImageScroller = () => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.95 }}
-      animate={isLoaded ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.8, delay: 0.3 }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={isLoaded ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.2, ease: "easeOut", delay: 0.02 }}
+      viewport={{ once: true, margin: "-100px" }}
       className="relative h-[400px] overflow-hidden rounded-2xl shadow-2xl"
     >
       <div className="absolute -right-4 -top-4 h-full w-full rounded-2xl bg-gradient-to-br from-yellow-500 to-yellow-600 shadow-xl"></div>
@@ -77,7 +77,7 @@ const ImageScroller = () => {
         {images.map((image, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
+            className={`absolute inset-0 transition-opacity duration-500 ${
               index === currentImageIndex ? "opacity-100" : "opacity-0"
             }`}
           >
