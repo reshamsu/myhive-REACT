@@ -59,13 +59,13 @@ const PriceCard = ({ plan, onSelect }: PriceCardProps) => {
       <div className="p-6 sm:p-8 bg-gray-100 mt-auto">
         <button
           onClick={onSelect}
-          className={`w-full py-3 px-4 rounded-full font-semibold transition-colors duration-300 text-sm sm:text-base ${
+          className={`w-full py-3 px-4 rounded-full font-semibold transition-colors duration-200 text-sm sm:text-base ${
             isPopular
-              ? "bg-yellow-600 text-zinc-900 hover:bg-yellow-500"
-              : "bg-gray-200 text-zinc-900 hover:bg-gray-300"
+              ? "bg-yellow-600 text-white hover:bg-yellow-500"
+              : "bg-black text-white hover: bg-gray-800"
           }`}
         >
-          {title === "Special Plan" ? "Contact Us" : "Start Now"}
+          {title === "Special Plan" ? "Contact Us" : "Get Started"}
         </button>
       </div>
     </div>
@@ -73,7 +73,7 @@ const PriceCard = ({ plan, onSelect }: PriceCardProps) => {
 };
 
 const EnterpriseCard = ({ onSelect }: { onSelect: () => void }) => (
-  <div className="bg-gradient-to-r from-yellow-500 to-yellow-700 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-8 text-white max-w-3xl mx-auto mt-16">
+  <div className="bg-gradient-to-r from-blue-500 via-blue-800 to-blue-900 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-8 text-white max-w-3xl mx-auto mt-16">
     <div className="flex flex-col md:flex-row items-center justify-between">
       <div className="mb-6 md:mb-0 md:mr-8">
         <h3 className="text-2xl font-bold mb-3">Alliance</h3>
@@ -110,7 +110,7 @@ const EnterpriseCard = ({ onSelect }: { onSelect: () => void }) => (
       </div>
       <button
         onClick={onSelect}
-        className="bg-zinc-900 text-yellow-400 py-3 px-8 rounded-full font-semibold hover:bg-zinc-800 transition-colors duration-300 whitespace-nowrap"
+        className="bg-white text-black py-3 px-8 rounded-full font-semibold hover:bg-neutral-200 transition-colors duration-200 whitespace-nowrap"
       >
         Contact Us
       </button>

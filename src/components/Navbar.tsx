@@ -84,9 +84,8 @@ const Navbar: React.FC = () => {
               <button
                 key={link.to}
                 onClick={() => handleLinkClick(link.to)}
-                className={`text-gray-800 hover:text-yellow-600 transition duration-300 ${
-                  location.pathname === link.to
-                    ? "text-yellow-600 font-medium"
+                className={`text-gray-800 hover:text-yellow-600 transition-colors duration-75 ease-out ${
+                  location.pathname === link.to ? "text-yellow-600 font-medium"
                     : ""
                 }`}
               >
@@ -111,7 +110,7 @@ const Navbar: React.FC = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden">
           <div
-            className="mobile-menu-container fixed right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 ease-in-out"
+            className="mobile-menu-container fixed right-0 top-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-50 ease-in-out"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-5">

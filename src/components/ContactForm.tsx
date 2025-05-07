@@ -131,7 +131,7 @@ export default function ContactForm() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={isLoaded ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-2xl md:text-3xl font-bold mb-6"
+                className="text-2xl md:text-3xl font-bold mb-6 text-white"
               >
                 Contact Information
               </motion.h2>
@@ -379,7 +379,7 @@ export default function ContactForm() {
             <div className="mt-8">
               <button
                 type="submit"
-                className="group flex w-full items-center justify-center rounded-lg bg-yellow-600 px-6 py-4 font-semibold text-gray-800 shadow-lg transition-all duration-300 hover:bg-yellow-500"
+                className="group flex w-full items-center justify-center rounded-lg bg-yellow-600 px-6 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-yellow-500"
               >
                 <Send className="mr-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 Send Message

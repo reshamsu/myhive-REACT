@@ -73,9 +73,9 @@ export default function HeroSection() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.3, delay: 0.2, ease: "easeOut" }}
               className="mt-6 max-w-xl text-lg text-gray-600 md:mx-auto lg:mx-0"
             >
               Technology that Empowers Visionary Ideas to Ignite Brands and
@@ -83,18 +83,18 @@ export default function HeroSection() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={isLoaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row lg:justify-start"
             >
               <button
-                className="group w-full rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors hover:bg-yellow-500 sm:w-auto"
+                className="group w-full rounded-full bg-yellow-600 px-8 py-4 font-bold text-white transition-colors duration-100 easse-out hover:bg-yellow-500 sm:w-auto"
                 onClick={() => handleNavigation("/about")}
               >
                 {/* Explore Our Locations */}
                 About Us
-                <ChevronRight className="ml-2 inline-block h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ChevronRight className="ml-2 inline-block h-4 w-4 transition-transform duration-100 ease-out group-hover:translate-x-1" />
               </button>
 
               <button
