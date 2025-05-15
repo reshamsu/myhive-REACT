@@ -73,7 +73,7 @@ const PriceCard = ({ plan, onSelect }: PriceCardProps) => {
 };
 
 const EnterpriseCard = ({ onSelect }: { onSelect: () => void }) => (
-  <div className="bg-gradient-to-r from-blue-500 via-blue-800 to-blue-900 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-8 text-white max-w-3xl mx-auto mt-16">
+  <div className="bg-gradient-to-r from-yellow-650 via-yellow-600 to-yellow-500 rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl p-8 text-white max-w-3xl mx-auto mt-16">
     <div className="flex flex-col md:flex-row items-center justify-between">
       <div className="mb-6 md:mb-0 md:mr-8">
         <h3 className="text-2xl font-bold mb-3">Alliance</h3>
